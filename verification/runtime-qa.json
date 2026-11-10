@@ -1,6 +1,16 @@
 {
   "passed": [
     "All runtime dialogue mappings, bodies, speakers, interaction flags and variables",
+    "Inline school font routes Chinese to CJK",
+    "Inline school font retains Latin face",
+    "Chinese font for fakeboob_back_button_text",
+    "Chinese font for fakeboob_username",
+    "Chinese font for fakeboob_message_text",
+    "Chinese font for fakeboob_system_text",
+    "Chinese font for fakeboob_close_button_text",
+    "Chinese font for fakeboob_footer_text",
+    "Accessibility CJK fallback dejavusans",
+    "Accessibility CJK fallback opendyslexic",
     "Chinese default language",
     "Main menu translation",
     "Map translation",

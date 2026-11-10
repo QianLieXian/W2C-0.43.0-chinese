@@ -480,14 +480,14 @@ screen campaign_select():
                             spacing 10
 
                             # Title (displayed letter-by-letter vertically)
-                            text panel["title"]:
+                            text renpy.translate_string(panel["title"]):
                                 xalign 0.5
                                 text_align 0.5
                                 color "#c8aa6e"
                                 outlines [(2, "#1a1000", 0, 0), (4, "#000000", 0, 0)]
                                 size 42
                                 bold True
-                                font "DejaVuSans.ttf"
+                                font (gui.interface_text_font if preferences.language == "zh" else "DejaVuSans.ttf")
 
                     # --- EXPANDED: Show full content ---
                     else:
@@ -498,23 +498,23 @@ screen campaign_select():
                             yoffset 40
                             spacing 5
 
-                            text panel["subtitle"]:
+                            text renpy.translate_string(panel["subtitle"]):
                                 xalign 0.5
                                 text_align 0.5
                                 color "#c8aa6e"
                                 outlines [(2, "#1a1000", 0, 0), (4, "#000000", 0, 0)]
                                 size 24
                                 italic True
-                                font "DejaVuSans.ttf"
+                                font (gui.interface_text_font if preferences.language == "zh" else "DejaVuSans.ttf")
 
-                            text panel["title"]:
+                            text renpy.translate_string(panel["title"]):
                                 xalign 0.5
                                 text_align 0.5
                                 color "#f0d878"
                                 outlines [(2, "#1a1000", 0, 0), (6, "#000000", 0, 0)]
                                 size 56
                                 bold True
-                                font "DejaVuSans.ttf"
+                                font (gui.interface_text_font if preferences.language == "zh" else "DejaVuSans.ttf")
 
                         # Bottom section: action buttons
                         vbox:
@@ -525,7 +525,7 @@ screen campaign_select():
 
                             for btn in panel["buttons"]:
                                 # btn[0] = label text, btn[1] = action list
-                                textbutton btn[0]:
+                                textbutton renpy.translate_string(btn[0]):
                                     xalign 0.5
                                     xminimum 280
                                     yminimum 54
@@ -534,7 +534,7 @@ screen campaign_select():
                                     text_hover_color "#ffffff"
                                     text_size 28
                                     text_bold True
-                                    text_font "DejaVuSans.ttf"
+                                    text_font (gui.interface_text_font if preferences.language == "zh" else "DejaVuSans.ttf")
                                     text_outlines [(2, "#1a1000", 0, 0), (3, "#000000", 0, 0)]
                                     background Frame("gui/button/choice_idle_background.png", 20, 10)
                                     hover_background Frame("gui/button/choice_hover_background.png", 20, 10)

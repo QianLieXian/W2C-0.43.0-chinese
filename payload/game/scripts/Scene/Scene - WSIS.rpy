@@ -3540,7 +3540,7 @@ screen FakeMes(message="", side="system", delivered=True, sender=""):
             background None
             padding (15, 8)
             xmaximum 600
-            text message:
+            text renpy.translate_string(message):
                 style "fakeboob_system_text"
                 xalign 0.5
 
@@ -3553,7 +3553,7 @@ screen FakeMes(message="", side="system", delivered=True, sender=""):
                 spacing 15
                 if delivered:
                     text "✔" color "#00FF00" size 40 yalign 0.0
-                text message color "#323232" size 40
+                text renpy.translate_string(message) color "#323232" size 40
 
     elif side == "right":
         if delivered == True:
@@ -3565,7 +3565,7 @@ screen FakeMes(message="", side="system", delivered=True, sender=""):
                 hbox:
                     spacing 15
                     xalign 1.0
-                    text message color "#009600" size 40 text_align 1.0
+                    text renpy.translate_string(message) color "#009600" size 40 text_align 1.0
                     if delivered:
                         text "✔" color "#00FF00" size 40 yalign 0.0
 
@@ -3578,7 +3578,7 @@ screen FakeMes(message="", side="system", delivered=True, sender=""):
                 hbox:
                     spacing 15
                     xalign 1.0
-                    text message color "#960000" size 40 text_align 1.0
+                    text renpy.translate_string(message) color "#960000" size 40 text_align 1.0
                     text "🕐" color "#FF0000" size 40 yalign 0.0
 
     null height 5

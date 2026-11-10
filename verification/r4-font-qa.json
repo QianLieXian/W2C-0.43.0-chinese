@@ -1,0 +1,24 @@
+{
+  "version": "r4",
+  "runtime_font_checks": [
+    "Inline school font routes Chinese to CJK",
+    "Inline school font retains Latin face",
+    "Chinese font for fakeboob_back_button_text",
+    "Chinese font for fakeboob_username",
+    "Chinese font for fakeboob_message_text",
+    "Chinese font for fakeboob_system_text",
+    "Chinese font for fakeboob_close_button_text",
+    "Chinese font for fakeboob_footer_text",
+    "Accessibility CJK fallback dejavusans",
+    "Accessibility CJK fallback opendyslexic"
+  ],
+  "font_checks_passed": true,
+  "rendered_screens": [
+    "campaign_select collapsed",
+    "campaign_select expanded",
+    "fakeboob_messenger_screen",
+    "inline monof55 and chat style proof"
+  ],
+  "new_font_downloads": false,
+  "android_device_tested": false
+}

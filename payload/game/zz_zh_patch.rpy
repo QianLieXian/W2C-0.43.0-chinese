@@ -42,3 +42,22 @@ init 999 python:
 
 translate zh style default:
     language "eastasian"
+
+# Some original screens bypass the GUI FontGroup with Western-only fonts.
+# monof55 is also used by inline font tags on the monument and class lists.
+init 998 python:
+    _zh_school_font = FontGroup().add("XiaolaiMonoSC-Regular.ttf", 0x2000, 0x206f).add("XiaolaiMonoSC-Regular.ttf", 0x2e80, 0x9fff).add("XiaolaiMonoSC-Regular.ttf", 0xf900, 0xffff).add("monof55.ttf", None, None)
+    config.font_name_map["monof55.ttf"] = _zh_school_font
+
+translate zh style fakeboob_back_button_text:
+    font gui.interface_text_font
+translate zh style fakeboob_username:
+    font gui.name_text_font
+translate zh style fakeboob_message_text:
+    font gui.text_font
+translate zh style fakeboob_system_text:
+    font gui.text_font
+translate zh style fakeboob_close_button_text:
+    font gui.interface_text_font
+translate zh style fakeboob_footer_text:
+    font gui.interface_text_font
