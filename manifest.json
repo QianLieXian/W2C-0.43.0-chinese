@@ -1,0 +1,980 @@
+{
+  "version": "0.43.0-zh-r1",
+  "input_sha256": "fe6ed14dedcbc08e01855ab4af36e204c0ff32c99130d701f6cdc1fae6f48d82",
+  "java": {
+    "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_windows_hotspot_17.0.20.1_1.zip",
+    "sha256": "bc21a93923103cdaac93ee337b0ae4365e739fde36df823dd456bc67c8a9d352"
+  },
+  "signer": {
+    "url": "https://github.com/patrickfav/uber-apk-signer/releases/download/v1.3.0/uber-apk-signer-1.3.0.jar",
+    "sha256": "e1299fd6fcf4da527dd53735b56127e8ea922a321128123b9c32d619bba1d835"
+  },
+  "files": [
+    {
+      "path": "payload/game/screens.rpy",
+      "size": 70371,
+      "sha256": "5db60df7d08cdc92a0cb7a6f9398b1afc46648e515e4d2bb9709487c3f807408",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/screens.rpyc",
+      "size": 71332,
+      "sha256": "7fa494d2d890ebbcc85b693d2bf563c6d121018ac138a9b75cc82a606c0e1d38",
+      "apk_entry": "assets/x-game/x-screens.rpyc"
+    },
+    {
+      "path": "payload/game/scripts/Chat/Chat WGOT.rpy",
+      "size": 68379,
+      "sha256": "72c8b7e1bfb63a60ad513540bf80fb4bc693d0859f56479a925f71041859a950",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/scripts/Chat/Chat WGOT.rpyc",
+      "size": 57009,
+      "sha256": "335a763a1b0ea1828a85d647398c2e1dd9412e984b349811c25f857a98abd801",
+      "apk_entry": "assets/x-game/x-scripts/x-Chat/x-Chat WGOT.rpyc"
+    },
+    {
+      "path": "payload/game/scripts/Chat/Chat WMOM.rpy",
+      "size": 52609,
+      "sha256": "b0aa83b97fcd76ea14af78f2980537d5bf449967b31aa39580445c5841861c0f",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/scripts/Chat/Chat WMOM.rpyc",
+      "size": 42445,
+      "sha256": "53b1ef5f4018dc78b3727df2de1a7124ef821f492507f6b3512bce8a665725ce",
+      "apk_entry": "assets/x-game/x-scripts/x-Chat/x-Chat WMOM.rpyc"
+    },
+    {
+      "path": "payload/game/scripts/Chat/Chat WRIC.rpy",
+      "size": 46438,
+      "sha256": "2b9e3d677add867d295498a555b74826bae9370ef207e9cea0f7f2b81a6434dc",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/scripts/Chat/Chat WRIC.rpyc",
+      "size": 41963,
+      "sha256": "eadc0e590e9089c3e973a2b49198771dd6864c3205434523850e9d354a025ad3",
+      "apk_entry": "assets/x-game/x-scripts/x-Chat/x-Chat WRIC.rpyc"
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/Data - Char.rpy",
+      "size": 63263,
+      "sha256": "751aa5251baf5dceefd5b5564df7dd7ba6911cdc97c2115bcea423ddec394689",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/Data - Char.rpyc",
+      "size": 13538,
+      "sha256": "a554178bcea85120bc7386effeb32ca56c2402879ff583ec46aa460f12ae4acf",
+      "apk_entry": "assets/x-game/x-scripts/x-Mechanics/x-Data - Char.rpyc"
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/GameCheck.rpy",
+      "size": 128584,
+      "sha256": "4e476fca53bf209c81a880925d1c0183597f8b7cda830002a16f99c8cc568f1b",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/GameCheck.rpyc",
+      "size": 76680,
+      "sha256": "83832556868a93ab9aa38d4811a81d86c0733fac08bdb93a99ebac761773b70b",
+      "apk_entry": "assets/x-game/x-scripts/x-Mechanics/x-GameCheck.rpyc"
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/Minigame - Logic.rpy",
+      "size": 19341,
+      "sha256": "4e00e743c50b7d8d80c60e45526ba5586e9d9b165e855d68903445bd90547183",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/Minigame - Logic.rpyc",
+      "size": 16106,
+      "sha256": "cc9422107e2c41c8ce7e3653aca3e86faa9fa0038ad8e30caee1d18620291cfd",
+      "apk_entry": "assets/x-game/x-scripts/x-Mechanics/x-Minigame - Logic.rpyc"
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/System - Changing.rpy",
+      "size": 55867,
+      "sha256": "59396632a8c382b5f9a8d1f4ba98be5480867d0eb3f6eac9258de97a98001dd3",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/System - Changing.rpyc",
+      "size": 31343,
+      "sha256": "bbbaf38727a3bda9b45cca53950180150dd12ecc66af10eddd92baefa1a934ec",
+      "apk_entry": "assets/x-game/x-scripts/x-Mechanics/x-System - Changing.rpyc"
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/System - Info.rpy",
+      "size": 228171,
+      "sha256": "5a10696f07490114a8e1fd3c5717a1ed590c5e37f64da05d6da20b135d7da7bb",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/System - Info.rpyc",
+      "size": 155886,
+      "sha256": "8a6051122bf4ee46e9006497a2bbdc166a37218b059069fa90e2f9e62cdf6f4c",
+      "apk_entry": "assets/x-game/x-scripts/x-Mechanics/x-System - Info.rpyc"
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/TXT Tag.rpy",
+      "size": 76456,
+      "sha256": "0da642ecbeecbc84ef5fba704a7136e91c6b5eeed7d4240d00d10e3f0cfc117b",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/scripts/Mechanics/TXT Tag.rpyc",
+      "size": 17524,
+      "sha256": "903607faa639a852e1b1727ca5d6ba38167f5912522afb34410cb950ef88d8b0",
+      "apk_entry": "assets/x-game/x-scripts/x-Mechanics/x-TXT Tag.rpyc"
+    },
+    {
+      "path": "payload/game/scripts/Scene/Scene - WSIS_Bath.rpy",
+      "size": 14893,
+      "sha256": "c41ea3bf1339383d7e553399fb1d1114d15f373461dcbc9de51e98ab0db33582",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/scripts/Scene/Scene - WSIS_Bath.rpyc",
+      "size": 17507,
+      "sha256": "7ba9c0c8c479e7153159fad917cb49c4f265f55c1935575b6816775e99fdae16",
+      "apk_entry": "assets/x-game/x-scripts/x-Scene/x-Scene - WSIS_Bath.rpyc"
+    },
+    {
+      "path": "payload/game/scripts/Scene/Scene - WSIS_Movie.rpy",
+      "size": 69216,
+      "sha256": "1ede80687a1f8f395608d8c4ccd730a8c0af040b1a7a0db18c362248261eabc8",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/scripts/Scene/Scene - WSIS_Movie.rpyc",
+      "size": 57750,
+      "sha256": "f8cd66888404f3771cf930feeb8135ff2154a408ca236374877d5ca656c900ed",
+      "apk_entry": "assets/x-game/x-scripts/x-Scene/x-Scene - WSIS_Movie.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/common.rpy",
+      "size": 36752,
+      "sha256": "da72ee45dc43563b3423de894a7500a180e72051fa28f8fb83ccb74664f05d2d",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/common.rpyc",
+      "size": 23748,
+      "sha256": "d92043c54ebe297477df704b2df99a8b3c73fc8a722904d7bdaebca7c196ddac",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-common.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/display_segments.json",
+      "size": 414108,
+      "sha256": "8f09fd43e2e7bab95f51a424166c3fa3b041d861522509cf63bf918228111bde",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-display_segments.json"
+    },
+    {
+      "path": "payload/game/tl/zh/options.rpy",
+      "size": 219169,
+      "sha256": "d0b8de423ba5846cd6ac99a7fc0280fd0889c5e33765286c6ea7f54f0809936a",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/options.rpyc",
+      "size": 130450,
+      "sha256": "9d3e47bb1d38d7bcfb217cc330129195e4ad277b0c2a1510937a65cadf0545e5",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-options.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/screens.rpy",
+      "size": 9910,
+      "sha256": "0e8d6e5ca24e63cbdad7818789819daca0e101fa126fe79b115402849de0a8c0",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/screens.rpyc",
+      "size": 8026,
+      "sha256": "3aedc29613be972e1f4a74116d55bd6fe8e2869d7cef76c3b1d450cd3accc39e",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-screens.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/script.rpy",
+      "size": 326,
+      "sha256": "3da47d439c74286fc4e275bc8bf8fe2f92c9970df9ef6b8ebc9bc8e3e1b74a40",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/script.rpyc",
+      "size": 964,
+      "sha256": "7e8417cc301baecdfcff3120d844989e48de7d5ec5ef129086b04b6fe7b0c048",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-script.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat HERO.rpy",
+      "size": 9343,
+      "sha256": "135326d6b5097a6dbdff31dc7a20f2b8f617e3fb7332e97a9a5b31411819ca00",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat HERO.rpyc",
+      "size": 5607,
+      "sha256": "7e10c581c64be815f0079a5561898c9f232f99637a22e0d2bf356d16552991a6",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat HERO.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat HINE.rpy",
+      "size": 52983,
+      "sha256": "cf07a98ca25b1ef42c394bcdd5d748c9c45e90f771ea6f348a3ae84f757d9a30",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat HINE.rpyc",
+      "size": 23759,
+      "sha256": "14d6ca7ff251550a47661115747b44dfd4792cf7658dbc9bfc43847a84b55200",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat HINE.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat HPRV.rpy",
+      "size": 51542,
+      "sha256": "5640e667c002ebe95c2eba1bef3d3ad0aa16ee6e55b65d8ba87a3340cb33b83e",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat HPRV.rpyc",
+      "size": 22945,
+      "sha256": "fb95ccf4a8bb1db518d16cbf8838000cc0b1e550a30f0a86739ea9e20126ab98",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat HPRV.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WCOU.rpy",
+      "size": 40815,
+      "sha256": "5069e0847b57a78fcc3fbe6fa2c7307fbe6edf62744a0f5747b3e4abb430c873",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WCOU.rpyc",
+      "size": 17494,
+      "sha256": "55b8fb43b7ebfc867a4cc0fd61dd1f7093aef5d76901f98a83d43afe7a0a433d",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WCOU.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WDEL.rpy",
+      "size": 63249,
+      "sha256": "71111e240d8cc6d54ac7742f8d42c89047575246f33d68f88b22aeea47ccd1fa",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WDEL.rpyc",
+      "size": 29129,
+      "sha256": "f931a48f7ec57ae619b6d40618710db80bf8ccf9110e48f749140bf08c1c8f02",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WDEL.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WDIS.rpy",
+      "size": 19398,
+      "sha256": "956aa522d8235a21637fa31acb1fac47e952e560f26d415d6b9d78914f22bd88",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WDIS.rpyc",
+      "size": 8781,
+      "sha256": "99ff3a8fd70a32c98381c89e44879dde65cc6e67ad4c3219efae316676c18964",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WDIS.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WGAL.rpy",
+      "size": 41073,
+      "sha256": "b3f37867cef1c141fd747b2146b5b0c56f4fee07ed041c7f5a54f7303de847b7",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WGAL.rpyc",
+      "size": 17861,
+      "sha256": "c9362d1b63bf0f7a3c0c6773744aac1875f72bbed1127e3ac81de5bb18e2a991",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WGAL.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WGOT.rpy",
+      "size": 86668,
+      "sha256": "a23633e5842609400d7cc5f8498e4a822d50e5d525e7922ef1992a1a7a156279",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WGOT.rpyc",
+      "size": 38863,
+      "sha256": "fa7425e3688fd0a7ed8941d5fe13f3dff66becb185b4b8331f585ed82b72503d",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WGOT.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WLAZ.rpy",
+      "size": 11865,
+      "sha256": "c82f248b763c5a52339e9536078bbbd2b4e48557801eec3684056ff249736221",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WLAZ.rpyc",
+      "size": 6470,
+      "sha256": "76d1044b5175ac2f37ef01345ddd24b4364ac06768c627f1e12eef1748c5ace4",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WLAZ.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WMOM.rpy",
+      "size": 50083,
+      "sha256": "c9668229733a420647c03d299348d4f7e684d9222ff7368675c494fbec1cbe16",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WMOM.rpyc",
+      "size": 19964,
+      "sha256": "5cbbd832451463946e91ab6439abd070d54f1c1f2a44b16dd5f95aaf3dcd6d67",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WMOM.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WNEI.rpy",
+      "size": 88158,
+      "sha256": "42d411eb4f35dd5daab8f59520535eef56f40e7dc3bf5116f6dd4129770a9198",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WNEI.rpyc",
+      "size": 37003,
+      "sha256": "ffbba33bff1fc0a6910c87e72543885cffd5fc2def73b284bd9b7fe2343d8cb2",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WNEI.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WOTA.rpy",
+      "size": 37684,
+      "sha256": "9bcce918c900a0e84dd2db146a4b46cb8d6ee44dbc0fdbfef60daa167dc582cf",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WOTA.rpyc",
+      "size": 17031,
+      "sha256": "545bba3425c532c3d7ceb5307c496e51ad726c677e1fd80a2fa8006ee683c559",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WOTA.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WPRE.rpy",
+      "size": 44149,
+      "sha256": "2fb4cd1aed238e18cfd48346acca2164c0abca25d9dd8149cc3e7a8454b52063",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WPRE.rpyc",
+      "size": 16725,
+      "sha256": "ae4210d9d6b8eea888719e755c218cdd860719c7b723d87c49ede2171e13cccf",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WPRE.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WRIC.rpy",
+      "size": 55309,
+      "sha256": "ba7e5f5c6208fc715971c2afd1838ca99bd37df2f9493a1ed95d385512f11565",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WRIC.rpyc",
+      "size": 23096,
+      "sha256": "05cb4229f99b0a7704414bfcf97083a7a343b076f1ba726a7bfcee895b7da7d7",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WRIC.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WSIS.rpy",
+      "size": 197882,
+      "sha256": "6306827191b91ba5cbfb1b5e1669c40cd276eb5e404c4e3d8b390aecfe09fa92",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WSIS.rpyc",
+      "size": 74094,
+      "sha256": "dda58fad6153782b5a15746c23ca0cbf36bb93ffb2df478930eafa95fe6ae365",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WSIS.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WUZA.rpy",
+      "size": 19895,
+      "sha256": "ab12ea782493bb6ce27b505e8f4a26ff2b598a3eccf0e2ae9612a706a348a80f",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Chat/Chat WUZA.rpyc",
+      "size": 9381,
+      "sha256": "cc106881cf6c1749af2007c514b39b444db85b98a00f7c5039ef36d5a5262ecc",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Chat/x-Chat WUZA.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Action.rpy",
+      "size": 19310,
+      "sha256": "dce494ea7fe0bc2a1569d0682fd2023760640a93e9e333c7d88710928c5a5f63",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Action.rpyc",
+      "size": 10653,
+      "sha256": "9eb76acc547aadeb5158f48ab3e1ea1a9dd46f4c58bfbb17d3b43dc53ddbb11a",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-Action.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Club - StudentCouncil.rpy",
+      "size": 14621,
+      "sha256": "935dd2cb55c85a7b14a20d9e38eefcf78b2eb11ce4a7ac5c4855cbd2362d0b27",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Club - StudentCouncil.rpyc",
+      "size": 7661,
+      "sha256": "94e0e40606b7f06beced3ae31cb0b025b66d2de99a2d92eb2a1d7e4380feed9d",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-Club - StudentCouncil.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Data - Char.rpy",
+      "size": 679,
+      "sha256": "947a5cb4dfd8095db64a42f05c20bd45a3095c92fc8ccf5f90b1d070f4193865",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Data - Char.rpyc",
+      "size": 1178,
+      "sha256": "bcf37020847c66a8a086169f1548e11b1b2acab0378dbb1e684b53c4cb7a5156",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-Data - Char.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Data - Content.rpy",
+      "size": 654,
+      "sha256": "76113f4cb3331071d8b8d58f599eb9298b4519f65b370cdab303d5ee5f023518",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Data - Content.rpyc",
+      "size": 1184,
+      "sha256": "24da00f8c109cc87b03bed0212a2a7bf9b843261f2a78c17e71a8c9a8278ba41",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-Data - Content.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/GameCheck.rpy",
+      "size": 3873,
+      "sha256": "bf17ff5609e40e607e36a8795dd1ba6cd9fb5a51b91af43340f4f88a0f33921c",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/GameCheck.rpyc",
+      "size": 2958,
+      "sha256": "8ab1421080ae0455bef95dc9cef199a0e9adaa9accef5c75ba5b36d6bd9976d0",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-GameCheck.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Minigame - Coverage.rpy",
+      "size": 226,
+      "sha256": "42091d54ce2e88806bbed8a10f7bc06168132a3604878f231d05dd2e86ce15bc",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Minigame - Coverage.rpyc",
+      "size": 842,
+      "sha256": "8f13159662146143b68254e1ea429fe4e9dcbf9c3ab963b29081634a6746d0db",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-Minigame - Coverage.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Minigame - Memory.rpy",
+      "size": 798,
+      "sha256": "b9b5321231651e469cc06fe99075960b441ec42fde1d9d6b42e51f0f9b857e33",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Minigame - Memory.rpyc",
+      "size": 1100,
+      "sha256": "d6f6ced1ce149745adcab139f4cfa4f6848d187efb6f40d34e4ae8c80ba4dfdd",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-Minigame - Memory.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Minigame - Tutoring.rpy",
+      "size": 7097,
+      "sha256": "a6ce7713a52c7fec7489aa5f0cf267a2683d558414498b8d7ac924a29f05fe86",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/Minigame - Tutoring.rpyc",
+      "size": 3791,
+      "sha256": "4308c5ba38f3e845ab5c109e5d8ce9074337a6199705bcb8b3288f9b52552339",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-Minigame - Tutoring.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/MusicRoom - Screen.rpy",
+      "size": 5104,
+      "sha256": "5d53fc779a05971a98e1f39b0cc54e403abd93da73ae929987991a58cf19b2e4",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/MusicRoom - Screen.rpyc",
+      "size": 5200,
+      "sha256": "11ee3c9476a06a754c4c5e76da1a69d76c7df69ea124067c9d88ff421904cd0e",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-MusicRoom - Screen.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/System - Changing.rpy",
+      "size": 1122,
+      "sha256": "a94ec0d2a97b6b95c5801b5f4f73cb99630d3519ae9934f60195b208354acd15",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/System - Changing.rpyc",
+      "size": 1617,
+      "sha256": "ea8d61284bda0644ee3d6234f7e36a84fc23feecc21e559837b9084aa20a48f9",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-System - Changing.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/System - Date.rpy",
+      "size": 131288,
+      "sha256": "2a8ed3e0ad3f10b3ed5d02d8fca45187964287f6b649f46ad35b5e39f50b92b7",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/System - Date.rpyc",
+      "size": 58235,
+      "sha256": "22af0782a57510c49ef532aff2bc3aebe094cd347d2e5b0c629f7b1b4c46a327",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-System - Date.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/System - Info.rpy",
+      "size": 2706,
+      "sha256": "95567ff20a18f736ffe37a8eee89f2c18b573b1a87d4c03739aa40716b49e63e",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/System - Info.rpyc",
+      "size": 2312,
+      "sha256": "1064d409536bc5b4b85abcb10cf7cae3faa5b3ccb0ee5cb817715dd21810c3bf",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-System - Info.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/System - Name.rpy",
+      "size": 908,
+      "sha256": "d94dfab87f8e7b04fdc7bfd039f94f566318f3b9a40d0ef5855334025f79c38b",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/System - Name.rpyc",
+      "size": 1224,
+      "sha256": "f7bba85abccfa5340815634040f4ab4e79d6ee9785c1b34bafdd3e3e7dae9d01",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-System - Name.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/UI.rpy",
+      "size": 1146,
+      "sha256": "626fb4727008c7facac54708c14b667394b96c241d19b9701833c1964bcdfab0",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Mechanics/UI.rpyc",
+      "size": 1438,
+      "sha256": "7a9132e8bc1b5b5cc3cbbc5a336eba345af78401b5c32f4852abd5e362cada2b",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Mechanics/x-UI.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - Day 1.rpy",
+      "size": 145502,
+      "sha256": "c1b266b39a9bd42da674c0a5e0e7ea40fe2ccb1551b6a2468e0ed8049f46000d",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - Day 1.rpyc",
+      "size": 57821,
+      "sha256": "6f1aae33e45b3c4f50a82b055d14ccc92afe7d41f239f504b6b0fc1e5917e37b",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - Day 1.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - Day 2.rpy",
+      "size": 164972,
+      "sha256": "3b9fabe158f4f54cf6785c1ebf097437da83c6963700a3317853965782d68517",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - Day 2.rpyc",
+      "size": 66156,
+      "sha256": "ed671da9adb26bb7c729e357e2500c5a89dd832a1e4b6dcb1b11d048a999ae98",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - Day 2.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - HINE.rpy",
+      "size": 71675,
+      "sha256": "d84f569d42be0ddfdb4796c920b66b9b750f33a52aec9ae59405f4b7c767ba34",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - HINE.rpyc",
+      "size": 32046,
+      "sha256": "1cf7536897f582469af32f5a66a82bd13be1de58cd09a1774d517512e633a341",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - HINE.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - HPRV.rpy",
+      "size": 40715,
+      "sha256": "6b116f98e1a36079b571d6bc18abce29f329edd8c9dbc99e4bbc3501266458dd",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - HPRV.rpyc",
+      "size": 19067,
+      "sha256": "118305b84d17cf6b756c2486af241e5f02f16b23a976e7b2cdf7586794d28127",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - HPRV.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WCOU.rpy",
+      "size": 93866,
+      "sha256": "41ee159a05a7879014307c2214d7e7980c23f1124a612cca8ec6b3251312169f",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WCOU.rpyc",
+      "size": 36031,
+      "sha256": "60e88c56a045ff0ea3e23ce639eb2a37bce06ce7354a162004b62dbe6e63185d",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WCOU.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WDEL.rpy",
+      "size": 23457,
+      "sha256": "3a9d3ee597f616a634587252d299446f1ce3b68ba82a189279abdce2e02777a1",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WDEL.rpyc",
+      "size": 12042,
+      "sha256": "17a0716e8cad002f5bf19269e569d7a3799d384fdac0f7bfda5ad4585acadaa7",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WDEL.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WDIS.rpy",
+      "size": 15994,
+      "sha256": "60d6b2457350bee133d5dd5d89e772f8bdc410f02acfa016a5f925aec4b940df",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WDIS.rpyc",
+      "size": 8771,
+      "sha256": "860c25ba0de5b7e9e99ab50f1983c40e024e1fc56ecb8a18ad593a662a97ffa9",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WDIS.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WGAL.rpy",
+      "size": 28433,
+      "sha256": "75994f634ef6b18167ea2723fba89ca60534b2c26a2bf33b61cf29665ae03941",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WGAL.rpyc",
+      "size": 13317,
+      "sha256": "f9c3be0606dc41f8603eee0691355906d7eeac6b5d1dee0267c5b0b6a1f9f8c0",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WGAL.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WGOT.rpy",
+      "size": 23318,
+      "sha256": "82e5b1541a7a35c5f1024d974774f4fa376cdcb07f4179f4eacdd1db83cb88af",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WGOT.rpyc",
+      "size": 12109,
+      "sha256": "0f8723c5628cf120deff58cbf680ae1a5cb0b4d809736177fa4c19ecd59ec98a",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WGOT.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WLAZ.rpy",
+      "size": 23492,
+      "sha256": "c01c5fd482a37979fba6e66e2d77d83e6ccb387210c63c5c7c416e9b6e20a751",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WLAZ.rpyc",
+      "size": 12078,
+      "sha256": "5c6b9513b26fb69ddea75cb7ba31bf9b7ff7b4b65e0a119e973891f31d7fe29d",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WLAZ.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WMOM.rpy",
+      "size": 11114,
+      "sha256": "c0741d5eb4df0114f4b93f92feb768dca1ae41771f68025440d0d791b298a531",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WMOM.rpyc",
+      "size": 6228,
+      "sha256": "b8d57275100b89b455c33be1cc27f6db09dc71b2c18c20e7092b8c87414a8844",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WMOM.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WNEI.rpy",
+      "size": 86024,
+      "sha256": "8367449f3c0a15a122617138ef02642248586921ac64498b1695329474bbb5e8",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WNEI.rpyc",
+      "size": 36379,
+      "sha256": "79a3178022102fc4a07a13f1a66788e8d7c08e25c588c1e3e90695a59738f501",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WNEI.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WNEI_Churras.rpy",
+      "size": 46499,
+      "sha256": "01806d04736ad5462705107a66e6552beac50bbcd86ff2117a975190742f5e61",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WNEI_Churras.rpyc",
+      "size": 20038,
+      "sha256": "ade4d2d0c3d7f2f4affd017aad6cc215af3295475bcc095a3571ace1af106768",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WNEI_Churras.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WOTA.rpy",
+      "size": 15429,
+      "sha256": "6fb88a55058514de14818eb8e567065a3e2defc4d11fbfab44c806a52ce99e05",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WOTA.rpyc",
+      "size": 8631,
+      "sha256": "916f8a00f2785fddb02b3f0463ff6614cf9e9c953eca013550c18ff54ef4d343",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WOTA.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WPRE.rpy",
+      "size": 27487,
+      "sha256": "1a84264fe38a0b9118ac3eabcab40fb9f8fad39d73bac36f50a9e310132326f8",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WPRE.rpyc",
+      "size": 13840,
+      "sha256": "89eeed9074d8f04456c0008755d2f21134467e74e3fd3c3a964f424c89c2975f",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WPRE.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WRIC.rpy",
+      "size": 37560,
+      "sha256": "57548a75fd1ff7da8ae3d03a9ba5b472cd7accc90bd10c1d9965e524e87f1876",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WRIC.rpyc",
+      "size": 16502,
+      "sha256": "5b497b111ba5c9f2f167f234f0697dfdafec68d3596cfb7237270aaf6ddf8b9d",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WRIC.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSIS.rpy",
+      "size": 86342,
+      "sha256": "a2b66bbe78b684973cb92764bac9377451ca1004a2c00deadf3f14caf7ab5a1d",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSIS.rpyc",
+      "size": 36931,
+      "sha256": "be17b085b567467ee1e7bb24cf3766b235258a786ee8f46cd503c97bf080164f",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WSIS.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSIS_Bath.rpy",
+      "size": 12264,
+      "sha256": "d680f82e2bd7835682112640d3d15f7ec58a84444a2fbfeef61e342a09b31d9a",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSIS_Bath.rpyc",
+      "size": 6767,
+      "sha256": "f4a54ecf9c33d7d0bc3b42c5c8298c0f27860afb1897bd4536aebe1ad61db673",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WSIS_Bath.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSIS_Movie.rpy",
+      "size": 110517,
+      "sha256": "0f6167a5fbcac7e5c5b266698afc9721566d59c5fbd15611aa5b22bf76bc280d",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSIS_Movie.rpyc",
+      "size": 45554,
+      "sha256": "309f675880b8774a5e6c299b84a79e317a786c670a56ef8ebda719a7b0ee18e4",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WSIS_Movie.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSIS_Sleepover.rpy",
+      "size": 21829,
+      "sha256": "901e38ff2b138e12a2c8077647094aa676933103b934410acf15c47c64a8e0a0",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSIS_Sleepover.rpyc",
+      "size": 11016,
+      "sha256": "a3dd89a73e587203b4f063150df8b82733d96ffa5276aa489a1207a79c5c4e85",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WSIS_Sleepover.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSIS_Stuck.rpy",
+      "size": 5608,
+      "sha256": "9eff00ba54af37ae29271f7ff2ecec59911acaec734eca75c9d94d7d450c18ee",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSIS_Stuck.rpyc",
+      "size": 3813,
+      "sha256": "69b0e4c097ca98f313399bab3e3c277d705054197e9defbda55009b3a975cdaa",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WSIS_Stuck.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSUK.rpy",
+      "size": 14569,
+      "sha256": "db9baa4712b7f169402090c08345ae3d164f5c98111ce6f30c179f3651a4fd3b",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WSUK.rpyc",
+      "size": 8020,
+      "sha256": "f304060710455fc7b84494401b590081b7bf32319aabf4f4384151046503e439",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WSUK.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WTPE.rpy",
+      "size": 9606,
+      "sha256": "596a727055f0c8287ecea455e70c5db0b003162ffd228ff8bca2427494a572f3",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WTPE.rpyc",
+      "size": 5374,
+      "sha256": "28086991ea56096ebe571e3e62cd013942bb15468cd28c08fd1b861fa263c8b5",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WTPE.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WUZA.rpy",
+      "size": 23563,
+      "sha256": "a275277e2d8cc9c1369236be4340b62ffa1ca013d251812a74ba75141b1e2817",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/scripts/Scene/Scene - WUZA.rpyc",
+      "size": 11877,
+      "sha256": "7f7e05ec606a467b146b4138148e0116be8a1ffa443599c911653165f99c5ae0",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-scripts/x-Scene/x-Scene - WUZA.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/zz_interface.rpy",
+      "size": 277362,
+      "sha256": "257d842cd00fe40433afeeb4a6687aa26357e131c4c3a974786de66364e52818",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/zz_interface.rpyc",
+      "size": 217134,
+      "sha256": "53c0936be148a3c528f804b87f5999fd1283d90bd22ead1e9f733824e6bb8cd4",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-zz_interface.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/zz_support.rpy",
+      "size": 2217,
+      "sha256": "42e4daefaebe198007f7f7bd0f7e21b8f7265e06c45f7e149596481d7fd7d740",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/zz_support.rpyc",
+      "size": 3250,
+      "sha256": "b98d19cb8d556cfbf493d507e7dd81a8d4bdaa0d42b42d30a97b851cf35db1a2",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-zz_support.rpyc"
+    },
+    {
+      "path": "payload/game/tl/zh/zz_tools.rpy",
+      "size": 5233,
+      "sha256": "5557695578dfd4b293fbadcdd09ea10c064e31a7298798c5136aa37c8ad575fd",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tl/zh/zz_tools.rpyc",
+      "size": 6556,
+      "sha256": "1e8b05f5360dff0152d043cf2f2eeff8f329e21e8742b9bcde9d0514f34d1331",
+      "apk_entry": "assets/x-game/x-tl/x-zh/x-zz_tools.rpyc"
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Config.rpy",
+      "size": 8338,
+      "sha256": "cb716568170384c74511c94172f5b346e30380c6f64be38760c3e1eaf6efb944",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Config.rpyc",
+      "size": 5824,
+      "sha256": "cb0cab36963f119f31ca2c84cf6f12417a2cff419b15a0c2476bc7c707169fb3",
+      "apk_entry": "assets/x-game/x-tools/x-Translator/x-Translator - Config.rpyc"
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Data.rpy",
+      "size": 27539,
+      "sha256": "905f1e821bf51363008d9813d911a2cfff4b9021b3bda0bb162a42f332f7be27",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Data.rpyc",
+      "size": 13834,
+      "sha256": "f2d6093e79ee5670ea89563d0a9d62e3823b29745a48c5ca658c156089f8eae8",
+      "apk_entry": "assets/x-game/x-tools/x-Translator/x-Translator - Data.rpyc"
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Field.rpy",
+      "size": 31746,
+      "sha256": "56559e172f08c5aeabfd3104d026ac7ef912da3f4753454cca273543c0c05883",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Field.rpyc",
+      "size": 16468,
+      "sha256": "82d3b7dde4560bb08af381ccc49772cab30f41da837a1f59b26719d48a31e2e8",
+      "apk_entry": "assets/x-game/x-tools/x-Translator/x-Translator - Field.rpyc"
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Screen.rpy",
+      "size": 25222,
+      "sha256": "59461496c470a445299240bd5ce070e7459db1fd02548ec702da27fee4881fe9",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Screen.rpyc",
+      "size": 21970,
+      "sha256": "61182ae5cbbda049afb9dcbe7aa81b0ef9b55ac2aaa392868cb727ca7c76e9c6",
+      "apk_entry": "assets/x-game/x-tools/x-Translator/x-Translator - Screen.rpyc"
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Source.rpy",
+      "size": 15960,
+      "sha256": "eb229589936fb461463c6473f6822750491f2d6bc9de0f68b2eba4034429a847",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Source.rpyc",
+      "size": 8038,
+      "sha256": "ba2a62e8832b5a8c6f8dd1eafd975ca4ad309c39567bc13dbf5fab938bc17c11",
+      "apk_entry": "assets/x-game/x-tools/x-Translator/x-Translator - Source.rpyc"
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Stage.rpy",
+      "size": 14129,
+      "sha256": "e4cd968f268e44f52d2f8846969e1a1d73b028ca43bc05a18bff0e20db13f073",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/tools/Translator/Translator - Stage.rpyc",
+      "size": 6656,
+      "sha256": "b8c0bc3afb094ab1806f609190414e7ec65755466d0e5bc11cc2bcfe77419469",
+      "apk_entry": "assets/x-game/x-tools/x-Translator/x-Translator - Stage.rpyc"
+    },
+    {
+      "path": "payload/game/zz_zh_patch.rpy",
+      "size": 1262,
+      "sha256": "29697d0fab6d517d38e0c6c4a6fe2cb7f7f1c686464f93c0a56cffe403d042a3",
+      "apk_entry": null
+    },
+    {
+      "path": "payload/game/zz_zh_patch.rpyc",
+      "size": 1760,
+      "sha256": "cb2f592d58506a42e3b05e7a754bc3f5e2b413bdcdcbad456e52033bfcd92262",
+      "apk_entry": "assets/x-game/x-zz_zh_patch.rpyc"
+    }
+  ]
+}
