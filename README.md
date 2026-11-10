@@ -1,8 +1,8 @@
 # W2C 0.43.0 简体中文补丁
 
-剧情、选项、界面与教程汉化，附部分原版问题修复。
+r2 修订版：剧情、选项、界面与教程汉化，补齐动态通知、活动状态等遗漏，附部分原版问题修复。
 
-[下载补丁 ZIP](https://github.com/QianLieXian/QLX/archive/refs/heads/w2c-0.43.0-zh.zip)
+[下载补丁 ZIP](https://github.com/QianLieXian/W2C-0.43.0-chinese/archive/refs/heads/w2c-0.43.0-zh.zip)
 
 ## 安卓
 

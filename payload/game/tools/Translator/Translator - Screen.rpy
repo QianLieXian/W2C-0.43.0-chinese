@@ -255,7 +255,7 @@ screen translator():
             xalign 0.5
             ypos 566
             spacing 6
-            text "in original:" style "tl_dim" yalign 0.5
+            text renpy.translate_string("in original:") style "tl_dim" yalign 0.5
             for t in tltool.tags_in(tltool.sel.original)[:16]:
                 textbutton tltool.esc(t):
                     style "tl_button"
@@ -298,8 +298,8 @@ screen translator():
                 spacing 6
                 hbox:
                     spacing 6
-                    text "reference:" style "tl_dim" yalign 0.5
-                    textbutton "original":
+                    text renpy.translate_string("reference:") style "tl_dim" yalign 0.5
+                    textbutton renpy.translate_string("original"):
                         style "tl_button"
                         text_style "tl_button_text"
                         action Function(tltool.set_ref, None)
@@ -370,20 +370,20 @@ screen tl_topbar():
             hbox:
                 spacing 6
 
-                text "TRANSLATOR" style "tl_head" yalign 0.5
+                text renpy.translate_string("TRANSLATOR") style "tl_head" yalign 0.5
 
-                textbutton "Browse":
+                textbutton renpy.translate_string("Browse"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.set_mode, "browse")
                     selected tltool.mode == "browse"
-                textbutton "View":
+                textbutton renpy.translate_string("View"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.set_mode, "view")
                     selected tltool.mode == "view"
                     sensitive tltool.sel is not None
-                textbutton "Edit":
+                textbutton renpy.translate_string("Edit"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.set_mode, "edit")
@@ -392,29 +392,29 @@ screen tl_topbar():
 
                 null width 18
                 if tltool.mode != "browse":
-                    textbutton "< prev":
+                    textbutton renpy.translate_string("< prev"):
                         style "tl_button"
                         text_style "tl_button_text"
                         action Function(tltool.step, -1)
-                    textbutton "next >":
+                    textbutton renpy.translate_string("next >"):
                         style "tl_button"
                         text_style "tl_button_text"
                         action Function(tltool.step, 1)
-                textbutton "Next untranslated":
+                textbutton renpy.translate_string("Next untranslated"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.next_todo)
 
                 null width 18
-                textbutton "tl folder":
+                textbutton renpy.translate_string("tl folder"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.open_tl_folder)
-                textbutton "Export":
+                textbutton renpy.translate_string("Export"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.export, tltool.lang)
-                textbutton "Close":
+                textbutton renpy.translate_string("Close"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.close_tool)
@@ -423,21 +423,21 @@ screen tl_topbar():
             hbox:
                 spacing 6
 
-                text "lang:" style "tl_dim" yalign 0.5
+                text renpy.translate_string("lang:") style "tl_dim" yalign 0.5
                 for l in tltool.languages():
                     textbutton l:
                         style "tl_button"
                         text_style "tl_button_text"
                         action Function(tltool.set_lang, l)
                         selected tltool.lang == l
-                textbutton "+ new":
+                textbutton renpy.translate_string("+ new"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.ask_new_language)
 
                 if tltool.mode == "edit":
                     null width 18
-                    textbutton "Save (alt+S)":
+                    textbutton renpy.translate_string("Save (alt+S)"):
                         style "tl_button"
                         text_style "tl_button_text"
                         action Function(tltool.save)
@@ -451,19 +451,19 @@ screen tl_topbar():
                         text_style "tl_button_text"
                         action ToggleField(persistent, "tl_atomic")
                         selected persistent.tl_atomic
-                    textbutton "Revert":
+                    textbutton renpy.translate_string("Revert"):
                         style "tl_button"
                         text_style "tl_button_text"
                         action Function(tltool.revert)
-                    textbutton "Use original":
+                    textbutton renpy.translate_string("Use original"):
                         style "tl_button"
                         text_style "tl_button_text"
                         action Function(tltool.use_original)
-                    textbutton "Copy":
+                    textbutton renpy.translate_string("Copy"):
                         style "tl_button"
                         text_style "tl_button_text"
                         action Function(tltool.to_clipboard, tltool.draft, "Translation")
-                    textbutton "Copy orig.":
+                    textbutton renpy.translate_string("Copy orig."):
                         style "tl_button"
                         text_style "tl_button_text"
                         action Function(tltool.to_clipboard, tltool.sel.original if tltool.sel else "", "Original")
@@ -490,7 +490,7 @@ screen tl_browse():
         ysize 912
         vbox:
             spacing 4
-            text "FILES" style "tl_head"
+            text renpy.translate_string("FILES") style "tl_head"
             viewport:
                 scrollbars "vertical"
                 mousewheel True
@@ -498,7 +498,7 @@ screen tl_browse():
                 vbox:
                     spacing 2
 
-                    textbutton "- everything -":
+                    textbutton renpy.translate_string("- everything -"):
                         style "tl_row"
                         text_style "tl_button_text"
                         xfill True
@@ -541,7 +541,7 @@ screen tl_browse():
             xsize 1400
             hbox:
                 spacing 10
-                text "search" style "tl_dim" yalign 0.5
+                text renpy.translate_string("search") style "tl_dim" yalign 0.5
                 frame:
                     background "#000000B4"
                     xsize 570
@@ -553,22 +553,22 @@ screen tl_browse():
                         copypaste True
                         length 80
                         style "tl_text"
-                textbutton "All":
+                textbutton renpy.translate_string("All"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.set_only, "all")
                     selected tltool.only == "all"
-                textbutton "TODO":
+                textbutton renpy.translate_string("TODO"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.set_only, "todo")
                     selected tltool.only == "todo"
-                textbutton "Done":
+                textbutton renpy.translate_string("Done"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.set_only, "done")
                     selected tltool.only == "done"
-                textbutton "Copies":
+                textbutton renpy.translate_string("Copies"):
                     style "tl_button"
                     text_style "tl_button_text"
                     action Function(tltool.set_only, "same")

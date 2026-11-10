@@ -26,7 +26,7 @@ label wmom_show:
 # Load activity
 # ----------------------------------------------------------------------------------------------------
 label wmom_show_activity:
-    $ msg.msg("[C_Nam][fnamewmom][C_Off] is " + str(Get_ActivityName("wmom")))
+    $ msg.msg(renpy.translate_string("[C_Nam][fnamewmom][C_Off] is ") + renpy.translate_string(str(str(Get_ActivityName("wmom")))))
 
     if Get_ActivityName("wmom") in ["staying", "cleaning", "reading"]:
         return
@@ -199,7 +199,7 @@ label wmom_show_activity:
 label wmom_interact_end:
     if "interacting_hero" in wmom_know:
         $ wmom_know.remove("interacting_hero")
-        $ msg.msg("Finish talking")
+        $ msg.msg(renpy.translate_string("Finish talking"))
     jump show_ui
 
 # ----------------------------------------------------------------------------------------------------
@@ -690,7 +690,7 @@ label wmom_interact_meet: # Invite Options
 
             else:
                 $ wmom_know.append("Neighbors_Reunion")
-                $ msg.msg("[C_Nam][fnamewmom][C_Off] is invited to [C_Dat]Neighbor's Reunion[C_Off]")
+                $ msg.msg(renpy.translate_string("[C_Nam][fnamewmom][C_Off] is invited to [C_Dat]Neighbor's Reunion[C_Off]"))
 
                 hero "[C_Nam][fnamewnei][C_Off]'s parents are inviting us to have lunch with them this Sunday.{w=[wt3]} Let's go!"
                 wmom "Oh, [C_Nam][wmom_to_hero][C_Off]{w=[wt2]}, that'd be so nice!{w=[wt3]} I'd love to.{w=[wt2]} But I'm so busy!{w=[wt3]} Sunday is the only day I have to do my chores."
@@ -901,7 +901,7 @@ label initiative_wmom:
             
             "Deny":
                 $ wmom_know.append("HERO_Dated_N")
-                $ msg.msg("{nm}[fnamewmom]{/nm} knows you a little more")
+                $ msg.msg(renpy.translate_string("{nm}[fnamewmom]{/nm} knows you a little more"))
                 $ add_stat("wmom", "inti", 0.5)
                 hero "N{w=[wt1]}-No{w=[wt2]}, I've never dated before."
                 $ wmom_mood = "O2"
@@ -911,7 +911,7 @@ label initiative_wmom:
 
             "Confirm":
                 $ wmom_know.append("HERO_Dated_Y")
-                $ msg.msg("{nm}[fnamewmom]{/nm} knows you a little more")
+                $ msg.msg(renpy.translate_string("{nm}[fnamewmom]{/nm} knows you a little more"))
                 $ add_stat("wmom", "inti", 0.5)
                 hero "W{w=[wt1]}-well{w=[wt2]}, y{w=[wt1]}-yes{w=[wt2]}, I kinda dated a girl once."
                 $ wmom_mood = "A3"
@@ -945,7 +945,7 @@ label initiative_wmom:
                 if _return:
                     $ wmom_know.append("HERO_Y_Girl_" + _return)
 
-                $ msg.msg("{nm}[fnamewmom]{/nm} knows you a little more")
+                $ msg.msg(renpy.translate_string("{nm}[fnamewmom]{/nm} knows you a little more"))
                 $ add_stat("wmom", "inti", 0.5)
 
                 if _return in ["Breast_3", "Breast_4", "Breast_5", "HairSize_4", "HairSize_5", "Personality_3"]: # Match - big breasts, medium-long hair, kind personality

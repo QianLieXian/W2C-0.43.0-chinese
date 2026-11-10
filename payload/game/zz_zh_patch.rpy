@@ -18,6 +18,11 @@ init 999 python:
         direct = _zh_segments.get(stripped)
         if direct is not None:
             return text[:len(text)-len(text.lstrip())] + direct + text[len(text.rstrip()):]
+        if " - " in text and text.split(" - ",1)[0] in ("Home", "School", "Office Building", "Neighbor's", "Grandma's"):
+            return "－".join(_zh_segment_translate(part) for part in text.split(" - "))
+        for suffix, replacement in ((" parents' bedroom", "父母的卧室"), ("'s bedroom", "的卧室"), ("'s Bedroom", "的卧室"), ("'s Room", "的房间"), ("'s Office", "的诊所")):
+            if text.endswith(suffix):
+                return text[:-len(suffix)] + replacement
         return text
 
     def _zh_replace_text(text):
@@ -25,6 +30,12 @@ init 999 python:
             text = _zh_previous_replace(text)
         if preferences.language == "zh":
             return _zh_segment_translate(text)
+        return text
+
+    def _zh_format_display(template, fields):
+        text = renpy.translate_string(template)
+        for key, value in fields:
+            text = text.replace(key, value)
         return text
 
     config.replace_text = _zh_replace_text

@@ -219,11 +219,11 @@ label wsis_movie_loop(popcorn=None): # Watching the movie — the loop itself, v
             # Each round is a small choice: sharing the bucket and talking to her are worth more than staring at the screen. On a date the same picks feed the axes; at home only the affinity does.
             "Eat popcorn" if (popcorn if popcorn is not None else CountItem_Inventory(item_id="Eat_Snack_Popcorn", inventory_id=inventory_home_table)):
                 $ a_event_8 -= int(5 + renpy.random.random() * 20)
-                $ msg.msg("You ate some popcorn")
+                $ msg.msg(renpy.translate_string("You ate some popcorn"))
                 $ Movie_Beat(love=0.2, fun=1)
 
             "Focus on movie":
-                $ msg.msg("You're watching the movie")
+                $ msg.msg(renpy.translate_string("You're watching the movie"))
                 $ Movie_Beat(love=0.1)
 
             "Chat":
@@ -232,21 +232,21 @@ label wsis_movie_loop(popcorn=None): # Watching the movie — the loop itself, v
 
             "Check [C_Nam][fnamewsis][C_Off]":
                 if a_event_6 >= 75:
-                    $ msg.msg("[C_Nam][fnamewsis][C_Off] looks really scared")
+                    $ msg.msg(renpy.translate_string("[C_Nam][fnamewsis][C_Off] looks really scared"))
                 elif a_event_6 >= 30:
-                    $ msg.msg("[C_Nam][fnamewsis][C_Off] looks tense")
+                    $ msg.msg(renpy.translate_string("[C_Nam][fnamewsis][C_Off] looks tense"))
                 elif a_event_5 < 20:
-                    $ msg.msg("[C_Nam][fnamewsis][C_Off] looks sad")
+                    $ msg.msg(renpy.translate_string("[C_Nam][fnamewsis][C_Off] looks sad"))
                 elif a_event_5 >= 80:
-                    $ msg.msg("[C_Nam][fnamewsis][C_Off] looks happy")
+                    $ msg.msg(renpy.translate_string("[C_Nam][fnamewsis][C_Off] looks happy"))
                 elif a_event_7 < 20:
-                    $ msg.msg("[C_Nam][fnamewsis][C_Off] looks sleepy")
+                    $ msg.msg(renpy.translate_string("[C_Nam][fnamewsis][C_Off] looks sleepy"))
                 elif a_event_7 >= 80:
-                    $ msg.msg("[C_Nam][fnamewsis][C_Off] looks excited")
+                    $ msg.msg(renpy.translate_string("[C_Nam][fnamewsis][C_Off] looks excited"))
                 elif a_event_4 >= 75:
-                    $ msg.msg("[C_Nam][fnamewsis][C_Off] is fully focused")
+                    $ msg.msg(renpy.translate_string("[C_Nam][fnamewsis][C_Off] is fully focused"))
                 else:
-                    $ msg.msg("[C_Nam][fnamewsis][C_Off] seems relaxed")
+                    $ msg.msg(renpy.translate_string("[C_Nam][fnamewsis][C_Off] seems relaxed"))
 
                 $ Movie_Beat(love=0.2)
 
@@ -261,7 +261,7 @@ label wsis_movie_loop(popcorn=None): # Watching the movie — the loop itself, v
 
         if renpy.random.random() * 100 >= a_event_4:
             $ a_event_8 -= int(5 + renpy.random.random() * 20)
-            $ msg.msg("[C_Nam][fnamewsis][C_Off] grabbed some popcorn")
+            $ msg.msg(renpy.translate_string("[C_Nam][fnamewsis][C_Off] grabbed some popcorn"))
 
         $ a_event_2 -= 20
 

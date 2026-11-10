@@ -47,7 +47,7 @@ define HERO_STAT_TREE = [
 
 # ----------------------------------------------------------------------------------------------------
 label inputcheat:
-    $ preferences.codetype = renpy.input("Input a code. Don't know how to use codes? then type [C_Dat]guide[C_Off]", length=12)
+    $ preferences.codetype = renpy.input(renpy.translate_string("Input a code. Don't know how to use codes? then type [C_Dat]guide[C_Off]"), length=12)
 
     # KCC Code Generator
     python:
@@ -86,10 +86,10 @@ label inputcheat:
             play SE1 "BeepRight.ogg"
             $ preferences.cheatmode = True
             $ preferences.codecheatuse = preferences.codecheat
-            $ msg.msg("Cheat Enabled")
+            $ msg.msg(renpy.translate_string("Cheat Enabled"))
         else:
             play SE1 "BeepWrong.ogg"
-            $ msg.msg("This code is already activated")
+            $ msg.msg(renpy.translate_string("This code is already activated"))
 
     elif preferences.codetype == "gettheme":
         menu:
@@ -109,10 +109,10 @@ label inputcheat:
             $ cellbg.insert(1, "KCC3")
             $ cellbg.insert(1, "KCC2")
             $ cellbg.insert(1, "KCC1")
-            $ msg.msg("New photos added to phone Gallery")
+            $ msg.msg(renpy.translate_string("New photos added to phone Gallery"))
         else:
             play SE1 "BeepWrong.ogg"
-            $ msg.msg("This code is already activated")
+            $ msg.msg(renpy.translate_string("This code is already activated"))
 
     elif preferences.codetype == "changeimg":
         if ("KCC1" in cellbg or "KCC1AI" in cellbg):
@@ -124,7 +124,7 @@ label inputcheat:
                 $ cellbg[cellbg.index("KCC4")] = "KCC4AI"
                 $ cellbg[cellbg.index("KCC5")] = "KCC5AI"
                 $ cellbg[cellbg.index("KCC6")] = "KCC6AI"
-                $ msg.msg("Arts changed to AI generated images")
+                $ msg.msg(renpy.translate_string("Arts changed to AI generated images"))
             elif "KCC1AI" in cellbg:
                 $ cellbg[cellbg.index("KCC1AI")] = "KCC1"
                 $ cellbg[cellbg.index("KCC2AI")] = "KCC2"
@@ -132,13 +132,13 @@ label inputcheat:
                 $ cellbg[cellbg.index("KCC4AI")] = "KCC4"
                 $ cellbg[cellbg.index("KCC5AI")] = "KCC5"
                 $ cellbg[cellbg.index("KCC6AI")] = "KCC6"
-                $ msg.msg("AI generated images changed to arts")
+                $ msg.msg(renpy.translate_string("AI generated images changed to arts"))
         else:
             play SE1 "BeepWrong.ogg"
-            $ msg.msg("You need to activate the KCC code first")
+            $ msg.msg(renpy.translate_string("You need to activate the KCC code first"))
     else:
         play SE1 "BeepWrong.ogg"
-        $ msg.msg("No code was found")
+        $ msg.msg(renpy.translate_string("No code was found"))
         $ preferences.codetype = ""
 
     jump UI_Menu_Options
@@ -189,7 +189,7 @@ screen UI_Menu_Guide():
 
                 vbox:
                     spacing 25
-                    label "Guide"
+                    label renpy.translate_string("Guide")
 
                     side ("c l"):
                         area (-10,0,1380,830)
@@ -197,26 +197,26 @@ screen UI_Menu_Guide():
                             xoffset 25
                             draggable True mousewheel True
                             vbox:
-                                text "Info"
+                                text renpy.translate_string("Info")
                                 textbutton _("{image=starchan} About") action SetVariable("a_menu_2", "About")
                                 textbutton _("{image=starchan} Code") action SetVariable("a_menu_2", "Code")
 
-                                text "{p}Work In Progress"
-                                textbutton "⚠ Interface" action None
-                                textbutton "⚠ Content" action None
-                                textbutton "⚠ Minigames" action None
+                                text renpy.translate_string("{p}Work In Progress")
+                                textbutton renpy.translate_string("⚠ Interface") action None
+                                textbutton renpy.translate_string("⚠ Content") action None
+                                textbutton renpy.translate_string("⚠ Minigames") action None
 
                                 if 0 > 1:
                                     textbutton _("{image=starchan} User Interface") action SetVariable("a_menu_2", "UI")
                                     textbutton _("{image=starchan} Content") action SetVariable("a_menu_2", "Content")
 
-                                    text "{p}Mechanics"
+                                    text renpy.translate_string("{p}Mechanics")
                                     textbutton _("{image=starchan} Attributes") action SetVariable("a_menu_2", "Attributes")
                                     textbutton _("{image=starchan} Talents") action SetVariable("a_menu_2", "Talents")
                                     textbutton _("{image=starchan} Personality") action SetVariable("a_menu_2", "Personality")
                                     textbutton _("{image=starchan} Stats") action SetVariable("a_menu_2", "Stats")
 
-                                    text "{p}Minigames"
+                                    text renpy.translate_string("{p}Minigames")
                                     textbutton _("{image=starchan} (Re)Action") action SetVariable("a_menu_2", "Minigame_Reaction")
                                     textbutton _("{image=starchan} Stretching") action SetVariable("a_menu_2", "Minigame_Stretching")
                                     if wnei_quest_2 >= 1:
@@ -239,31 +239,31 @@ screen UI_Menu_Guide():
             vbox:
                 spacing 25
                 if a_menu_2 == "About":
-                    label "About"
+                    label renpy.translate_string("About")
                 elif a_menu_2 == "UI":
-                    label "User Interface"
+                    label renpy.translate_string("User Interface")
                 elif a_menu_2 == "Code":
-                    label "Code"
+                    label renpy.translate_string("Code")
                 elif a_menu_2 == "Attributes":
-                    label "Attributes"
+                    label renpy.translate_string("Attributes")
                 elif a_menu_2 == "Talents":
-                    label "Talents"
+                    label renpy.translate_string("Talents")
                 elif a_menu_2 == "Personality":
-                    label "Personality"
+                    label renpy.translate_string("Personality")
                 elif a_menu_2 == "Stats":
-                    label "Stats"
+                    label renpy.translate_string("Stats")
                 elif a_menu_2 == "Minigame_Reaction":
-                    label "(Re)Action"
+                    label renpy.translate_string("(Re)Action")
                 elif a_menu_2 == "Minigame_Stretching":
-                    label "Stretching [C_Mnd](PROTOTYPE)[C_Off]"
+                    label renpy.translate_string("Stretching [C_Mnd](PROTOTYPE)[C_Off]")
                 elif a_menu_2 == "Minigame_HReceive":
-                    label "H Scene (Receive)"
+                    label renpy.translate_string("H Scene (Receive)")
                 elif a_menu_2 == "Minigame_HAct":
-                    label "H Scene (Act)"
+                    label renpy.translate_string("H Scene (Act)")
                 elif a_menu_2 == "Minigame_TugOfWar":
-                    label "Tug Of War"
+                    label renpy.translate_string("Tug Of War")
                 else:
-                    label "Content"
+                    label renpy.translate_string("Content")
 
                 side ("c l"):
                     area (-10,0,1300,940)
@@ -274,44 +274,44 @@ screen UI_Menu_Guide():
                             spacing 20
                             justify True
                             if a_menu_2 == "About":
-                                text "WelCUM To The City is intended to not be just one more visual novel game with linear story where you just keep clicking and doing repetitive things again and again, but also have some RPG and sandbox features, where you can upgrade your character skills and your decisions affect the world around you."
+                                text renpy.translate_string("WelCUM To The City is intended to not be just one more visual novel game with linear story where you just keep clicking and doing repetitive things again and again, but also have some RPG and sandbox features, where you can upgrade your character skills and your decisions affect the world around you.")
                                 image "images/UI/Guide/About.webp"
-                                text "Some mechanics often used in visual novels, such as {b}Wrong Choices{/b} or {b}Scene Gallery{/b} will probably not be implemented in the game. Instead, it will be more like a life simulator, where everything is intended to be part of your progress."
+                                text renpy.translate_string("Some mechanics often used in visual novels, such as {b}Wrong Choices{/b} or {b}Scene Gallery{/b} will probably not be implemented in the game. Instead, it will be more like a life simulator, where everything is intended to be part of your progress.")
 
                             elif a_menu_2 == "Content":
-                                text "This game is in a very early development stage. Which means that it's far from complete and does not have all the content that is intended to have. Therefore, consider checking the content list to know what is available at the moment."
+                                text renpy.translate_string("This game is in a very early development stage. Which means that it's far from complete and does not have all the content that is intended to have. Therefore, consider checking the content list to know what is available at the moment.")
                                 image "images/UI/Guide/ContentList.webp"
 
                             elif a_menu_2 == "Code":
-                                text "WelCUM To The City has some bonus features unlockable from codes. To use that, just get the codes and input it on Player Menu following the examples below."
-                                text "{p}"
-                                label "Free Gallery Images Code"
-                                text "Open Kawaii Character Creator and find the special code on the bottom of the game, then, just type or paste it in the input section to unlock special gallery photos."
+                                text renpy.translate_string("WelCUM To The City has some bonus features unlockable from codes. To use that, just get the codes and input it on Player Menu following the examples below.")
+                                text renpy.translate_string("{p}")
+                                label renpy.translate_string("Free Gallery Images Code")
+                                text renpy.translate_string("Open Kawaii Character Creator and find the special code on the bottom of the game, then, just type or paste it in the input section to unlock special gallery photos.")
                                 image "guide_kcc2w2c"
-                                textbutton "{b}Open:{/b} Kawaii Character Creator" action OpenURL("https://quiquersson.itch.io/kcc")
-                                text "{p}"
-                                label "Cheat Code"
-                                text "Cheat codes are available on the montly update posts for {b}big tiers{/b} on [C_Dat]SubscribeStar[C_Off] and [C_Dat]Patreon[C_Off]."
+                                textbutton renpy.translate_string("{b}Open:{/b} Kawaii Character Creator") action OpenURL("https://quiquersson.itch.io/kcc")
+                                text renpy.translate_string("{p}")
+                                label renpy.translate_string("Cheat Code")
+                                text renpy.translate_string("Cheat codes are available on the montly update posts for {b}big tiers{/b} on [C_Dat]SubscribeStar[C_Off] and [C_Dat]Patreon[C_Off].")
                                 image "images/UI/Guide/SuportTier.webp" xalign 0.5
-                                textbutton "{b}Open:{/b} SubscribeStar" action OpenURL("https://subscribestar.adult/quiquersson")
-                                textbutton "{b}Open:{/b} Patreon" action OpenURL("https://www.patreon.com/quiquersson")
-                                text "{p}Once you get the code, just need input it in the {image=icon_code} {b}Code Session{/b} to enable it like the example below."
+                                textbutton renpy.translate_string("{b}Open:{/b} SubscribeStar") action OpenURL("https://subscribestar.adult/quiquersson")
+                                textbutton renpy.translate_string("{b}Open:{/b} Patreon") action OpenURL("https://www.patreon.com/quiquersson")
+                                text renpy.translate_string("{p}Once you get the code, just need input it in the {image=icon_code} {b}Code Session{/b} to enable it like the example below.")
                                 image "guide_cheat" xalign 0.5
 
                             elif a_menu_2 == "UI":
-                                text "When you aren't in any scene, you may be free to choose what to do from the interface buttons."
+                                text renpy.translate_string("When you aren't in any scene, you may be free to choose what to do from the interface buttons.")
                                 image "images/UI/Guide/UI.webp"
-                                text "If any message appears indicating that the particular activity is not available when you click in a button, you are probably in the middle of an important event, and you need to finish it first."
-                                text "[C_But]{b}Data & Time:{/b}[C_Off] Information about what day and time you are. Click on the icon to pass to the next hour."
-                                text "[C_But]{b}Character Data:{/b}[C_Off] The amount of energy; attribute points; and money you current have. You have energy to perform 4 workouts every day; and up to 2 workouts of some specific attribute, which may be: Intelligence; Physical; and Charisma. Your energy recovers completely when you sleep. [C_Mnd](PROTOTYPE: It may work different in future versions)[C_Off]"
-                                text "[C_But]{b}Available Characters:{/b}[C_Off] Characters available to interact in the current map."
-                                text "[C_But]{b}Available Activities:{/b}[C_Off] Activities available to interact in the current map."
-                                text "[C_But]{b}Map Navigation:{/b}[C_Off] Navigate between maps."
-                                text "[C_But]{b}Main Menu:{/b}[C_Off] Customize settings and check general game info."
-                                text "[C_But]{b}Character Menu:{/b}[C_Off] Check information about characters and their available contents."
-                                text "[C_But]{b}Item Menu:{/b}[C_Off] Check and use items [C_Mnd](PROTOTYPE: It's just visual for now)[C_Off]."
-                                text "[C_But]{b}Player Menu:{/b}[C_Off] Check and customize more personal data from your game."
-                                text "[C_But]{b}Guide Menu:{/b}[C_Off] Check information about the game. {bt}You are here{/bt}."
+                                text renpy.translate_string("If any message appears indicating that the particular activity is not available when you click in a button, you are probably in the middle of an important event, and you need to finish it first.")
+                                text renpy.translate_string("[C_But]{b}Data & Time:{/b}[C_Off] Information about what day and time you are. Click on the icon to pass to the next hour.")
+                                text renpy.translate_string("[C_But]{b}Character Data:{/b}[C_Off] The amount of energy; attribute points; and money you current have. You have energy to perform 4 workouts every day; and up to 2 workouts of some specific attribute, which may be: Intelligence; Physical; and Charisma. Your energy recovers completely when you sleep. [C_Mnd](PROTOTYPE: It may work different in future versions)[C_Off]")
+                                text renpy.translate_string("[C_But]{b}Available Characters:{/b}[C_Off] Characters available to interact in the current map.")
+                                text renpy.translate_string("[C_But]{b}Available Activities:{/b}[C_Off] Activities available to interact in the current map.")
+                                text renpy.translate_string("[C_But]{b}Map Navigation:{/b}[C_Off] Navigate between maps.")
+                                text renpy.translate_string("[C_But]{b}Main Menu:{/b}[C_Off] Customize settings and check general game info.")
+                                text renpy.translate_string("[C_But]{b}Character Menu:{/b}[C_Off] Check information about characters and their available contents.")
+                                text renpy.translate_string("[C_But]{b}Item Menu:{/b}[C_Off] Check and use items [C_Mnd](PROTOTYPE: It's just visual for now)[C_Off].")
+                                text renpy.translate_string("[C_But]{b}Player Menu:{/b}[C_Off] Check and customize more personal data from your game.")
+                                text renpy.translate_string("[C_But]{b}Guide Menu:{/b}[C_Off] Check information about the game. {bt}You are here{/bt}.")
 
                             elif a_menu_2 == "Attributes":
                                 vbox:
@@ -322,17 +322,17 @@ screen UI_Menu_Guide():
                                         xalign 0.5
                                         spacing 25
                                         image "images/UI/ICON_StatCha.webp"
-                                        text "CHA" size 60
+                                        text renpy.translate_string("CHA") size 60
                                         image "images/UI/ICON_StatCha.webp"
                                     hbox:
                                         xalign 0.5
-                                        text "Charisma" size 40
+                                        text renpy.translate_string("Charisma") size 40
                                     text ""
-                                    text "* Unlocks certain dialogues with characters"
-                                    text "* Increases intimacy point gain for most characters"
-                                    text "* Increases love point gain for most characters"
-                                    text "* Increases lust point gain for most characters"
-                                    text "{p}"
+                                    text renpy.translate_string("* Unlocks certain dialogues with characters")
+                                    text renpy.translate_string("* Increases intimacy point gain for most characters")
+                                    text renpy.translate_string("* Increases love point gain for most characters")
+                                    text renpy.translate_string("* Increases lust point gain for most characters")
+                                    text renpy.translate_string("{p}")
                                 vbox:
                                     xminimum 1280
                                     xalign 0.5
@@ -341,17 +341,17 @@ screen UI_Menu_Guide():
                                         xalign 0.5
                                         spacing 25
                                         image "images/UI/ICON_StatInt.webp"
-                                        text "INT" size 60
+                                        text renpy.translate_string("INT") size 60
                                         image "images/UI/ICON_StatInt.webp"
                                     hbox:
                                         xalign 0.5
-                                        text "Intelligence"
+                                        text renpy.translate_string("Intelligence")
                                     text ""
-                                    text "* Unlocks certain dialogues with some intelligent characters"
-                                    text "* Increases performance in mental minigames"
-                                    text "* Increases intimacy point gain for some intelligent characters"
-                                    text "* Increases love point gain for some intelligent characters"
-                                    text "{p}"
+                                    text renpy.translate_string("* Unlocks certain dialogues with some intelligent characters")
+                                    text renpy.translate_string("* Increases performance in mental minigames")
+                                    text renpy.translate_string("* Increases intimacy point gain for some intelligent characters")
+                                    text renpy.translate_string("* Increases love point gain for some intelligent characters")
+                                    text renpy.translate_string("{p}")
                                 vbox:
                                     xminimum 1280
                                     xalign 0.5
@@ -360,188 +360,188 @@ screen UI_Menu_Guide():
                                         xalign 0.5
                                         spacing 25
                                         image "images/UI/ICON_StatPhy.webp"
-                                        text "PHY" size 60
+                                        text renpy.translate_string("PHY") size 60
                                         image "images/UI/ICON_StatPhy.webp"
                                     hbox:
                                         xalign 0.5
-                                        text "Physics"
+                                        text renpy.translate_string("Physics")
                                     text ""
-                                    text "* Increases performance in minigame {b}(Re)Action{/b}"
-                                    text "* Increases performance in minigame {b}Stretching{/b}"
-                                    text "* Increases performance in minigame {b}H Scene (Receive){/b}"
-                                    text "{p}"
+                                    text renpy.translate_string("* Increases performance in minigame {b}(Re)Action{/b}")
+                                    text renpy.translate_string("* Increases performance in minigame {b}Stretching{/b}")
+                                    text renpy.translate_string("* Increases performance in minigame {b}H Scene (Receive){/b}")
+                                    text renpy.translate_string("{p}")
 
                             elif a_menu_2 == "Talents":
                                 vbox:
                                     spacing 50
 
-                                    text "Level up and gain perk points to spend on talents. You can level up during day changes by gaining experience points from increasing your attributes or girls' love, lust, and intimacy, or by making girls cum. [C_Mnd](Some perks are currently unavailable so you cannot spend it in not implemented content)[C_Off]."
+                                    text renpy.translate_string("Level up and gain perk points to spend on talents. You can level up during day changes by gaining experience points from increasing your attributes or girls' love, lust, and intimacy, or by making girls cum. [C_Mnd](Some perks are currently unavailable so you cannot spend it in not implemented content)[C_Off].")
 
-                                    label "Basic Talents"
-
-                                    vbox:
-                                        xsize 1200
-                                        xoffset 25
-
-                                        label "[C_But]Strength[C_Off]"
-                                        text "Improves your performance when carrying girls and heavier items; increases your damage in fights [C_Mnd](when available)[C_Off]. [C_Dat]You can carry " + str(round((20 + ((3 + (perk_phy_str * 2)) * (3 + (perk_phy_str * 2)))) * (1 + (stat_phy * 0.01)), 2)) + "kg[C_Off]."
-                                        text "{p}"
-
-                                        label "[C_But]Agility[C_Off] [C_Mnd](Unavailable)[C_Off]"
-                                        text "Improves your speed performance. Spend less time when use fast travel. Time passes slower in agility minigames."
-                                        text "{p}"
-
-                                        label "[C_But]Endurance[C_Off] [C_Mnd](Unavailable)[C_Off]"
-                                        text "Increases your stamina and ability to perform physical activities for longer periods, and increase your resistance in fights."
-                                        text "{p}"
-
-                                        label "[C_But]Perception[C_Off]"
-                                        text "Enhances your ability to notice hidden scenes and see through characters' words and actions. Reduce chances of you to be caught by surprise in some scenes [C_Mnd](when available)[C_Off]. [C_Dat]You have a " + str(round(((perk_int_per/3)*100), 2)) + "% chance of noticing hidden things[C_Off]."
-                                        text "{p}"
-
-                                        label "[C_But]Knowledge[C_Off]"
-                                        text "Allows you to have knowledge of general things around you, enhances your ability to remember information and details, and slightly improves your performance in some skills."
-                                        text "{p}"
-
-                                        label "[C_But]Logic[C_Off] [C_Mnd](Unavailable)[C_Off]"
-                                        text "Improves your logical reasoning skills, making it easier to solve complex problems and puzzles, and make better decisions. Time passes slower in thinking minigames."
-                                        text "{p}"
-
-                                        label "[C_But]Sensuality[C_Off]"
-                                        text "Increases your attractiveness and the amount of lust generated in the characters."
-                                        text "{p}"
-
-                                        label "[C_But]Performance[C_Off]"
-                                        text "Improves your performance in using skills and increases the amount of money received when working."
-                                        text "{p}"
-
-                                        label "[C_But]Social[C_Off] [C_Mnd](Unavailable)[C_Off]"
-                                        text "Increases your performance in character interactions."
-                                        text "{p}"
-
-                                    label "Advanced Talents"
+                                    label renpy.translate_string("Basic Talents")
 
                                     vbox:
                                         xsize 1200
                                         xoffset 25
 
-                                        label "[C_But]Sensuality[C_Off]"
-                                        text "Improve your performance in H scenes. Characters get even hornier by erotic physical contacts with you, and also get horny by common physical contacts with you."
-                                        text "{p}"
+                                        label renpy.translate_string("[C_But]Strength[C_Off]")
+                                        text renpy.translate_string("Improves your performance when carrying girls and heavier items; increases your damage in fights [C_Mnd](when available)[C_Off]. [C_Dat]You can carry ") + str(round((20 + ((3 + (perk_phy_str * 2)) * (3 + (perk_phy_str * 2)))) * (1 + (stat_phy * 0.01)), 2)) + "kg[C_Off]."
+                                        text renpy.translate_string("{p}")
+
+                                        label renpy.translate_string("[C_But]Agility[C_Off] [C_Mnd](Unavailable)[C_Off]")
+                                        text renpy.translate_string("Improves your speed performance. Spend less time when use fast travel. Time passes slower in agility minigames.")
+                                        text renpy.translate_string("{p}")
+
+                                        label renpy.translate_string("[C_But]Endurance[C_Off] [C_Mnd](Unavailable)[C_Off]")
+                                        text renpy.translate_string("Increases your stamina and ability to perform physical activities for longer periods, and increase your resistance in fights.")
+                                        text renpy.translate_string("{p}")
+
+                                        label renpy.translate_string("[C_But]Perception[C_Off]")
+                                        text renpy.translate_string("Enhances your ability to notice hidden scenes and see through characters' words and actions. Reduce chances of you to be caught by surprise in some scenes [C_Mnd](when available)[C_Off]. [C_Dat]You have a ") + str(round(((perk_int_per/3)*100), 2)) + "% chance of noticing hidden things[C_Off]."
+                                        text renpy.translate_string("{p}")
+
+                                        label renpy.translate_string("[C_But]Knowledge[C_Off]")
+                                        text renpy.translate_string("Allows you to have knowledge of general things around you, enhances your ability to remember information and details, and slightly improves your performance in some skills.")
+                                        text renpy.translate_string("{p}")
+
+                                        label renpy.translate_string("[C_But]Logic[C_Off] [C_Mnd](Unavailable)[C_Off]")
+                                        text renpy.translate_string("Improves your logical reasoning skills, making it easier to solve complex problems and puzzles, and make better decisions. Time passes slower in thinking minigames.")
+                                        text renpy.translate_string("{p}")
+
+                                        label renpy.translate_string("[C_But]Sensuality[C_Off]")
+                                        text renpy.translate_string("Increases your attractiveness and the amount of lust generated in the characters.")
+                                        text renpy.translate_string("{p}")
+
+                                        label renpy.translate_string("[C_But]Performance[C_Off]")
+                                        text renpy.translate_string("Improves your performance in using skills and increases the amount of money received when working.")
+                                        text renpy.translate_string("{p}")
+
+                                        label renpy.translate_string("[C_But]Social[C_Off] [C_Mnd](Unavailable)[C_Off]")
+                                        text renpy.translate_string("Increases your performance in character interactions.")
+                                        text renpy.translate_string("{p}")
+
+                                    label renpy.translate_string("Advanced Talents")
+
+                                    vbox:
+                                        xsize 1200
+                                        xoffset 25
+
+                                        label renpy.translate_string("[C_But]Sensuality[C_Off]")
+                                        text renpy.translate_string("Improve your performance in H scenes. Characters get even hornier by erotic physical contacts with you, and also get horny by common physical contacts with you.")
+                                        text renpy.translate_string("{p}")
                                         
-                                        label "[C_But]Ninjutsu[C_Off] [C_Mnd](Unavailable)[C_Off]"
-                                        text "Increases the chances that you won't be noticed when you're in hiding. Reduces the chance of you being caught off guard in some scenes. Time passes slowly in agility minigames."
-                                        text "{p}"
+                                        label renpy.translate_string("[C_But]Ninjutsu[C_Off] [C_Mnd](Unavailable)[C_Off]")
+                                        text renpy.translate_string("Increases the chances that you won't be noticed when you're in hiding. Reduces the chance of you being caught off guard in some scenes. Time passes slowly in agility minigames.")
+                                        text renpy.translate_string("{p}")
 
-                                        label "[C_But]Psychology[C_Off] [C_Mnd](Unavailable)[C_Off]"
-                                        text "Improves your performance in character interactions, and allows you to see through their words and actions. Unlocks additional information about characters."
-                                        text "{p}"
+                                        label renpy.translate_string("[C_But]Psychology[C_Off] [C_Mnd](Unavailable)[C_Off]")
+                                        text renpy.translate_string("Improves your performance in character interactions, and allows you to see through their words and actions. Unlocks additional information about characters.")
+                                        text renpy.translate_string("{p}")
 
-                                    label "Skills"
+                                    label renpy.translate_string("Skills")
 
                                     vbox:
                                         xsize 1200
                                         xoffset 25
 
-                                        label "[C_But]Dance[C_Off]"
-                                        text "Allows you to dance in a rhythm minigame."
-                                        text "{p}"
+                                        label renpy.translate_string("[C_But]Dance[C_Off]")
+                                        text renpy.translate_string("Allows you to dance in a rhythm minigame.")
+                                        text renpy.translate_string("{p}")
 
-                                        label "[C_But]Guitar[C_Off] [C_Mnd](Unavailable)[C_Off]"
-                                        text "Allows you to play guitar in a rhythm minigame."
-                                        text "{p}"
+                                        label renpy.translate_string("[C_But]Guitar[C_Off] [C_Mnd](Unavailable)[C_Off]")
+                                        text renpy.translate_string("Allows you to play guitar in a rhythm minigame.")
+                                        text renpy.translate_string("{p}")
 
-                                        label "[C_But]Swimming[C_Off]"
-                                        text "Allows you to swim in scenes and minigames [C_Mnd](when available)[C_Off]."
-                                        text "{p}"
+                                        label renpy.translate_string("[C_But]Swimming[C_Off]")
+                                        text renpy.translate_string("Allows you to swim in scenes and minigames [C_Mnd](when available)[C_Off].")
+                                        text renpy.translate_string("{p}")
 
-                                        label "[C_But]Massage[C_Off] [C_Mnd](Unavailable)[C_Off]"
-                                        text "Allows you to massage characters."
-                                        text "{p}"
+                                        label renpy.translate_string("[C_But]Massage[C_Off] [C_Mnd](Unavailable)[C_Off]")
+                                        text renpy.translate_string("Allows you to massage characters.")
+                                        text renpy.translate_string("{p}")
 
-                                        label "[C_But]Cooking[C_Off] [C_Mnd](Unavailable)[C_Off]"
-                                        text "Allows you to cook or create consumable itens."
-                                        text "{p}"
+                                        label renpy.translate_string("[C_But]Cooking[C_Off] [C_Mnd](Unavailable)[C_Off]")
+                                        text renpy.translate_string("Allows you to cook or create consumable itens.")
+                                        text renpy.translate_string("{p}")
 
-                                        label "[C_But]Tutoring[C_Off]"
-                                        text "Allows you to teach a skill you know."
-                                        text "{p}"
+                                        label renpy.translate_string("[C_But]Tutoring[C_Off]")
+                                        text renpy.translate_string("Allows you to teach a skill you know.")
+                                        text renpy.translate_string("{p}")
 
                             elif a_menu_2 == "Personality":
-                                label "[C_But]Your main personality is:[C_Off] [C_Per]{b}[personality[0]]{/b}[C_Off]"
-                                text "{p}{b}Common{/b}"
-                                text "[C_Mnd](balanced rate)[C_Off]"
-                                text "Neither there nor here... the middle path is ideal"
-                                text "{p}{b}Hentai{/b}"
-                                text "[C_Mnd]([C_Pos]increases lust rate[C_Off], but [C_Neg]decreases love rate[C_Off])[C_Off]"
-                                text "You perfected in made decisions in your life thinking with your bottom head, now you can easily influence people to get horny. however, you also get easily horny, and now people don't believe that much in your kind actions since they tend to think you're doing that just to take advantage later."
-                                text "{p}{b}Kind{/b}"
-                                text "[C_Mnd]([C_Pos]increases love rate[C_Off], but [C_Neg]decreases lust rate[C_Off])[C_Off]"
-                                text "You have shown yourself to be a very good-hearted person, and that delights everyone. People often trust you so much that they tend to believe that you don't do anything wrong on purpose. It also implies that your actions look so cute that it's harder for you to make people horny."
-                                text "{p}{b}Reserved{/b}"
-                                text "[C_Mnd]([C_Pos]increases skill and money rate[C_Off], but [C_Neg]decreases affection rate[C_Off])[C_Off]"
-                                text "You've become accustomed to acting with a certain level of formality, without being swayed by emotions, and this has shown people that you know how to separate things very well and that they shouldn't cross the line with you. Now everyone tends to respect you a lot and avoid disappointing you as much as possible. Your performance in studies and work tends to be above average."
-                                text "{p}{b}Intimate{/b}"
-                                text "[C_Mnd]([C_Pos]increases affection rate[C_Off], but [C_Neg]decreases skill and money rate[C_Off])[C_Off]"
-                                text "You've shown yourself to be a very welcoming person and people tend to be extremely comfortable around you, and open up more when talking, talking more easily about subjects they wouldn't talk about with just anyone. However, because you are quite emotional, you tend to have difficulty with logical reasoning and imposing yourself on others."
+                                label renpy.translate_string("[C_But]Your main personality is:[C_Off] [C_Per]{b}[personality[0]]{/b}[C_Off]")
+                                text renpy.translate_string("{p}{b}Common{/b}")
+                                text renpy.translate_string("[C_Mnd](balanced rate)[C_Off]")
+                                text renpy.translate_string("Neither there nor here... the middle path is ideal")
+                                text renpy.translate_string("{p}{b}Hentai{/b}")
+                                text renpy.translate_string("[C_Mnd]([C_Pos]increases lust rate[C_Off], but [C_Neg]decreases love rate[C_Off])[C_Off]")
+                                text renpy.translate_string("You perfected in made decisions in your life thinking with your bottom head, now you can easily influence people to get horny. however, you also get easily horny, and now people don't believe that much in your kind actions since they tend to think you're doing that just to take advantage later.")
+                                text renpy.translate_string("{p}{b}Kind{/b}")
+                                text renpy.translate_string("[C_Mnd]([C_Pos]increases love rate[C_Off], but [C_Neg]decreases lust rate[C_Off])[C_Off]")
+                                text renpy.translate_string("You have shown yourself to be a very good-hearted person, and that delights everyone. People often trust you so much that they tend to believe that you don't do anything wrong on purpose. It also implies that your actions look so cute that it's harder for you to make people horny.")
+                                text renpy.translate_string("{p}{b}Reserved{/b}")
+                                text renpy.translate_string("[C_Mnd]([C_Pos]increases skill and money rate[C_Off], but [C_Neg]decreases affection rate[C_Off])[C_Off]")
+                                text renpy.translate_string("You've become accustomed to acting with a certain level of formality, without being swayed by emotions, and this has shown people that you know how to separate things very well and that they shouldn't cross the line with you. Now everyone tends to respect you a lot and avoid disappointing you as much as possible. Your performance in studies and work tends to be above average.")
+                                text renpy.translate_string("{p}{b}Intimate{/b}")
+                                text renpy.translate_string("[C_Mnd]([C_Pos]increases affection rate[C_Off], but [C_Neg]decreases skill and money rate[C_Off])[C_Off]")
+                                text renpy.translate_string("You've shown yourself to be a very welcoming person and people tend to be extremely comfortable around you, and open up more when talking, talking more easily about subjects they wouldn't talk about with just anyone. However, because you are quite emotional, you tend to have difficulty with logical reasoning and imposing yourself on others.")
 
                             elif a_menu_2 == "Stats":
-                                text "Each character reacts to you differently depending on their personality and yours. At the moment, {b}love{/b} and {b}lust{/b} do not yet have their full functionality within the game, so the most important status is {b}intimacy{/b}, as it unlocks more content. {b}Love{/b} and {b}lust{/b} only serve to increase characters {b}intimacy{/b} rate."
+                                text renpy.translate_string("Each character reacts to you differently depending on their personality and yours. At the moment, {b}love{/b} and {b}lust{/b} do not yet have their full functionality within the game, so the most important status is {b}intimacy{/b}, as it unlocks more content. {b}Love{/b} and {b}lust{/b} only serve to increase characters {b}intimacy{/b} rate.")
 
-                                text "{p}[C_But]{b}Intimacy:{/b}[C_Off] Determines how intimate this character considers you to be. Unlocks new scenes with characters. This stat increase very slowly, but don't decrease."
+                                text renpy.translate_string("{p}[C_But]{b}Intimacy:{/b}[C_Off] Determines how intimate this character considers you to be. Unlocks new scenes with characters. This stat increase very slowly, but don't decrease.")
 
-                                text "{p}[C_But]{b}Love:{/b}[C_Off] Determines how much the character likes you, which can vary between -100% (hate) and 100% (love). This stat increases slowly and only decreases on special occasions. [C_Mnd]({b}PLANS:{/b} It should increase the chance that characters will seek you out on their own, start conversations with you, give you gifts, and be more likely to approve of your actions.)[C_Off]"
+                                text renpy.translate_string("{p}[C_But]{b}Love:{/b}[C_Off] Determines how much the character likes you, which can vary between -100% (hate) and 100% (love). This stat increases slowly and only decreases on special occasions. [C_Mnd]({b}PLANS:{/b} It should increase the chance that characters will seek you out on their own, start conversations with you, give you gifts, and be more likely to approve of your actions.)[C_Off]")
 
-                                text "{p}[C_But]{b}Lust:{/b}[C_Off] Determines how aroused the character is. Increases quickly but is very unstable, resetting when characters cum [C_Mnd](Occurs when lust reaches approximately 80% to 100%)[C_Off], or decreasing significantly [C_Mnd](about 12,5% to 30%)[C_Off] between one day and the next. [C_Mnd]({b}PLANS:{/b} Some girls masturbate when they are really horny and it should be possible to see some of these scenes if you are in the right place.)[C_Off]"
+                                text renpy.translate_string("{p}[C_But]{b}Lust:{/b}[C_Off] Determines how aroused the character is. Increases quickly but is very unstable, resetting when characters cum [C_Mnd](Occurs when lust reaches approximately 80% to 100%)[C_Off], or decreasing significantly [C_Mnd](about 12,5% to 30%)[C_Off] between one day and the next. [C_Mnd]({b}PLANS:{/b} Some girls masturbate when they are really horny and it should be possible to see some of these scenes if you are in the right place.)[C_Off]")
 
-                                text "{p}[C_But]{b}Pain:{/b}[C_Off] Determines how sore the character is feeling. Some characters must have better resistance than others depending on their physical size, height, and flexibility. Decreasing significantly [C_Mnd](about 6,25% to 25%)[C_Off] between one day and the next. [C_Mnd](Only available for {image=icon_wmom} until now. {b}PLANS:{/b} medicines and massages may reduce pain; characters with more sexual experience; wider anus or vagina; or greater flexibility, should withstand deeper penetration during H scenes, while the opposite, you would need to act more cautiously if you don't want to hurt them.)[C_Off]"
+                                text renpy.translate_string("{p}[C_But]{b}Pain:{/b}[C_Off] Determines how sore the character is feeling. Some characters must have better resistance than others depending on their physical size, height, and flexibility. Decreasing significantly [C_Mnd](about 6,25% to 25%)[C_Off] between one day and the next. [C_Mnd](Only available for {image=icon_wmom} until now. {b}PLANS:{/b} medicines and massages may reduce pain; characters with more sexual experience; wider anus or vagina; or greater flexibility, should withstand deeper penetration during H scenes, while the opposite, you would need to act more cautiously if you don't want to hurt them.)[C_Off]")
 
-                                text "{p}[C_But]{b}Flexibility:{/b}[C_Off] Determines how flexible the character's leg joints are, decreasing very slowly [C_Mnd](1%)[C_Off] between one day and the next. [C_Mnd](Only available for {image=icon_wmom} in the {b}Stretching{/b} minigame until now.)[C_Off]"
+                                text renpy.translate_string("{p}[C_But]{b}Flexibility:{/b}[C_Off] Determines how flexible the character's leg joints are, decreasing very slowly [C_Mnd](1%)[C_Off] between one day and the next. [C_Mnd](Only available for {image=icon_wmom} in the {b}Stretching{/b} minigame until now.)[C_Off]")
 
-                                text "{p}[C_But]{b}Extra Points:{/b}[C_Off]"
+                                text renpy.translate_string("{p}[C_But]{b}Extra Points:{/b}[C_Off]")
                                 image "guide_extra"
-                                text "Influences the characters' {b}intimacy{/b}, {b}love{/b}, and {b}lust{/b} point count. These extra points can generally be acquired in moments when a certain character is not present, but is mentioned in a positive or negative way. Positive extras increase the gain and decrease the loss of {b}intimacy{/b}, {b}love{/b}, and {b}lust{/b}, while positive extras have the opposite effect. The amount of extra points acquired tends to be very small, on the other hand, there is no limit to how many you can have, but their absolute value reduces by 0.2% every day [C_Mnd](Example: 1% would take 5 days to reset if no new extra points are adquired, while -10% would take 50 days)[C_Off]."
+                                text renpy.translate_string("Influences the characters' {b}intimacy{/b}, {b}love{/b}, and {b}lust{/b} point count. These extra points can generally be acquired in moments when a certain character is not present, but is mentioned in a positive or negative way. Positive extras increase the gain and decrease the loss of {b}intimacy{/b}, {b}love{/b}, and {b}lust{/b}, while positive extras have the opposite effect. The amount of extra points acquired tends to be very small, on the other hand, there is no limit to how many you can have, but their absolute value reduces by 0.2% every day [C_Mnd](Example: 1% would take 5 days to reset if no new extra points are adquired, while -10% would take 50 days)[C_Off].")
 
                             elif a_menu_2 == "Minigame_Reaction":
-                                text "Click correctly on the arrows that appear on the screen as quickly as possible so that your action or reaction to a certain event performs better."
+                                text renpy.translate_string("Click correctly on the arrows that appear on the screen as quickly as possible so that your action or reaction to a certain event performs better.")
                                 image "guide_minigamereaction_w"
-                                text "Clicking the wrong arrow or not clicking within the right time will make you miss the current turn and move on to the next one."
+                                text renpy.translate_string("Clicking the wrong arrow or not clicking within the right time will make you miss the current turn and move on to the next one.")
                                 image "guide_minigamereaction_l"
-                                text "Increase your {image=images/UI/ICON_StatPhy.webp} to see time pass more slowly and have the opportunity to act or react better"
+                                text renpy.translate_string("Increase your {image=images/UI/ICON_StatPhy.webp} to see time pass more slowly and have the opportunity to act or react better")
 
                             elif a_menu_2 == "Minigame_Stretching":
-                                text "[C_Neg]{b}WARNING:{/b} This system is just a prototype and the current {b}flexibility{/b} stat must be reset in future updates so you can enjoy a better experience (Know more on the bottom info).[C_Off]{p}"
-                                text "Click and hold the screen to stretch the girl leg, and release it to release the stretching. Control your holding and releasing time to increase her flexibility by 100% before the time ends, without leaving the pain bar reach 100%."
+                                text renpy.translate_string("[C_Neg]{b}WARNING:{/b} This system is just a prototype and the current {b}flexibility{/b} stat must be reset in future updates so you can enjoy a better experience (Know more on the bottom info).[C_Off]{p}")
+                                text renpy.translate_string("Click and hold the screen to stretch the girl leg, and release it to release the stretching. Control your holding and releasing time to increase her flexibility by 100% before the time ends, without leaving the pain bar reach 100%.")
                                 image "guide_minigamestretching_p"
-                                text "The more you open her legs, the faster you tend to increase her flexibility, but also, the more you tend to hurt her if she doesn't have the necessary flexibility to withstand the pain. Therefore, for the best performance, control how much you stretch her legs according to her current flexibility, being careful not to strain her legs more than she can handle."
+                                text renpy.translate_string("The more you open her legs, the faster you tend to increase her flexibility, but also, the more you tend to hurt her if she doesn't have the necessary flexibility to withstand the pain. Therefore, for the best performance, control how much you stretch her legs according to her current flexibility, being careful not to strain her legs more than she can handle.")
                                 image "guide_minigamestretching_l"
-                                text "Increase your {image=images/UI/ICON_StatPhy.webp} to ease your strength control and don't force girls legs too much."
-                                text "{p}[C_Mnd]({b}PLANS:{/b} {image=icon_wmom}'s flexibility should unlock new yoga scenes and increase way more slowly so that you can enjoy a better progression of your relationship with her; The arrow button may be changed to something else.)[C_Off]"
+                                text renpy.translate_string("Increase your {image=images/UI/ICON_StatPhy.webp} to ease your strength control and don't force girls legs too much.")
+                                text renpy.translate_string("{p}[C_Mnd]({b}PLANS:{/b} {image=icon_wmom}'s flexibility should unlock new yoga scenes and increase way more slowly so that you can enjoy a better progression of your relationship with her; The arrow button may be changed to something else.)[C_Off]")
 
                             elif a_menu_2 == "Minigame_HReceive":
-                                text "Your mind is very full of lewd thoughts. To get rid of them, click as soon as possible in the {b}Thinking Balloons{/b} to control your urges. The faster you burst the balloons, the less your lust will increase and you can resist H scenes for longer."
+                                text renpy.translate_string("Your mind is very full of lewd thoughts. To get rid of them, click as soon as possible in the {b}Thinking Balloons{/b} to control your urges. The faster you burst the balloons, the less your lust will increase and you can resist H scenes for longer.")
                                 image "guide_minigamehreceive_w"
-                                text "Or just let it go if you prefer."
+                                text renpy.translate_string("Or just let it go if you prefer.")
                                 image "guide_minigamehreceive_l"
-                                text "More experienced girls tend to resist more at H-Scenes. Increase your {image=images/UI/ICON_StatPhy.webp} to ease your lust control at H-Scenes and make girls cum more times."
+                                text renpy.translate_string("More experienced girls tend to resist more at H-Scenes. Increase your {image=images/UI/ICON_StatPhy.webp} to ease your lust control at H-Scenes and make girls cum more times.")
 
                             elif a_menu_2 == "Minigame_TugOfWar":
-                                text "In this contest of strength, click on the screen as many times as you can to force the bar to your side. The greater your [C_Dat]strength[C_Off] talent, the more points you apply with each click."
+                                text renpy.translate_string("In this contest of strength, click on the screen as many times as you can to force the bar to your side. The greater your [C_Dat]strength[C_Off] talent, the more points you apply with each click.")
                                 image "guide_minigametugofwar"
 
                             elif a_menu_2 == "Minigame_HAct":
-                                text "Sex content is completely player-controllable, with performance dependent on skills and attributes such as [C_Dat]Sensuality[C_Off].{p}Click the penetration button to enable control."
+                                text renpy.translate_string("Sex content is completely player-controllable, with performance dependent on skills and attributes such as [C_Dat]Sensuality[C_Off].{p}Click the penetration button to enable control.")
                                 image "guide_minigameact_1"
-                                text "Move the cursor/finger in the red area below to control penis movement after is control is enabled. The speed at which you move this is very important to define the characters' reactions of pleasure, pain, and breath.{p}The upper part of the control area can cause pain to the girl if you make too many sudden movements, and if the pain indicator reaches its maximum, the scene ends.{p}Note the speed at which the girl feels the most pleasure and use this to your advantage."
+                                text renpy.translate_string("Move the cursor/finger in the red area below to control penis movement after is control is enabled. The speed at which you move this is very important to define the characters' reactions of pleasure, pain, and breath.{p}The upper part of the control area can cause pain to the girl if you make too many sudden movements, and if the pain indicator reaches its maximum, the scene ends.{p}Note the speed at which the girl feels the most pleasure and use this to your advantage.")
                                 image "guide_minigameact_2"
-                                text "The closer a character's lust meter gets to maximum, the more likely they are to cum. If you cum, the scene ends. The higher the [C_Dat]Sensuality[C_Off] skill level, the less likely you are to automatically cum, and the higher is girl's pleasure.{p}For the highest possible score, make the girl cum at least 3 times, and cum at the same time as her.{p}To cum at the same time as the girl, you need to click the ejaculation button when the girl has at least 90% lust, or has more lust than you."
+                                text renpy.translate_string("The closer a character's lust meter gets to maximum, the more likely they are to cum. If you cum, the scene ends. The higher the [C_Dat]Sensuality[C_Off] skill level, the less likely you are to automatically cum, and the higher is girl's pleasure.{p}For the highest possible score, make the girl cum at least 3 times, and cum at the same time as her.{p}To cum at the same time as the girl, you need to click the ejaculation button when the girl has at least 90% lust, or has more lust than you.")
                                 image "guide_minigameact_3"
-                                text "Want to just watch the scene while leaving your right hand free? No problem! Just use the automatic mode and hide the interface. The automatic mode is enabled after the first sexual intercourse. This mode calculates the average speed of your movements from your last sexual intercourse and tries to simulate your speed."
+                                text renpy.translate_string("Want to just watch the scene while leaving your right hand free? No problem! Just use the automatic mode and hide the interface. The automatic mode is enabled after the first sexual intercourse. This mode calculates the average speed of your movements from your last sexual intercourse and tries to simulate your speed.")
                                 image "guide_minigameact_4"
-                                text "This content is still in the process of being improved and the energy indicator is not very useful. A mechanic for a better penis control, different positions; reactions; and scenarios should be implemented in the future."
+                                text renpy.translate_string("This content is still in the process of being improved and the energy indicator is not very useful. A mechanic for a better penis control, different positions; reactions; and scenarios should be implemented in the future.")
 
                             else:
-                                text "[C_Mnd]Oops... Missing info.[C_Off]"
+                                text renpy.translate_string("[C_Mnd]Oops... Missing info.[C_Off]")
                     vbar value YScrollValue("ScrollGuide_R")
 
 # ----------------------------------------------------------------------------------------------------
@@ -552,7 +552,7 @@ screen UI_Menu_Guide():
 # --------------------------------------------------
 label rename_rnamecity:
     if fnameselect:
-        $ rnamecity = renpy.input("What's your city Name?{p}{color=#FFAF32}(Leave it blank to generate a random name)[C_Off]", length=12)
+        $ rnamecity = renpy.input(renpy.translate_string("What's your city Name?{p}{color=#FFAF32}(Leave it blank to generate a random name)[C_Off]"), length=12)
         if rnamecity == "":
             call rnamegen from _call_rnamegen
             $ rnamecity = a_check_0
@@ -603,7 +603,7 @@ label Set_Wallpaper:
     $ a_menu_1 = 0
     $ a_menu_2 = 0
     $ a_menu_3 = 0
-    $ msg.msg("Wallpaper Updated")
+    $ msg.msg(renpy.translate_string("Wallpaper Updated"))
     jump UI_Menu_Options
 
 screen Set_Wallpaper():
@@ -632,20 +632,20 @@ screen Set_Wallpaper():
                 spacing 25
                 vbox:
                     xalign 0.5
-                    text "Day [gametimeday], [gametimeclock]" size 60
+                    text renpy.translate_string("Day [gametimeday], [gametimeclock]") size 60
                 vbox:
                     xalign 0.5
-                    text "[fnamehero] [lnamehero]" size 30
+                    text renpy.translate_string("[fnamehero] [lnamehero]") size 30
         vbox:
             xsize 1200
             yalign 0.5
             xalign 0.5
             spacing 50
-            label "Adjust View" xalign 0.5
+            label renpy.translate_string("Adjust View") xalign 0.5
             bar value VariableValue("cellwx", 100) xmaximum 1000 xalign 0.5
             bar value VariableValue("cellwy", 100) xmaximum 1000 xalign 0.5
             bar value VariableValue("cellwz", 100) xmaximum 1000 xalign 0.5
-            textbutton "Confirm" action Return() xalign 0.5
+            textbutton renpy.translate_string("Confirm") action Return() xalign 0.5
 
 label UI_Menu_Options_Music:
     call gamecheck from _call_gamecheck_25
@@ -731,10 +731,10 @@ screen UI_Menu_Options():
             spacing 25
             vbox:
                 xalign 0.5
-                text "Day [gametimeday], [gametimeclock]" size 60
+                text renpy.translate_string("Day [gametimeday], [gametimeclock]") size 60
             vbox:
                 xalign 0.5
-                text "[fnamehero] [lnamehero]" size 30
+                text renpy.translate_string("[fnamehero] [lnamehero]") size 30
         vpgrid:
             spacing 25
             cols 3
@@ -789,7 +789,7 @@ screen UI_Menu_Options_Contacts():
         xalign 0.5
         yalign 0.5
         spacing 10
-        text "Not available yet"
+        text renpy.translate_string("Not available yet")
     imagebutton:
         xalign 0.41
         yalign 0.915
@@ -833,10 +833,10 @@ screen UI_Menu_Options_Gallery_IMG():
                 xalign 0.5
                 yalign 0.5
                 spacing 50
-                text "This art was made by [C_Dat]yuro pri[C_Off]" size 60
-                textbutton "{size=60}Visit artist's Instagram{/size}" xalign 0.5:
+                text renpy.translate_string("This art was made by [C_Dat]yuro pri[C_Off]") size 60
+                textbutton renpy.translate_string("{size=60}Visit artist's Instagram{/size}") xalign 0.5:
                     action [OpenURL("https://www.instagram.com/p.sdraws/"), SetVariable("a_menu_1","")]
-                textbutton "{size=60}Return{/size}" xalign 0.5:
+                textbutton renpy.translate_string("{size=60}Return{/size}") xalign 0.5:
                     action SetVariable("a_menu_1","")
 
     elif a_menu_1 == "silvestre_siri":
@@ -850,10 +850,10 @@ screen UI_Menu_Options_Gallery_IMG():
                 xalign 0.5
                 yalign 0.5
                 spacing 50
-                text "This art was made by [C_Dat]siri[C_Off]" size 60
-                textbutton "{size=60}Visit artist's Instagram{/size}" xalign 0.5:
+                text renpy.translate_string("This art was made by [C_Dat]siri[C_Off]") size 60
+                textbutton renpy.translate_string("{size=60}Visit artist's Instagram{/size}") xalign 0.5:
                     action [OpenURL("https://www.instagram.com/silvestre_siri/"), SetVariable("a_menu_1","")]
-                textbutton "{size=60}Return{/size}" xalign 0.5:
+                textbutton renpy.translate_string("{size=60}Return{/size}") xalign 0.5:
                     action SetVariable("a_menu_1","")
 
     elif a_menu_1 == "TikkiWii":
@@ -867,10 +867,10 @@ screen UI_Menu_Options_Gallery_IMG():
                 xalign 0.5
                 yalign 0.5
                 spacing 50
-                text "This art was made by [C_Dat]TikkiWii[C_Off]" size 60
-                textbutton "{size=60}Visit artist's Instagram{/size}" xalign 0.5:
+                text renpy.translate_string("This art was made by [C_Dat]TikkiWii[C_Off]") size 60
+                textbutton renpy.translate_string("{size=60}Visit artist's Instagram{/size}") xalign 0.5:
                     action [OpenURL("https://www.instagram.com/tikkiwiii/"), SetVariable("a_menu_1","")]
-                textbutton "{size=60}Return{/size}" xalign 0.5:
+                textbutton renpy.translate_string("{size=60}Return{/size}") xalign 0.5:
                     action SetVariable("a_menu_1","")
 
     elif a_menu_1 == "Aquaryart":
@@ -884,10 +884,10 @@ screen UI_Menu_Options_Gallery_IMG():
                 xalign 0.5
                 yalign 0.5
                 spacing 50
-                text "This art was made by [C_Dat]Aquaryart[C_Off]" size 60
-                textbutton "{size=60}Visit artist's Carrd{/size}" xalign 0.5:
+                text renpy.translate_string("This art was made by [C_Dat]Aquaryart[C_Off]") size 60
+                textbutton renpy.translate_string("{size=60}Visit artist's Carrd{/size}") xalign 0.5:
                     action [OpenURL("https://aquaryartoficial.carrd.co/"), SetVariable("a_menu_1","")]
-                textbutton "{size=60}Return{/size}" xalign 0.5:
+                textbutton renpy.translate_string("{size=60}Return{/size}") xalign 0.5:
                     action SetVariable("a_menu_1","")
 
     elif a_menu_1 == "pedrodesenhador":
@@ -901,10 +901,10 @@ screen UI_Menu_Options_Gallery_IMG():
                 xalign 0.5
                 yalign 0.5
                 spacing 50
-                text "This art was made by [C_Dat]Pedro Desenhador[C_Off]" size 60
-                textbutton "{size=60}Visit artist's Carrd{/size}" xalign 0.5:
+                text renpy.translate_string("This art was made by [C_Dat]Pedro Desenhador[C_Off]") size 60
+                textbutton renpy.translate_string("{size=60}Visit artist's Carrd{/size}") xalign 0.5:
                     action [OpenURL("https://pedrodesenhador.carrd.co/"), SetVariable("a_menu_1","")]
-                textbutton "{size=60}Return{/size}" xalign 0.5:
+                textbutton renpy.translate_string("{size=60}Return{/size}") xalign 0.5:
                     action SetVariable("a_menu_1","")
 
     elif a_menu_1 == "goBlinzzy":
@@ -918,10 +918,10 @@ screen UI_Menu_Options_Gallery_IMG():
                 xalign 0.5
                 yalign 0.5
                 spacing 50
-                text "This art was made by [C_Dat]Blinzzy[C_Off]" size 60
-                textbutton "{size=60}Visit artist's Twitter{/size}" xalign 0.5:
+                text renpy.translate_string("This art was made by [C_Dat]Blinzzy[C_Off]") size 60
+                textbutton renpy.translate_string("{size=60}Visit artist's Twitter{/size}") xalign 0.5:
                     action [OpenURL("https://twitter.com/goBlinzzy/media"), SetVariable("a_menu_1","")]
-                textbutton "{size=60}Return{/size}" xalign 0.5:
+                textbutton renpy.translate_string("{size=60}Return{/size}") xalign 0.5:
                     action SetVariable("a_menu_1","")
 
     else:
@@ -1049,7 +1049,7 @@ screen UI_Menu_Options_Gallery():
                     idle "images/UI/Arrow_4 IDLE.webp"
                     hover "images/UI/Arrow_4 HOVER.webp"
                     action If (a_menu_2 == 0, true=(SetVariable("a_menu_2", math.ceil((0.25 * len(cellbg)) - 1.25))), false=(SetVariable("a_menu_2", a_menu_2-1)))
-                text "Gallery" size 60
+                text renpy.translate_string("Gallery") size 60
                 imagebutton:
                     idle "images/UI/Arrow_6 IDLE.webp"
                     hover "images/UI/Arrow_6 HOVER.webp"
@@ -1096,7 +1096,7 @@ screen UI_Menu_Options_Message():
         xalign 0.5
         yalign 0.5
         spacing 10
-        text "Not available yet"
+        text renpy.translate_string("Not available yet")
 
     imagebutton:
         xalign 0.41
@@ -1136,13 +1136,13 @@ screen UI_Menu_Options_Settings():
                 xalign 0.5
                 hbox:
                     xalign 0.5
-                    label "Edit Data"
+                    label renpy.translate_string("Edit Data")
                 hbox:
                     xalign 0.5
-                    textbutton "Character Names" action SetVariable("a_menu_1", "rename")
+                    textbutton renpy.translate_string("Character Names") action SetVariable("a_menu_1", "rename")
                 hbox:
                     xalign 0.5
-                    textbutton "Stats & Attributes" action SetVariable("a_menu_1", "Cheat")
+                    textbutton renpy.translate_string("Stats & Attributes") action SetVariable("a_menu_1", "Cheat")
             
             hbox:
                 xalign 0.5
@@ -1169,21 +1169,21 @@ screen UI_Menu_Options_Settings():
             vbox:
                 spacing 20
                 if a_menu_1 == "Cheat":
-                    label "Stats & Attributes"
-                    text "Stats and attributes can only be editable by enabling cheat. Cheat codes are available on the montly update posts for [C_Dat]{b}big tiers{/b}[C_Off] on [C_Dat]{b}SubscribeStar{/b}[C_Off] and [C_Dat]{b}Patreon{/b}[C_Off]."
-                    textbutton "How to use codes" action Jump("UI_Menu_Guide_Code")
+                    label renpy.translate_string("Stats & Attributes")
+                    text renpy.translate_string("Stats and attributes can only be editable by enabling cheat. Cheat codes are available on the montly update posts for [C_Dat]{b}big tiers{/b}[C_Off] on [C_Dat]{b}SubscribeStar{/b}[C_Off] and [C_Dat]{b}Patreon{/b}[C_Off].")
+                    textbutton renpy.translate_string("How to use codes") action Jump("UI_Menu_Guide_Code")
                     if not preferences.cheatmode:
-                        text "[C_Neg]Cheat is disabled[C_Off]."
+                        text renpy.translate_string("[C_Neg]Cheat is disabled[C_Off].")
                     else:
-                        text "[C_Pos]Cheat is enabled[C_Off]. Drag the bars to edit data values."
+                        text renpy.translate_string("[C_Pos]Cheat is enabled[C_Off]. Drag the bars to edit data values.")
                 elif a_menu_1 == "rename":
-                    label "Character Names"
-                    text "Click on character names to change it. Then write or just leave it blank to generate a random name."
-                    text "{p}{b}Generation Method:{/b}"
-                    textbutton "All names" action SetVariable("fnamelang", "All")
-                    textbutton "Brazilian names" action SetVariable("fnamelang", "Brazilian")
-                    textbutton "Fantasy names" action SetVariable("fnamelang", "Fantasy")
-                    text "{p}Would you like to see a generation method with names from your country/language or from themes that you find interesting? Then consider suggesting a list of names on our Discord!"
+                    label renpy.translate_string("Character Names")
+                    text renpy.translate_string("Click on character names to change it. Then write or just leave it blank to generate a random name.")
+                    text renpy.translate_string("{p}{b}Generation Method:{/b}")
+                    textbutton renpy.translate_string("All names") action SetVariable("fnamelang", "All")
+                    textbutton renpy.translate_string("Brazilian names") action SetVariable("fnamelang", "Brazilian")
+                    textbutton renpy.translate_string("Fantasy names") action SetVariable("fnamelang", "Fantasy")
+                    text renpy.translate_string("{p}Would you like to see a generation method with names from your country/language or from themes that you find interesting? Then consider suggesting a list of names on our Discord!")
         frame:
             xalign 1.0
             xsize 600
@@ -1199,65 +1199,65 @@ screen UI_Menu_Options_Settings():
                     vbox:
                         spacing 25
                         if a_menu_1 == "rename":
-                            label "Available Maps"
+                            label renpy.translate_string("Available Maps")
                             hbox:
                                 spacing 10
                                 vbox:
                                     yalign 0.5
                                     image "icon_city"
                                 vbox:
-                                    textbutton "[rnamecity]" action Function(renpy.call, "rename_rnamecity")
+                                    textbutton renpy.translate_string("[rnamecity]") action Function(renpy.call, "rename_rnamecity")
 
                             text ""
-                            label "Available Characters"
+                            label renpy.translate_string("Available Characters")
                             hbox:
                                 spacing 10
                                 vbox:
                                     yalign 0.5
                                     image "icon_hero"
                                 vbox:
-                                    textbutton "[fnamehero]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "hero", 1)
-                                    textbutton "[lnamehero]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "hero", 2)
+                                    textbutton renpy.translate_string("[fnamehero]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "hero", 1)
+                                    textbutton renpy.translate_string("[lnamehero]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "hero", 2)
                             hbox:
                                 spacing 10
                                 vbox:
                                     yalign 0.5
                                     image "icon_wsis"
                                 vbox:
-                                    textbutton "[fnamewsis]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "wsis", 1)
-                                    textbutton "[lnamestep]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "wsis", 2)
+                                    textbutton renpy.translate_string("[fnamewsis]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "wsis", 1)
+                                    textbutton renpy.translate_string("[lnamestep]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "wsis", 2)
                             hbox:
                                 spacing 10
                                 vbox:
                                     yalign 0.5
                                     image "icon_wmom"
                                 vbox:
-                                    textbutton "[fnamewmom]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "wmom", 1)
-                                    textbutton "[lnamestep]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "wmom", 2)
+                                    textbutton renpy.translate_string("[fnamewmom]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "wmom", 1)
+                                    textbutton renpy.translate_string("[lnamestep]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "wmom", 2)
                             hbox:
                                 spacing 10
                                 vbox:
                                     yalign 0.5
                                     image "icon_wcou"
                                 vbox:
-                                    textbutton "[fnamewcou]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "wcou", 1)
-                                    textbutton "[lnamerela]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "wcou", 2)
+                                    textbutton renpy.translate_string("[fnamewcou]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "wcou", 1)
+                                    textbutton renpy.translate_string("[lnamerela]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "wcou", 2)
                             hbox:
                                 spacing 10
                                 vbox:
                                     yalign 0.5
                                     image "icon_wgma"
                                 vbox:
-                                    textbutton "[fnamewgma]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "wgma", 1)
-                                    textbutton "[lnamerela]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "wgma", 2)
+                                    textbutton renpy.translate_string("[fnamewgma]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "wgma", 1)
+                                    textbutton renpy.translate_string("[lnamerela]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "wgma", 2)
                             hbox:
                                 spacing 10
                                 vbox:
                                     yalign 0.5
                                     image "icon_wnei"
                                 vbox:
-                                    textbutton "[fnamewnei]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "wnei", 1)
-                                    textbutton "[lnamewnei]" action Function(renpy.invoke_in_new_context, ChaNameWrite, "wnei", 2)
+                                    textbutton renpy.translate_string("[fnamewnei]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "wnei", 1)
+                                    textbutton renpy.translate_string("[lnamewnei]") action Function(renpy.invoke_in_new_context, ChaNameWrite, "wnei", 2)
                             if hero_quest_2 >= 1:
                                 hbox:
                                     spacing 10
@@ -1265,9 +1265,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_wpre"
                                     vbox:
-                                        textbutton "[fnamewpre]":
+                                        textbutton renpy.translate_string("[fnamewpre]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wpre", 1)
-                                        textbutton "[lnamewpre]":
+                                        textbutton renpy.translate_string("[lnamewpre]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wpre", 2)
                                 hbox:
                                     spacing 10
@@ -1275,9 +1275,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_wric"
                                     vbox:
-                                        textbutton "[fnamewric]":
+                                        textbutton renpy.translate_string("[fnamewric]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wric", 1)
-                                        textbutton "[lnamewric]":
+                                        textbutton renpy.translate_string("[lnamewric]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wric", 2)
                                 hbox:
                                     spacing 10
@@ -1285,9 +1285,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_wgal"
                                     vbox:
-                                        textbutton "[fnamewgal]":
+                                        textbutton renpy.translate_string("[fnamewgal]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wgal", 1)
-                                        textbutton "[lnamewgal]":
+                                        textbutton renpy.translate_string("[lnamewgal]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wgal", 2)
                                 hbox:
                                     spacing 10
@@ -1295,9 +1295,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_wota"
                                     vbox:
-                                        textbutton "[fnamewota]":
+                                        textbutton renpy.translate_string("[fnamewota]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wota", 1)
-                                        textbutton "[lnamewota]":
+                                        textbutton renpy.translate_string("[lnamewota]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wota", 2)
                                 hbox:
                                     spacing 10
@@ -1305,9 +1305,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_wdis"
                                     vbox:
-                                        textbutton "[fnamewdis]":
+                                        textbutton renpy.translate_string("[fnamewdis]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wdis", 1)
-                                        textbutton "[lnamewdis]":
+                                        textbutton renpy.translate_string("[lnamewdis]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wdis", 2)
                                 hbox:
                                     spacing 10
@@ -1315,9 +1315,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_hriv"
                                     vbox:
-                                        textbutton "[fnamehriv]":
+                                        textbutton renpy.translate_string("[fnamehriv]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "hriv", 1)
-                                        textbutton "[lnamehriv]":
+                                        textbutton renpy.translate_string("[lnamehriv]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "hriv", 2)
                                 hbox:
                                     spacing 10
@@ -1325,9 +1325,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_hprv"
                                     vbox:
-                                        textbutton "[fnamehprv]":
+                                        textbutton renpy.translate_string("[fnamehprv]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "hprv", 1)
-                                        textbutton "[lnamehprv]":
+                                        textbutton renpy.translate_string("[lnamehprv]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "hprv", 2)
                                 hbox:
                                     spacing 10
@@ -1335,22 +1335,22 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_wsuk"
                                     vbox:
-                                        textbutton "[fnamewsuk]":
+                                        textbutton renpy.translate_string("[fnamewsuk]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wsuk", 1)
-                                        textbutton "[lnamewsuk]":
+                                        textbutton renpy.translate_string("[lnamewsuk]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wsuk", 2)
 
                                 text ""
-                                label "Unavailable Characters"
+                                label renpy.translate_string("Unavailable Characters")
                                 hbox:
                                     spacing 10
                                     vbox:
                                         yalign 0.5
                                         image "icon_wdel"
                                     vbox:
-                                        textbutton "[fnamewdel]":
+                                        textbutton renpy.translate_string("[fnamewdel]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wdel", 1)
-                                        textbutton "[lnamewdel]":
+                                        textbutton renpy.translate_string("[lnamewdel]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wdel", 2)
                                 hbox:
                                     spacing 10
@@ -1358,9 +1358,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_wuza"
                                     vbox:
-                                        textbutton "[fnamewuza]":
+                                        textbutton renpy.translate_string("[fnamewuza]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wuza", 1)
-                                        textbutton "[lnamewuza]":
+                                        textbutton renpy.translate_string("[lnamewuza]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wuza", 2)
                                 hbox:
                                     spacing 10
@@ -1368,9 +1368,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_wlaz"
                                     vbox:
-                                        textbutton "[fnamewlaz]":
+                                        textbutton renpy.translate_string("[fnamewlaz]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wlaz", 1)
-                                        textbutton "[lnamewlaz]":
+                                        textbutton renpy.translate_string("[lnamewlaz]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wlaz", 2)
                                 hbox:
                                     spacing 10
@@ -1378,9 +1378,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_wgot"
                                     vbox:
-                                        textbutton "[fnamewgot]":
+                                        textbutton renpy.translate_string("[fnamewgot]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wgot", 1)
-                                        textbutton "[lnamewgot]":
+                                        textbutton renpy.translate_string("[lnamewgot]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wgot", 2)
                                 hbox:
                                     spacing 10
@@ -1388,9 +1388,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_hine"
                                     vbox:
-                                        textbutton "[fnamehine]":
+                                        textbutton renpy.translate_string("[fnamehine]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "hine", 1)
-                                        textbutton "[lnamehine]":
+                                        textbutton renpy.translate_string("[lnamehine]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "hine", 2)
                                 hbox:
                                     spacing 10
@@ -1398,9 +1398,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_wdan"
                                     vbox:
-                                        textbutton "[fnamewdan]":
+                                        textbutton renpy.translate_string("[fnamewdan]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wdan", 1)
-                                        textbutton "[lnamewdan]":
+                                        textbutton renpy.translate_string("[lnamewdan]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wdan", 2)
                                 hbox:
                                     spacing 10
@@ -1408,9 +1408,9 @@ screen UI_Menu_Options_Settings():
                                         yalign 0.5
                                         image "icon_wrin"
                                     vbox:
-                                        textbutton "[fnamewrin]":
+                                        textbutton renpy.translate_string("[fnamewrin]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wrin", 1)
-                                        textbutton "[lnamewrin]":
+                                        textbutton renpy.translate_string("[lnamewrin]"):
                                                 action Function(renpy.invoke_in_new_context, ChaNameWrite, "wrin", 2)
 
                         if a_menu_1 == "Cheat":
@@ -1418,111 +1418,111 @@ screen UI_Menu_Options_Settings():
                                 vbox:
                                     spacing 50
                                     vbox:
-                                        text "{image=icon_hero} [C_Nam][fnamehero][C_Off]"
-                                        text "{image=images/UI/ICON_StatInt.webp}: " + str(stat_int)[:4] + "%"
-                                        text "{image=images/UI/ICON_StatCha.webp}: " + str(stat_cha)[:4] + "%"
-                                        text "{image=images/UI/ICON_StatPhy.webp}: " + str(stat_phy)[:4] + "%"
+                                        text renpy.translate_string("{image=icon_hero} [C_Nam][fnamehero][C_Off]")
+                                        text renpy.translate_string("{image=images/UI/ICON_StatInt.webp}: ") + str(stat_int)[:4] + "%"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatCha.webp}: ") + str(stat_cha)[:4] + "%"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatPhy.webp}: ") + str(stat_phy)[:4] + "%"
                                     vbox:
-                                        text "{image=icon_wmom} [C_Nam][fnamewmom][C_Off]"
-                                        text "{image=images/UI/ICON_StatInti.webp}: " + str(wmom_inti)[:4] + "%"
-                                        text "{image=images/UI/ICON_StatLove.webp}: " + str(wmom_love)[:4] + "%"
-                                        text "{image=images/UI/ICON_StatLust.webp}: " + str(wmom_lust)[:4] + "%"
+                                        text renpy.translate_string("{image=icon_wmom} [C_Nam][fnamewmom][C_Off]")
+                                        text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wmom_inti)[:4] + "%"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wmom_love)[:4] + "%"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wmom_lust)[:4] + "%"
                                     vbox:
-                                        text "{image=icon_wsis} [C_Nam][fnamewsis][C_Off]"
-                                        text "{image=images/UI/ICON_StatInti.webp}: " + str(wsis_inti)[:4] + "%"
-                                        text "{image=images/UI/ICON_StatLove.webp}: " + str(wsis_love)[:4] + "%"
-                                        text "{image=images/UI/ICON_StatLust.webp}: " + str(wsis_lust)[:4] + "%"
+                                        text renpy.translate_string("{image=icon_wsis} [C_Nam][fnamewsis][C_Off]")
+                                        text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wsis_inti)[:4] + "%"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wsis_love)[:4] + "%"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wsis_lust)[:4] + "%"
                                     vbox:
-                                        text "{image=icon_wnei} [C_Nam][fnamewnei][C_Off]"
-                                        text "{image=images/UI/ICON_StatInti.webp}: " + str(wnei_inti)[:4] + "%"
-                                        text "{image=images/UI/ICON_StatLove.webp}: " + str(wnei_love)[:4] + "%"
-                                        text "{image=images/UI/ICON_StatLust.webp}: " + str(wnei_lust)[:4] + "%"
+                                        text renpy.translate_string("{image=icon_wnei} [C_Nam][fnamewnei][C_Off]")
+                                        text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wnei_inti)[:4] + "%"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wnei_love)[:4] + "%"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wnei_lust)[:4] + "%"
                                     if wpre_quest_1 >= 1:
                                         vbox:
-                                            text "{image=icon_wpre} [C_Nam][fnamewpre][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(wpre_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(wpre_love)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLust.webp}: " + str(wpre_lust)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_wpre} [C_Nam][fnamewpre][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wpre_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wpre_love)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wpre_lust)[:4] + "%"
                                     if wric_quest_1 >= 1:
                                         vbox:
-                                            text "{image=icon_wric} [C_Nam][fnamewric][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(wric_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(wric_love)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLust.webp}: " + str(wric_lust)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_wric} [C_Nam][fnamewric][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wric_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wric_love)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wric_lust)[:4] + "%"
                                     if wgal_quest_1 >= 1:
                                         vbox:
-                                            text "{image=icon_wgal} [C_Nam][fnamewgal][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(wgal_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(wgal_love)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLust.webp}: " + str(wgal_lust)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_wgal} [C_Nam][fnamewgal][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wgal_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wgal_love)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wgal_lust)[:4] + "%"
                                     if wota_quest_1 >= 1:
                                         vbox:
-                                            text "{image=icon_wota} [C_Nam][fnamewota][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(wota_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(wota_love)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLust.webp}: " + str(wota_lust)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_wota} [C_Nam][fnamewota][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wota_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wota_love)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wota_lust)[:4] + "%"
                                     if wdis_quest_1 >= 1:
                                         vbox:
-                                            text "{image=icon_wdis} [C_Nam][fnamewdis][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(wdis_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(wdis_love)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLust.webp}: " + str(wdis_lust)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_wdis} [C_Nam][fnamewdis][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wdis_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wdis_love)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wdis_lust)[:4] + "%"
                                     if wgot_quest_1 >= 1:
                                         vbox:
-                                            text "{image=icon_wgot} [C_Nam][fnamewgot][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(wgot_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(wgot_love)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLust.webp}: " + str(wgot_lust)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_wgot} [C_Nam][fnamewgot][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wgot_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wgot_love)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wgot_lust)[:4] + "%"
                                     if wdel_quest_1 >= 1:
                                         vbox:
-                                            text "{image=icon_wdel} [C_Nam][fnamewdel][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(wdel_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(wdel_love)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLust.webp}: " + str(wdel_lust)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_wdel} [C_Nam][fnamewdel][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wdel_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wdel_love)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wdel_lust)[:4] + "%"
                                     if wuza_quest_1 >= 1:
                                         vbox:
-                                            text "{image=icon_wuza} [C_Nam][fnamewuza][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(wuza_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(wuza_love)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLust.webp}: " + str(wuza_lust)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_wuza} [C_Nam][fnamewuza][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wuza_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wuza_love)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wuza_lust)[:4] + "%"
                                     if wlaz_quest_1 >= 1:
                                         vbox:
-                                            text "{image=icon_wlaz} [C_Nam][fnamewlaz][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(wlaz_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(wlaz_love)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLust.webp}: " + str(wlaz_lust)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_wlaz} [C_Nam][fnamewlaz][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(wlaz_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(wlaz_love)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}: ") + str(wlaz_lust)[:4] + "%"
                                     if hriv_quest[0] >= 1:
                                         vbox:
-                                            text "{image=icon_hriv} [C_Nam][fnamehriv][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(hriv_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(hriv_love)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_hriv} [C_Nam][fnamehriv][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(hriv_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(hriv_love)[:4] + "%"
                                     if hprv_quest_1 >= 1:
                                         vbox:
-                                            text "{image=icon_hprv} [C_Nam][fnamehprv][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(hprv_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(hprv_love)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_hprv} [C_Nam][fnamehprv][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(hprv_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(hprv_love)[:4] + "%"
                                     if hine_quest_1 >= 1:
                                         vbox:
-                                            text "{image=icon_hine} [C_Nam][fnamehine][C_Off]"
-                                            text "{image=images/UI/ICON_StatInti.webp}: " + str(hine_inti)[:4] + "%"
-                                            text "{image=images/UI/ICON_StatLove.webp}: " + str(hine_love)[:4] + "%"
+                                            text renpy.translate_string("{image=icon_hine} [C_Nam][fnamehine][C_Off]")
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}: ") + str(hine_inti)[:4] + "%"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}: ") + str(hine_love)[:4] + "%"
 
                             else:
                                 vbox:
-                                    label "{image=icon_hero} [C_Nam][fnamehero][C_Off]"
+                                    label renpy.translate_string("{image=icon_hero} [C_Nam][fnamehero][C_Off]")
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatInt.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatInt.webp}")
                                         bar value VariableValue("stat_int", 100) xmaximum 300
                                         text str(stat_int) + "%"
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatCha.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatCha.webp}")
                                         bar value VariableValue("stat_cha", 100) xmaximum 300
                                         text str(stat_cha) + "%"
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatPhy.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatPhy.webp}")
                                         bar value VariableValue("stat_phy", 100) xmaximum 300
                                         text str(stat_phy) + "%"
                                     textbutton ("Money: [C_Pos]Infinite (ON)[C_Off]" if cheat_money else "Money: "+str(round(money, 2))) action Function(Cheat_Infinite, "money")
@@ -1530,296 +1530,296 @@ screen UI_Menu_Options_Settings():
                                     text ""
 
                                 vbox:
-                                    label "{image=icon_wmom} [C_Nam][fnamewmom][C_Off]"
+                                    label renpy.translate_string("{image=icon_wmom} [C_Nam][fnamewmom][C_Off]")
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatInti.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                         bar value VariableValue("wmom_inti", wmom_inti_cap) xmaximum 300
                                         text str(wmom_inti) + "%"
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatLove.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                         bar value VariableValue("wmom_love", 100) xmaximum 300
                                         text str(wmom_love) + "%"
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatLust.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                         bar value VariableValue("wmom_lust", 100) xmaximum 300
                                         text str(wmom_lust) + "%"
                                     text ""
 
                                 vbox:
-                                    label "{image=icon_wsis} [C_Nam][fnamewsis][C_Off]"
+                                    label renpy.translate_string("{image=icon_wsis} [C_Nam][fnamewsis][C_Off]")
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatInti.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                         bar value VariableValue("wsis_inti", wsis_inti_cap) xmaximum 300
                                         text str(wsis_inti) + "%"
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatLove.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                         bar value VariableValue("wsis_love", 100) xmaximum 300
                                         text str(wsis_love) + "%"
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatLust.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                         bar value VariableValue("wsis_lust", 100) xmaximum 300
                                         text str(wsis_lust) + "%"
                                     text ""
 
                                 vbox:
-                                    label "{image=icon_wnei} [C_Nam][fnamewnei][C_Off]"
+                                    label renpy.translate_string("{image=icon_wnei} [C_Nam][fnamewnei][C_Off]")
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatInti.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                         bar value VariableValue("wnei_inti", wnei_inti_cap) xmaximum 300
                                         text str(wnei_inti) + "%"
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatLove.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                         bar value VariableValue("wnei_love", 100) xmaximum 300
                                         text str(wnei_love) + "%"
                                     hbox:
                                         spacing 10
-                                        text "{image=images/UI/ICON_StatLust.webp}"
+                                        text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                         bar value VariableValue("wnei_lust", 100) xmaximum 300
                                         text str(wnei_lust) + "%"
                                     text ""
 
                                 if wpre_quest_1 >= 1:
                                     vbox:
-                                        label "{image=icon_wpre} [C_Nam][fnamewpre][C_Off]"
+                                        label renpy.translate_string("{image=icon_wpre} [C_Nam][fnamewpre][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("wpre_inti", char_inti_cap) xmaximum 300
                                             text str(wpre_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("wpre_love", 100) xmaximum 300
                                             text str(wpre_love) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLust.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                             bar value VariableValue("wpre_lust", 100) xmaximum 300
                                             text str(wpre_lust) + "%"
                                         text ""
 
                                 if wric_quest_1 >= 1:
                                     vbox:
-                                        label "{image=icon_wric} [C_Nam][fnamewric][C_Off]"
+                                        label renpy.translate_string("{image=icon_wric} [C_Nam][fnamewric][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("wric_inti", char_inti_cap) xmaximum 300
                                             text str(wric_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("wric_love", 100) xmaximum 300
                                             text str(wric_love) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLust.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                             bar value VariableValue("wric_lust", 100) xmaximum 300
                                             text str(wric_lust) + "%"
                                         text ""
 
                                 if wgal_quest_1 >= 1:
                                     vbox:
-                                        label "{image=icon_wgal} [C_Nam][fnamewgal][C_Off]"
+                                        label renpy.translate_string("{image=icon_wgal} [C_Nam][fnamewgal][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("wgal_inti", char_inti_cap) xmaximum 300
                                             text str(wgal_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("wgal_love", 100) xmaximum 300
                                             text str(wgal_love) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLust.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                             bar value VariableValue("wgal_lust", 100) xmaximum 300
                                             text str(wgal_lust) + "%"
                                         text ""
 
                                 if wota_quest_1 >= 1:
                                     vbox:
-                                        label "{image=icon_wota} [C_Nam][fnamewota][C_Off]"
+                                        label renpy.translate_string("{image=icon_wota} [C_Nam][fnamewota][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("wota_inti", char_inti_cap) xmaximum 300
                                             text str(wota_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("wota_love", 100) xmaximum 300
                                             text str(wota_love) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLust.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                             bar value VariableValue("wota_lust", 100) xmaximum 300
                                             text str(wota_lust) + "%"
                                         text ""
 
                                 if wdis_quest_1 >= 1:
                                     vbox:
-                                        label "{image=icon_wdis} [C_Nam][fnamewdis][C_Off]"
+                                        label renpy.translate_string("{image=icon_wdis} [C_Nam][fnamewdis][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("wdis_inti", char_inti_cap) xmaximum 300
                                             text str(wdis_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("wdis_love", 100) xmaximum 300
                                             text str(wdis_love) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLust.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                             bar value VariableValue("wdis_lust", 100) xmaximum 300
                                             text str(wdis_lust) + "%"
                                         text ""
 
                                 if wgot_quest_1 >= 1:
                                     vbox:
-                                        label "{image=icon_wgot} [C_Nam][fnamewgot][C_Off]"
+                                        label renpy.translate_string("{image=icon_wgot} [C_Nam][fnamewgot][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("wgot_inti", char_inti_cap) xmaximum 300
                                             text str(wgot_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("wgot_love", 100) xmaximum 300
                                             text str(wgot_love) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLust.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                             bar value VariableValue("wgot_lust", 100) xmaximum 300
                                             text str(wgot_lust) + "%"
                                         text ""
 
                                 if wdel_quest_1 >= 1:
                                     vbox:
-                                        label "{image=icon_wdel} [C_Nam][fnamewdel][C_Off]"
+                                        label renpy.translate_string("{image=icon_wdel} [C_Nam][fnamewdel][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("wdel_inti", char_inti_cap) xmaximum 300
                                             text str(wdel_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("wdel_love", 100) xmaximum 300
                                             text str(wdel_love) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLust.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                             bar value VariableValue("wdel_lust", 100) xmaximum 300
                                             text str(wdel_lust) + "%"
                                         text ""
 
                                 if wuza_quest_1 >= 1:
                                     vbox:
-                                        label "{image=icon_wuza} [C_Nam][fnamewuza][C_Off]"
+                                        label renpy.translate_string("{image=icon_wuza} [C_Nam][fnamewuza][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("wuza_inti", char_inti_cap) xmaximum 300
                                             text str(wuza_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("wuza_love", 100) xmaximum 300
                                             text str(wuza_love) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLust.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                             bar value VariableValue("wuza_lust", 100) xmaximum 300
                                             text str(wuza_lust) + "%"
                                         text ""
 
                                 if wlaz_quest_1 >= 1:
                                     vbox:
-                                        label "{image=icon_wlaz} [C_Nam][fnamewlaz][C_Off]"
+                                        label renpy.translate_string("{image=icon_wlaz} [C_Nam][fnamewlaz][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("wlaz_inti", char_inti_cap) xmaximum 300
                                             text str(wlaz_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("wlaz_love", 100) xmaximum 300
                                             text str(wlaz_love) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLust.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLust.webp}")
                                             bar value VariableValue("wlaz_lust", 100) xmaximum 300
                                             text str(wlaz_lust) + "%"
                                         text ""
 
                                 if hriv_quest[0] >= 1:
                                     vbox:
-                                        label "{image=icon_hriv} [C_Nam][fnamehriv][C_Off]"
+                                        label renpy.translate_string("{image=icon_hriv} [C_Nam][fnamehriv][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("hriv_inti", char_inti_cap) xmaximum 300
                                             text str(hriv_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("hriv_love", 100) xmaximum 300
                                             text str(hriv_love) + "%"
                                         text ""
 
                                 if hprv_quest_1 >= 1:
                                     vbox:
-                                        label "{image=icon_hprv} [C_Nam][fnamehprv][C_Off]"
+                                        label renpy.translate_string("{image=icon_hprv} [C_Nam][fnamehprv][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("hprv_inti", char_inti_cap) xmaximum 300
                                             text str(hprv_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("hprv_love", 100) xmaximum 300
                                             text str(hprv_love) + "%"
                                         text ""
 
                                 if hine_quest_1 >= 1:
                                     vbox:
-                                        label "{image=icon_hine} [C_Nam][fnamehine][C_Off]"
+                                        label renpy.translate_string("{image=icon_hine} [C_Nam][fnamehine][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("hine_inti", char_inti_cap) xmaximum 300
                                             text str(hine_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("hine_love", 100) xmaximum 300
                                             text str(hine_love) + "%"
                                         text ""
                                     vbox:
-                                        label "{image=icon_wsuk} [C_Nam][fnamewsuk][C_Off]"
+                                        label renpy.translate_string("{image=icon_wsuk} [C_Nam][fnamewsuk][C_Off]")
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatInti.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatInti.webp}")
                                             bar value VariableValue("wsuk_inti", char_inti_cap) xmaximum 300
                                             text str(wsuk_inti) + "%"
                                         hbox:
                                             spacing 10
-                                            text "{image=images/UI/ICON_StatLove.webp}"
+                                            text renpy.translate_string("{image=images/UI/ICON_StatLove.webp}")
                                             bar value VariableValue("wsuk_love", 100) xmaximum 300
                                             text str(wsuk_love) + "%"
                                         text ""
@@ -1859,7 +1859,7 @@ screen UI_Menu_Options_Music(mr):
                 viewport:
                     mousewheel True scrollbars "vertical" draggable True
                     has vbox
-                    label "Soundtrack" style "music_room_title"
+                    label renpy.translate_string("Soundtrack") style "music_room_title"
                     ## get_tracklist takes one argument, all_tracks. If all_tracks is
                     ## True, it shows all tracks, including locked ones (which will be
                     ## shown grayed out). If all_tracks is False, it only shows unlocked
@@ -1914,7 +1914,7 @@ screen UI_Menu_Options_Music(mr):
                 if current_track:
                     add current_track.art xalign 0.5 xsize 500 fit "contain"
                     label current_track.name xalign 0.5
-                    text "[C_Mnd]"+current_track.artist+"[C_Off]" xalign 0.5
+                    text renpy.translate_string("[C_Mnd]")+current_track.artist+"[C_Off]" xalign 0.5
                 else:
                     ## To maintain sizing, the default art is shown at alpha 0.0.
                     ## You can also just include it without the alpha 0.0 to display
@@ -2003,7 +2003,7 @@ screen UI_Menu_Options_Music(mr):
                             idle "repeat_all_button"
                             action mr.CycleLoop()
                         if mr.single_track:
-                            text "{size=60}{b}1{/b}{/size}" at colorize_button() xalign 0.5 yalign 0.5
+                            text renpy.translate_string("{size=60}{b}1{/b}{/size}") at colorize_button() xalign 0.5 yalign 0.5
                 viewport:
                     xsize 540
                     ysize 350
@@ -2051,19 +2051,19 @@ screen UI_Menu_Options_KCC():
                 spacing 10
                 vbox:
                     xalign 0.5
-                    label "Dev Info{p}"
+                    label renpy.translate_string("Dev Info{p}")
                 vbox:
                     xalign 0.5
-                    textbutton "Projects" action SetVariable("a_menu_1", 0)
+                    textbutton renpy.translate_string("Projects") action SetVariable("a_menu_1", 0)
                 vbox:
                     xalign 0.5
-                    textbutton "Discord" action SetVariable("a_menu_1", "DISCORD")
+                    textbutton renpy.translate_string("Discord") action SetVariable("a_menu_1", "DISCORD")
                 vbox:
                     xalign 0.5
-                    textbutton "Support" action SetVariable("a_menu_1", "SUPPORT")
+                    textbutton renpy.translate_string("Support") action SetVariable("a_menu_1", "SUPPORT")
                 vbox:
                     xalign 0.5
-                    textbutton "KCC" action SetVariable("a_menu_1", "KCC")
+                    textbutton renpy.translate_string("KCC") action SetVariable("a_menu_1", "KCC")
             
             hbox:
                 xalign 0.5
@@ -2096,39 +2096,39 @@ screen UI_Menu_Options_KCC():
                     vbox:
                         spacing 15
                         if a_menu_1 == 0:
-                            label "All In One"
-                            text "You can simply access my Carrd to know everything about my games, projects, and social media."
-                            textbutton "Open Carrd" action [OpenURL("https://quiquersson.carrd.co/"), Return()]
-                            label "{p}Social Media"
-                            text "You can follow me on your preferred social media."
-                            textbutton "Open YouTube" action [OpenURL("https://www.youtube.com/@quiquersson"), Return()]
-                            textbutton "Open Twitch" action [OpenURL("https://www.twitch.tv/quiquersson"), Return()]
-                            textbutton "Open X/Twitter" action [OpenURL("https://x.com/quiquersson"), Return()]
-                            textbutton "Open Instagram" action [OpenURL("https://www.instagram.com/quiquersson/"), Return()]
-                            textbutton "Open DeviantArt" action [OpenURL("https://www.deviantart.com/quiquersson"), Return()]
-                            label "{p}Games"
-                            text "Follow my account on itch.io to stay up to date with updates of WelCUM To The City and Kawaii Character Creator."
-                            textbutton "Open Itch" action [OpenURL("https://quiquersson.itch.io"), Return()]
-                            label "{p}SFW Stuff"
-                            text "Feel free to follow my SFW accounts and projects if you're interested."
-                            textbutton "Open Carrd" action [OpenURL("https://kikeluzi.carrd.co/"), Return()]
+                            label renpy.translate_string("All In One")
+                            text renpy.translate_string("You can simply access my Carrd to know everything about my games, projects, and social media.")
+                            textbutton renpy.translate_string("Open Carrd") action [OpenURL("https://quiquersson.carrd.co/"), Return()]
+                            label renpy.translate_string("{p}Social Media")
+                            text renpy.translate_string("You can follow me on your preferred social media.")
+                            textbutton renpy.translate_string("Open YouTube") action [OpenURL("https://www.youtube.com/@quiquersson"), Return()]
+                            textbutton renpy.translate_string("Open Twitch") action [OpenURL("https://www.twitch.tv/quiquersson"), Return()]
+                            textbutton renpy.translate_string("Open X/Twitter") action [OpenURL("https://x.com/quiquersson"), Return()]
+                            textbutton renpy.translate_string("Open Instagram") action [OpenURL("https://www.instagram.com/quiquersson/"), Return()]
+                            textbutton renpy.translate_string("Open DeviantArt") action [OpenURL("https://www.deviantart.com/quiquersson"), Return()]
+                            label renpy.translate_string("{p}Games")
+                            text renpy.translate_string("Follow my account on itch.io to stay up to date with updates of WelCUM To The City and Kawaii Character Creator.")
+                            textbutton renpy.translate_string("Open Itch") action [OpenURL("https://quiquersson.itch.io"), Return()]
+                            label renpy.translate_string("{p}SFW Stuff")
+                            text renpy.translate_string("Feel free to follow my SFW accounts and projects if you're interested.")
+                            textbutton renpy.translate_string("Open Carrd") action [OpenURL("https://kikeluzi.carrd.co/"), Return()]
                             
                         if a_menu_1 == "KCC":
-                            label "Kawaii Character Creator"
-                            text "Create your own character in this sexy Dress-Up game"
-                            textbutton "Open the game" action [OpenURL("https://quiquersson.itch.io/kcc"), Return()]
+                            label renpy.translate_string("Kawaii Character Creator")
+                            text renpy.translate_string("Create your own character in this sexy Dress-Up game")
+                            textbutton renpy.translate_string("Open the game") action [OpenURL("https://quiquersson.itch.io/kcc"), Return()]
 
                         if a_menu_1 == "DISCORD":
-                            label "Discord"
-                            text "Join our Discord and let's do fun community things, like:{p}{image=starchan} Interact with other cool pervert people like us{p}{image=starchan} Give me game feedbacks{p}{image=starchan} Report errors{p}{image=starchan} Give suggestions for future characters or scenes. {p}{image=starchan} Chat with WelCUM To The City characters '-'"
+                            label renpy.translate_string("Discord")
+                            text renpy.translate_string("Join our Discord and let's do fun community things, like:{p}{image=starchan} Interact with other cool pervert people like us{p}{image=starchan} Give me game feedbacks{p}{image=starchan} Report errors{p}{image=starchan} Give suggestions for future characters or scenes. {p}{image=starchan} Chat with WelCUM To The City characters '-'")
                             image "UI/Guide/Discord.webp"
-                            textbutton "Join Our Guild" action [OpenURL("https://discord.gg/raU65TZqbE"), Return()]
+                            textbutton renpy.translate_string("Join Our Guild") action [OpenURL("https://discord.gg/raU65TZqbE"), Return()]
 
                         if a_menu_1 == "SUPPORT":
-                            label "Financial Support"
-                            text "You can directly support me on Patreon or SubscribeStar, allowing me to dedicate more time to game development. Plus you get early access to my games and also access to some exclusive stuff. I should be posting the same content on both platforms from now on.."
-                            textbutton "Open Patreon" action [OpenURL("https://www.patreon.com/quiquersson"), Return()]
-                            textbutton "Open SubscribeStar" action [OpenURL("https://subscribestar.adult/quiquersson"), Return()]
+                            label renpy.translate_string("Financial Support")
+                            text renpy.translate_string("You can directly support me on Patreon or SubscribeStar, allowing me to dedicate more time to game development. Plus you get early access to my games and also access to some exclusive stuff. I should be posting the same content on both platforms from now on..")
+                            textbutton renpy.translate_string("Open Patreon") action [OpenURL("https://www.patreon.com/quiquersson"), Return()]
+                            textbutton renpy.translate_string("Open SubscribeStar") action [OpenURL("https://subscribestar.adult/quiquersson"), Return()]
                 vbar value YScrollValue("ScrollAuthorData")
 
 screen UI_Menu_Options_Contacts():
@@ -2185,19 +2185,19 @@ screen UI_Menu_Options_Contacts():
                     hbox:
                         xalign 0.5
                         if len(getattr(store, a_menu_1 + "_achiev_wear")) >= 2:
-                            textbutton "{size=60}◀{/size}" action [SetVariable("a_menu_8", (a_menu_8 - 1) % max(1, len(getattr(store, a_menu_1 + "_achiev_wear"))))]
+                            textbutton renpy.translate_string("{size=60}◀{/size}") action [SetVariable("a_menu_8", (a_menu_8 - 1) % max(1, len(getattr(store, a_menu_1 + "_achiev_wear"))))]
                         else:
-                            textbutton "{size=60}◀{/size}" action None
-                        text "{size=60} Style {/size}"
+                            textbutton renpy.translate_string("{size=60}◀{/size}") action None
+                        text renpy.translate_string("{size=60} Style {/size}")
                         if len(getattr(store, a_menu_1 + "_achiev_wear")) >= 2:
-                            textbutton "{size=60}▶{/size}" action [SetVariable("a_menu_8", (a_menu_8 + 1) % max(1, len(getattr(store, a_menu_1 + "_achiev_wear"))))]
+                            textbutton renpy.translate_string("{size=60}▶{/size}") action [SetVariable("a_menu_8", (a_menu_8 + 1) % max(1, len(getattr(store, a_menu_1 + "_achiev_wear"))))]
                         else:
-                            textbutton "{size=60}▶{/size}" action None
+                            textbutton renpy.translate_string("{size=60}▶{/size}") action None
             else:
                 vbox:
                     spacing 10 xalign 0.5 yalign 0.15
-                    label "Select a Character" xalign 0.5 yalign 0.15
-                    textbutton "{size=40}Style{/size}" action None xalign 0.5
+                    label renpy.translate_string("Select a Character") xalign 0.5 yalign 0.15
+                    textbutton renpy.translate_string("{size=40}Style{/size}") action None xalign 0.5
 
 
             add "images/UI/CellphoneBG/Menu_FG.webp"
@@ -2396,12 +2396,12 @@ screen UI_Menu_Options_Contacts():
                                             spacing 10
                                             frame:
                                                 background "#323232" xsize 420 ysize 100 xalign 0.5 yalign 0.5 xpadding 0 ypadding 0
-                                                textbutton "{size=50}[_char_fname]{/size}":
+                                                textbutton renpy.translate_string("{size=50}[_char_fname]{/size}"):
                                                     xalign 0.5 yalign 0.5
                                                     action Function(renpy.invoke_in_new_context, ChaNameWrite, a_menu_1, 1)
                                             frame:
                                                 background "#323232" xsize 420 ysize 100 xalign 0.5 yalign 0.5 xpadding 0 ypadding 0
-                                                textbutton "{size=50}[_char_lname]{/size}":
+                                                textbutton renpy.translate_string("{size=50}[_char_lname]{/size}"):
                                                     xalign 0.5 yalign 0.5
                                                     action Function(renpy.invoke_in_new_context, ChaNameWrite, a_menu_1, 2)
 
@@ -2423,7 +2423,7 @@ screen UI_Menu_Options_Contacts():
                                                             selected_idle At("images/UI/" + _icon + ".webp", ButtonHover)
                                                             yalign 0.5
                                                             action ToggleVariable("a_menu_10", _main, 0)
-                                                        text "{size=50}" + _name + ": " + str(stat_value("hero", _main))[:4] + "%{/size}" yalign 0.5 outlines [(2, "#191919", 0, 0)]
+                                                        text renpy.translate_string("{size=50}") + _name + ": " + str(stat_value("hero", _main))[:4] + "%{/size}" yalign 0.5 outlines [(2, "#191919", 0, 0)]
                                                 if a_menu_10 == _main:
                                                     for _sub, _sub_name in _subs:
                                                         frame:
@@ -2432,7 +2432,7 @@ screen UI_Menu_Options_Contacts():
                                                                 bar value HeroStatValue(_sub) ymaximum 80 xmaximum 780
                                                             else:
                                                                 bar value stat_value("hero", _sub) range 100 ymaximum 80 xmaximum 780
-                                                            text "{size=40}• " + _sub_name + ": " + str(stat_value("hero", _sub))[:4] + "%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
+                                                            text renpy.translate_string("{size=40}• ") + _sub_name + ": " + str(stat_value("hero", _sub))[:4] + "%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
                                         else:
                                             frame:
                                                 background None xsize 850 ysize 100 xalign 0.5 yalign 0.5 xpadding 0 ypadding 0
@@ -2460,21 +2460,21 @@ screen UI_Menu_Options_Contacts():
 
                                                     else:
                                                         bar value stat_value(a_menu_1, "inti") range char_inti_cap ymaximum 100 xmaximum 850 xalign 0.5 yalign 0.5
-                                                text "{size=50}{image=images/UI/ICON_StatInti.webp} Intimacy: "+str(stat_value(a_menu_1, "inti"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
+                                                text renpy.translate_string("{size=50}{image=images/UI/ICON_StatInti.webp} Intimacy: ")+str(stat_value(a_menu_1, "inti"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
                                             frame:
                                                 background None xsize 850 ysize 100 xalign 0.5 yalign 0.5 xpadding 0 ypadding 0
                                                 if preferences.cheatmode:
                                                     bar value VariableValue(stat_key(a_menu_1, "love"), 100, action=Function(check_stat)) ymaximum 100 xmaximum 850
                                                 else:
                                                     bar value (stat_value(a_menu_1, "love")+100) range 200 ymaximum 100 xmaximum 850
-                                                text "{size=50}{image=images/UI/ICON_StatLove.webp} Love: "+str(stat_value(a_menu_1, "love"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
+                                                text renpy.translate_string("{size=50}{image=images/UI/ICON_StatLove.webp} Love: ")+str(stat_value(a_menu_1, "love"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
                                             frame:
                                                 background None xsize 850 ysize 100 xalign 0.5 yalign 0.5 xpadding 0 ypadding 0
                                                 if preferences.cheatmode:
                                                     bar value VariableValue(stat_key(a_menu_1, "lust"), 100, action=Function(check_stat)) ymaximum 100 xmaximum 850
                                                 else:
                                                     bar value stat_value(a_menu_1, "lust") range 100 ymaximum 100 xmaximum 850
-                                                text "{size=50}{image=images/UI/ICON_StatLust.webp} Lust: "+str(stat_value(a_menu_1, "lust"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
+                                                text renpy.translate_string("{size=50}{image=images/UI/ICON_StatLust.webp} Lust: ")+str(stat_value(a_menu_1, "lust"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
                                         if a_menu_1 == "wnei":
                                             hbox:
                                                 spacing 10
@@ -2484,14 +2484,14 @@ screen UI_Menu_Options_Contacts():
                                                         bar value VariableValue(stat_key("hpap", "love"), wnei_inti_cap, action=Function(check_stat)) ymaximum 100 xmaximum 420
                                                     else:
                                                         bar value (stat_value("hpap", "love")) range wnei_inti_cap ymaximum 100 xmaximum 420
-                                                    text "{size=50}👨‍👧 Dad's: "+str(stat_value("hpap", "love"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
+                                                    text renpy.translate_string("{size=50}👨‍👧 Dad's: ")+str(stat_value("hpap", "love"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
                                                 frame:
                                                     background None xsize 420 ysize 100 xalign 0.5 yalign 0.5 xpadding 0 ypadding 0
                                                     if preferences.cheatmode:
                                                         bar value VariableValue(stat_key("wmam", "love"), wnei_inti_cap, action=Function(check_stat)) ymaximum 100 xmaximum 420
                                                     else:
                                                         bar value (stat_value("wmam", "love")) range wnei_inti_cap ymaximum 100 xmaximum 420
-                                                    text "{size=50}👩‍👧 Mom's: "+str(stat_value("wmam", "love"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
+                                                    text renpy.translate_string("{size=50}👩‍👧 Mom's: ")+str(stat_value("wmam", "love"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
                                         if a_menu_1 == "hero" or perk_int_per >= 1:
                                             frame:
                                                 background None xsize 850 ysize 100 xalign 0.5 yalign 0.5 xpadding 0 ypadding 0
@@ -2499,14 +2499,14 @@ screen UI_Menu_Options_Contacts():
                                                     bar value VariableValue(stat_key(a_menu_1, "hyg"), 100, action=Function(check_stat)) ymaximum 100 xmaximum 850
                                                 else:
                                                     bar value stat_value(a_menu_1, "hyg") range 100 ymaximum 100 xmaximum 850
-                                                text "{size=50}{image=images/UI/ICON_StatHyg.webp} Hygiene: "+str(stat_value(a_menu_1, "hyg"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
+                                                text renpy.translate_string("{size=50}{image=images/UI/ICON_StatHyg.webp} Hygiene: ")+str(stat_value(a_menu_1, "hyg"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
                                             frame:
                                                 background None xsize 850 ysize 100 xalign 0.5 yalign 0.5 xpadding 0 ypadding 0
                                                 if preferences.cheatmode:
                                                     bar value VariableValue(stat_key(a_menu_1, "eat"), 100, action=Function(check_stat)) ymaximum 100 xmaximum 850
                                                 else:
                                                     bar value stat_value(a_menu_1, "eat") range 100 ymaximum 100 xmaximum 850
-                                                text "{size=50}🍗 Saciety: "+str(stat_value(a_menu_1, "eat"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
+                                                text renpy.translate_string("{size=50}🍗 Saciety: ")+str(stat_value(a_menu_1, "eat"))[:4]+"%{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
                                             hbox:
                                                 spacing 10
                                                 frame:
@@ -2517,7 +2517,7 @@ screen UI_Menu_Options_Contacts():
                                                             xalign 0.0 yalign 0.5 xpos 10 text_outlines [(2, "#191919", 0, 0)]
                                                             action Function(Cheat_Infinite, "money")
                                                     else:
-                                                        text "{size=50}{image=images/UI/ICON_StatMon.webp} Money: $"+str(stat_value(a_menu_1, "money"))[:4]+"{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
+                                                        text renpy.translate_string("{size=50}{image=images/UI/ICON_StatMon.webp} Money: $")+str(stat_value(a_menu_1, "money"))[:4]+"{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
                                                 frame:
                                                     background "#323232" xsize 420 ysize 100 xalign 0.5 yalign 0.5 xpadding 0 ypadding 0
                                                     if preferences.cheatmode and a_menu_1 == "hero":
@@ -2526,20 +2526,20 @@ screen UI_Menu_Options_Contacts():
                                                             xalign 0.0 yalign 0.5 xpos 10 text_outlines [(2, "#191919", 0, 0)]
                                                             action Function(Cheat_Infinite, "perk")
                                                     else:
-                                                        text "{size=50}🗿 Perks: [perk]{/size}" xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
+                                                        text renpy.translate_string("{size=50}🗿 Perks: [perk]{/size}") xalign 0.0 yalign 0.5 xpos 10 outlines [(2, "#191919", 0, 0)]
 
 
                                 vbar value YScrollValue("ScrollOCData")
 
                         elif a_menu_4 == 0 and a_menu_1 == "none":
                             # Name Generation Tools
-                            label "Name Generation"
+                            label renpy.translate_string("Name Generation")
                                         
                             $ _batch_chars = ["hero", "wmom", "wsis", "wnei", "wcou", "wgma", "wpre", "wric", "wgal", "wota", "wdis", "wgot", "wdel", "wuza", "wlaz", "hprv", "hine", "hriv", "wsuk", "wdan", "wrin"]
-                            textbutton "Generate All First Names" action Function(ChaNameGen, char_id=_batch_chars, target=1)
-                            textbutton "Generate All Last Names" action Function(ChaNameGen, char_id=_batch_chars, target=2)
+                            textbutton renpy.translate_string("Generate All First Names") action Function(ChaNameGen, char_id=_batch_chars, target=1)
+                            textbutton renpy.translate_string("Generate All Last Names") action Function(ChaNameGen, char_id=_batch_chars, target=2)
 
-                            text "{p}{b}Generation Method:{/b} [fnamelang]"
+                            text renpy.translate_string("{p}{b}Generation Method:{/b} [fnamelang]")
 
                             hbox:
                                 spacing 10
@@ -2585,7 +2585,7 @@ screen UI_Menu_Options_Contacts():
                                 spacing 10
                                 vbox:
                                     xalign 0.5
-                                    label "Content Progress"
+                                    label renpy.translate_string("Content Progress")
                                 vbox:
                                     xalign 0.5
                                     bar value (_content_done if _content_total else 1) range (_content_total or 1) xmaximum 650
@@ -2612,8 +2612,8 @@ screen UI_Menu_Options_Contacts():
                                                 elif a_menu_1 != "none":
                                                     vbox:
                                                         xalign 0.5
-                                                        label "{p}Unavailable Content" xalign 0.5
-                                                        text "Oops. No data available for this character in the current game version." xalign 0.5
+                                                        label renpy.translate_string("{p}Unavailable Content") xalign 0.5
+                                                        text renpy.translate_string("Oops. No data available for this character in the current game version.") xalign 0.5
                                         vbar value YScrollValue("ScrollContent")
 
                         elif a_menu_4 == 3 and a_menu_1 not in  ["none", "hero"]:
@@ -2623,11 +2623,11 @@ screen UI_Menu_Options_Contacts():
                                     draggable True mousewheel True
                                     vbox:
                                         spacing 10
-                                        text "{b}Map:{/b} " + str(getattr(store, a_menu_1 + "_map"))
-                                        text "{b}Wear:{/b} " + str(getattr(store, a_menu_1 + "_wear"))
-                                        text "{b}Activity:{/b} " + str(getattr(store, a_menu_1 + "_activity_current")) + ", {b}Since:{/b} " + str(Get_MinuteToClock(getattr(store, a_menu_1 + "_activity_time_start"))) + ", {b}To:{/b} " + str(Get_MinuteToClock(getattr(store, a_menu_1 + "_activity_time_end")))
+                                        text renpy.translate_string("{b}Map:{/b} ") + str(getattr(store, a_menu_1 + "_map"))
+                                        text renpy.translate_string("{b}Wear:{/b} ") + str(getattr(store, a_menu_1 + "_wear"))
+                                        text renpy.translate_string("{b}Activity:{/b} ") + str(getattr(store, a_menu_1 + "_activity_current")) + ", {b}Since:{/b} " + str(Get_MinuteToClock(getattr(store, a_menu_1 + "_activity_time_start"))) + ", {b}To:{/b} " + str(Get_MinuteToClock(getattr(store, a_menu_1 + "_activity_time_end")))
                                         if persistent.debug == True or perk_int_per >= 2:
-                                            text "{b}Done List:{/b}\n" + (
+                                            text renpy.translate_string("{b}Done List:{/b}\n") + (
                                                 "\n".join([
                                                     "{color=#64AFFF}* " + (
                                                         str(item["name"]) if isinstance(item["name"], str)
@@ -2644,7 +2644,7 @@ screen UI_Menu_Options_Contacts():
                                                 ]) if getattr(store, a_menu_1 + "_activity_list_done") else "Empty"
                                             )
                                         if persistent.debug == True or perk_int_per >= 3:
-                                            text "{b}To Do:{/b}\n" + (
+                                            text renpy.translate_string("{b}To Do:{/b}\n") + (
                                                 "\n".join([
                                                     "{color=#64AFFF}* " + (
                                                         str(item["name"]) if isinstance(item["name"], str)
@@ -2682,7 +2682,7 @@ screen UI_Menu_Options_Skill():
                 "images/UI/CellphoneBG/Menu_Mask_2.webp"
             )
 
-            label "Select a Skill" xalign 0.5 yalign 0.3
+            label renpy.translate_string("Select a Skill") xalign 0.5 yalign 0.3
             side ("c l"):
                 area (-50, 0, 620, 490)
                 xalign 0.5 yalign 0.65 xoffset 50
@@ -2955,315 +2955,315 @@ screen UI_Menu_Options_Skill():
             yalign 0.0
             vbox:
                 spacing 25
-                label "Talents" xalign 0.5
-                text "{b}Level:{/b} [lvl], {b}Experience:{/b} [xp_now], {b}Perks:{/b} [perk]"
+                label renpy.translate_string("Talents") xalign 0.5
+                text renpy.translate_string("{b}Level:{/b} [lvl], {b}Experience:{/b} [xp_now], {b}Perks:{/b} [perk]")
                 bar value xp_now range xp_max
 
                 if a_menu_2 == "perk_phy_str":
                     if perk_phy_str == 0 and perk >= 1 and stat_phy_str >= 5:
-                        label "Strength"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_phy_str", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Strength")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_phy_str", 1), SetVariable("perk", perk-1)]
                     elif perk_phy_str == 1 and perk >= 2 and stat_phy_str >= 20:
-                        label "Strength (LVL 1)"
-                        textbutton "Spend 2 Points" action [SetVariable("perk_phy_str", 2), SetVariable("perk", perk-2)]
+                        label renpy.translate_string("Strength (LVL 1)")
+                        textbutton renpy.translate_string("Spend 2 Points") action [SetVariable("perk_phy_str", 2), SetVariable("perk", perk-2)]
                     elif perk_phy_str == 2 and perk >= 3 and stat_phy_str >= 80:
-                        label "Strength (LVL 2)"
-                        textbutton "Spend 3 Points" action [SetVariable("perk_phy_str", 3), SetVariable("perk", perk-3)]
+                        label renpy.translate_string("Strength (LVL 2)")
+                        textbutton renpy.translate_string("Spend 3 Points") action [SetVariable("perk_phy_str", 3), SetVariable("perk", perk-3)]
                     elif perk_phy_str == 3:
-                        label "Strength (LVL 3)"
-                        textbutton "[C_Pos]Complete[C_Off]" action None
+                        label renpy.translate_string("Strength (LVL 3)")
+                        textbutton renpy.translate_string("[C_Pos]Complete[C_Off]") action None
                     else:
                         if perk_phy_str > 0:
-                            label "Strength (LVL [perk_phy_str])"
+                            label renpy.translate_string("Strength (LVL [perk_phy_str])")
                         if perk_phy_str == 0:
-                            label "Strength"
-                            textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                            label renpy.translate_string("Strength")
+                            textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
                         if perk_phy_str == 1:
-                            textbutton "[C_Mnd]Spend 2 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 2 Points[C_Off]") action None
                         if perk_phy_str == 2:
-                            textbutton "[C_Mnd]Spend 3 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 3 Points[C_Off]") action None
 
                 if a_menu_2 == "perk_phy_agi":
                     if 1 < 0:
-                        label "Agility"
-                        textbutton "[C_Mnd]Unavailable[C_Off]" action None
+                        label renpy.translate_string("Agility")
+                        textbutton renpy.translate_string("[C_Mnd]Unavailable[C_Off]") action None
                     elif perk_phy_agi == 0 and perk >= 1 and stat_phy_agi >= 5:
-                        label "Agility"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_phy_agi", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Agility")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_phy_agi", 1), SetVariable("perk", perk-1)]
                     elif perk_phy_agi == 1 and perk >= 2 and stat_phy_agi >= 20:
-                        label "Agility (LVL 1)"
-                        textbutton "Spend 2 Points" action [SetVariable("perk_phy_agi", 2), SetVariable("perk", perk-2)]
+                        label renpy.translate_string("Agility (LVL 1)")
+                        textbutton renpy.translate_string("Spend 2 Points") action [SetVariable("perk_phy_agi", 2), SetVariable("perk", perk-2)]
                     elif perk_phy_agi == 2 and perk >= 3 and stat_phy_agi >= 80:
-                        label "Agility (LVL 2)"
-                        textbutton "Spend 3 Points" action [SetVariable("perk_phy_agi", 3), SetVariable("perk", perk-3)]
+                        label renpy.translate_string("Agility (LVL 2)")
+                        textbutton renpy.translate_string("Spend 3 Points") action [SetVariable("perk_phy_agi", 3), SetVariable("perk", perk-3)]
                     elif perk_phy_agi == 3:
-                        label "Agility (LVL 3)"
-                        textbutton "[C_Pos]Complete[C_Off]" action None
+                        label renpy.translate_string("Agility (LVL 3)")
+                        textbutton renpy.translate_string("[C_Pos]Complete[C_Off]") action None
                     else:
                         if perk_phy_agi > 0:
-                            label "Agility (LVL [perk_phy_agi])"
+                            label renpy.translate_string("Agility (LVL [perk_phy_agi])")
                         if perk_phy_agi == 0:
-                            label "Agility"
-                            textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                            label renpy.translate_string("Agility")
+                            textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
                         if perk_phy_agi == 1:
-                            textbutton "[C_Mnd]Spend 2 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 2 Points[C_Off]") action None
                         if perk_phy_agi == 2:
-                            textbutton "[C_Mnd]Spend 3 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 3 Points[C_Off]") action None
 
                 if a_menu_2 == "perk_phy_res":
                     if 1 < 0:
-                        label "Endurance"
-                        textbutton "[C_Mnd]Unavailable[C_Off]" action None
+                        label renpy.translate_string("Endurance")
+                        textbutton renpy.translate_string("[C_Mnd]Unavailable[C_Off]") action None
                     elif perk_phy_res == 0 and perk >= 1 and stat_phy_res >= 5:
-                        label "Endurance"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_phy_res", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Endurance")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_phy_res", 1), SetVariable("perk", perk-1)]
                     elif perk_phy_res == 1 and perk >= 2 and stat_phy_res >= 20:
-                        label "Endurance (LVL 1)"
-                        textbutton "Spend 2 Points" action [SetVariable("perk_phy_res", 2), SetVariable("perk", perk-2)]
+                        label renpy.translate_string("Endurance (LVL 1)")
+                        textbutton renpy.translate_string("Spend 2 Points") action [SetVariable("perk_phy_res", 2), SetVariable("perk", perk-2)]
                     elif perk_phy_res == 2 and perk >= 3 and stat_phy_res >= 80:
-                        label "Endurance (LVL 2)"
-                        textbutton "Spend 3 Points" action [SetVariable("perk_phy_res", 3), SetVariable("perk", perk-3)]
+                        label renpy.translate_string("Endurance (LVL 2)")
+                        textbutton renpy.translate_string("Spend 3 Points") action [SetVariable("perk_phy_res", 3), SetVariable("perk", perk-3)]
                     elif perk_phy_res == 3:
-                        label "Endurance (LVL 3)"
-                        textbutton "[C_Pos]Complete[C_Off]" action None
+                        label renpy.translate_string("Endurance (LVL 3)")
+                        textbutton renpy.translate_string("[C_Pos]Complete[C_Off]") action None
                     else:
                         if perk_phy_res > 0:
-                            label "Endurance (LVL [perk_phy_res])"
+                            label renpy.translate_string("Endurance (LVL [perk_phy_res])")
                         if perk_phy_res == 0:
-                            label "Endurance"
-                            textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                            label renpy.translate_string("Endurance")
+                            textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
                         if perk_phy_res == 1:
-                            textbutton "[C_Mnd]Spend 2 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 2 Points[C_Off]") action None
                         if perk_phy_res == 2:
-                            textbutton "[C_Mnd]Spend 3 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 3 Points[C_Off]") action None
 
                 if a_menu_2 == "perk_int_per":
                     if perk_int_per == 0 and perk >= 1 and stat_int_per >= 5:
-                        label "Perception"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_int_per", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Perception")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_int_per", 1), SetVariable("perk", perk-1)]
                     elif perk_int_per == 1 and perk >= 2 and stat_int_per >= 20:
-                        label "Perception (LVL 1)"
-                        textbutton "Spend 2 Points" action [SetVariable("perk_int_per", 2), SetVariable("perk", perk-2)]
+                        label renpy.translate_string("Perception (LVL 1)")
+                        textbutton renpy.translate_string("Spend 2 Points") action [SetVariable("perk_int_per", 2), SetVariable("perk", perk-2)]
                     elif perk_int_per == 2 and perk >= 3 and stat_int_per >= 80:
-                        label "Perception (LVL 2)"
-                        textbutton "Spend 3 Points" action [SetVariable("perk_int_per", 3), SetVariable("perk", perk-3)]
+                        label renpy.translate_string("Perception (LVL 2)")
+                        textbutton renpy.translate_string("Spend 3 Points") action [SetVariable("perk_int_per", 3), SetVariable("perk", perk-3)]
                     elif perk_int_per == 3:
-                        label "Perception (LVL 3)"
-                        textbutton "[C_Pos]Complete[C_Off]" action None
+                        label renpy.translate_string("Perception (LVL 3)")
+                        textbutton renpy.translate_string("[C_Pos]Complete[C_Off]") action None
                     else:
                         if perk_int_per > 0:
-                            label "Perception (LVL [perk_int_per])"
+                            label renpy.translate_string("Perception (LVL [perk_int_per])")
                         if perk_int_per == 0:
-                            label "Perception"
-                            textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                            label renpy.translate_string("Perception")
+                            textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
                         if perk_int_per == 1:
-                            textbutton "[C_Mnd]Spend 2 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 2 Points[C_Off]") action None
                         if perk_int_per == 2:
-                            textbutton "[C_Mnd]Spend 3 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 3 Points[C_Off]") action None
 
                 if a_menu_2 == "perk_int_mem":
                     if perk_int_mem == 0 and perk >= 1 and stat_int_mem >= 5:
-                        label "Knowledge"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_int_mem", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Knowledge")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_int_mem", 1), SetVariable("perk", perk-1)]
                     elif perk_int_mem == 1 and perk >= 2 and stat_int_mem >= 20:
-                        label "Knowledge (LVL 1)"
-                        textbutton "Spend 2 Points" action [SetVariable("perk_int_mem", 2), SetVariable("perk", perk-2)]
+                        label renpy.translate_string("Knowledge (LVL 1)")
+                        textbutton renpy.translate_string("Spend 2 Points") action [SetVariable("perk_int_mem", 2), SetVariable("perk", perk-2)]
                     elif perk_int_mem == 2 and perk >= 3 and stat_int_mem >= 80:
-                        label "Knowledge (LVL 2)"
-                        textbutton "Spend 3 Points" action [SetVariable("perk_int_mem", 3), SetVariable("perk", perk-3)]
+                        label renpy.translate_string("Knowledge (LVL 2)")
+                        textbutton renpy.translate_string("Spend 3 Points") action [SetVariable("perk_int_mem", 3), SetVariable("perk", perk-3)]
                     elif perk_int_mem == 3:
-                        label "Knowledge (LVL 3)"
-                        textbutton "[C_Pos]Complete[C_Off]" action None
+                        label renpy.translate_string("Knowledge (LVL 3)")
+                        textbutton renpy.translate_string("[C_Pos]Complete[C_Off]") action None
                     else:
                         if perk_int_mem > 0:
-                            label "Knowledge (LVL [perk_int_mem])"
+                            label renpy.translate_string("Knowledge (LVL [perk_int_mem])")
                         if perk_int_mem == 0:
-                            label "Knowledge"
-                            textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                            label renpy.translate_string("Knowledge")
+                            textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
                         if perk_int_mem == 1:
-                            textbutton "[C_Mnd]Spend 2 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 2 Points[C_Off]") action None
                         if perk_int_mem == 2:
-                            textbutton "[C_Mnd]Spend 3 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 3 Points[C_Off]") action None
 
                 if a_menu_2 == "perk_int_log":
                     if 1 < 0:
-                        label "Logic"
-                        textbutton "[C_Mnd]Unavailable[C_Off]" action None
+                        label renpy.translate_string("Logic")
+                        textbutton renpy.translate_string("[C_Mnd]Unavailable[C_Off]") action None
                     elif perk_int_log == 0 and perk >= 1 and stat_int_log >= 5:
-                        label "Logic"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_int_log", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Logic")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_int_log", 1), SetVariable("perk", perk-1)]
                     elif perk_int_log == 1 and perk >= 2 and stat_int_log >= 20:
-                        label "Logic (LVL 1)"
-                        textbutton "Spend 2 Points" action [SetVariable("perk_int_log", 2), SetVariable("perk", perk-2)]
+                        label renpy.translate_string("Logic (LVL 1)")
+                        textbutton renpy.translate_string("Spend 2 Points") action [SetVariable("perk_int_log", 2), SetVariable("perk", perk-2)]
                     elif perk_int_log == 2 and perk >= 3 and stat_int_log >= 80:
-                        label "Logic (LVL 2)"
-                        textbutton "Spend 3 Points" action [SetVariable("perk_int_log", 3), SetVariable("perk", perk-3)]
+                        label renpy.translate_string("Logic (LVL 2)")
+                        textbutton renpy.translate_string("Spend 3 Points") action [SetVariable("perk_int_log", 3), SetVariable("perk", perk-3)]
                     elif perk_int_log == 3:
-                        label "Logic (LVL 3)"
-                        textbutton "[C_Pos]Complete[C_Off]" action None
+                        label renpy.translate_string("Logic (LVL 3)")
+                        textbutton renpy.translate_string("[C_Pos]Complete[C_Off]") action None
                     else:
                         if perk_int_log > 0:
-                            label "Logic (LVL [perk_int_log])"
+                            label renpy.translate_string("Logic (LVL [perk_int_log])")
                         if perk_int_log == 0:
-                            label "Logic"
-                            textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                            label renpy.translate_string("Logic")
+                            textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
                         if perk_int_log == 1:
-                            textbutton "[C_Mnd]Spend 2 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 2 Points[C_Off]") action None
                         if perk_int_log == 2:
-                            textbutton "[C_Mnd]Spend 3 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 3 Points[C_Off]") action None
 
                 if a_menu_2 == "perk_cha_sex":
                     if perk_cha_sex == 0 and perk >= 1 and stat_cha_sex >= 5:
-                        label "Sensuality"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_cha_sex", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Sensuality")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_cha_sex", 1), SetVariable("perk", perk-1)]
                     elif perk_cha_sex == 1 and perk >= 2 and stat_cha_sex >= 20:
-                        label "Sensuality (LVL 1)"
-                        textbutton "Spend 2 Points" action [SetVariable("perk_cha_sex", 2), SetVariable("perk", perk-2)]
+                        label renpy.translate_string("Sensuality (LVL 1)")
+                        textbutton renpy.translate_string("Spend 2 Points") action [SetVariable("perk_cha_sex", 2), SetVariable("perk", perk-2)]
                     elif perk_cha_sex == 2 and perk >= 3 and stat_cha_sex >= 80:
-                        label "Sensuality (LVL 2)"
-                        textbutton "Spend 3 Points" action [SetVariable("perk_cha_sex", 3), SetVariable("perk", perk-3)]
+                        label renpy.translate_string("Sensuality (LVL 2)")
+                        textbutton renpy.translate_string("Spend 3 Points") action [SetVariable("perk_cha_sex", 3), SetVariable("perk", perk-3)]
                     elif perk_cha_sex == 3:
-                        label "Sensuality (LVL 3)"
-                        textbutton "[C_Pos]Complete[C_Off]" action None
+                        label renpy.translate_string("Sensuality (LVL 3)")
+                        textbutton renpy.translate_string("[C_Pos]Complete[C_Off]") action None
                     else:
                         if perk_cha_sex > 0:
-                            label "Sensuality (LVL [perk_cha_sex])"
+                            label renpy.translate_string("Sensuality (LVL [perk_cha_sex])")
                         if perk_cha_sex == 0:
-                            label "Sensuality"
-                            textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                            label renpy.translate_string("Sensuality")
+                            textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
                         if perk_cha_sex == 1:
-                            textbutton "[C_Mnd]Spend 2 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 2 Points[C_Off]") action None
                         if perk_cha_sex == 2:
-                            textbutton "[C_Mnd]Spend 3 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 3 Points[C_Off]") action None
 
                 if a_menu_2 == "perk_cha_per":
                     if perk_cha_per == 0 and perk >= 1 and stat_cha_per >= 5:
-                        label "Performance"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_cha_per", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Performance")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_cha_per", 1), SetVariable("perk", perk-1)]
                     elif perk_cha_per == 1 and perk >= 2 and stat_cha_per >= 20:
-                        label "Performance (LVL 1)"
-                        textbutton "Spend 2 Points" action [SetVariable("perk_cha_per", 2), SetVariable("perk", perk-2)]
+                        label renpy.translate_string("Performance (LVL 1)")
+                        textbutton renpy.translate_string("Spend 2 Points") action [SetVariable("perk_cha_per", 2), SetVariable("perk", perk-2)]
                     elif perk_cha_per == 2 and perk >= 3 and stat_cha_per >= 80:
-                        label "Performance (LVL 2)"
-                        textbutton "Spend 3 Points" action [SetVariable("perk_cha_per", 3), SetVariable("perk", perk-3)]
+                        label renpy.translate_string("Performance (LVL 2)")
+                        textbutton renpy.translate_string("Spend 3 Points") action [SetVariable("perk_cha_per", 3), SetVariable("perk", perk-3)]
                     elif perk_cha_per == 3:
-                        label "Performance (LVL 3)"
-                        textbutton "[C_Pos]Complete[C_Off]" action None
+                        label renpy.translate_string("Performance (LVL 3)")
+                        textbutton renpy.translate_string("[C_Pos]Complete[C_Off]") action None
                     else:
                         if perk_cha_per > 0:
-                            label "Performance (LVL [perk_cha_per])"
+                            label renpy.translate_string("Performance (LVL [perk_cha_per])")
                         if perk_cha_per == 0:
-                            label "Performance"
-                            textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                            label renpy.translate_string("Performance")
+                            textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
                         if perk_cha_per == 1:
-                            textbutton "[C_Mnd]Spend 2 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 2 Points[C_Off]") action None
                         if perk_cha_per == 2:
-                            textbutton "[C_Mnd]Spend 3 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 3 Points[C_Off]") action None
 
                 if a_menu_2 == "perk_cha_soc":
                     if 1 < 0:
-                        label "Social"
-                        textbutton "[C_Mnd]Unavailable[C_Off]" action None
+                        label renpy.translate_string("Social")
+                        textbutton renpy.translate_string("[C_Mnd]Unavailable[C_Off]") action None
                     elif perk_cha_soc == 0 and perk >= 1 and stat_cha_soc >= 5:
-                        label "Social"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_cha_soc", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Social")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_cha_soc", 1), SetVariable("perk", perk-1)]
                     elif perk_cha_soc == 1 and perk >= 2 and stat_cha_soc >= 20:
-                        label "Social (LVL 1)"
-                        textbutton "Spend 2 Points" action [SetVariable("perk_cha_soc", 2), SetVariable("perk", perk-2)]
+                        label renpy.translate_string("Social (LVL 1)")
+                        textbutton renpy.translate_string("Spend 2 Points") action [SetVariable("perk_cha_soc", 2), SetVariable("perk", perk-2)]
                     elif perk_cha_soc == 2 and perk >= 3 and stat_cha_soc >= 80:
-                        label "Social (LVL 2)"
-                        textbutton "Spend 3 Points" action [SetVariable("perk_cha_soc", 3), SetVariable("perk", perk-3)]
+                        label renpy.translate_string("Social (LVL 2)")
+                        textbutton renpy.translate_string("Spend 3 Points") action [SetVariable("perk_cha_soc", 3), SetVariable("perk", perk-3)]
                     elif perk_cha_soc == 3:
-                        label "Social (LVL 3)"
-                        textbutton "[C_Pos]Complete[C_Off]" action None
+                        label renpy.translate_string("Social (LVL 3)")
+                        textbutton renpy.translate_string("[C_Pos]Complete[C_Off]") action None
                     else:
                         if perk_cha_soc > 0:
-                            label "Social (LVL [perk_cha_soc])"
+                            label renpy.translate_string("Social (LVL [perk_cha_soc])")
                         if perk_cha_soc == 0:
-                            label "Social"
-                            textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                            label renpy.translate_string("Social")
+                            textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
                         if perk_cha_soc == 1:
-                            textbutton "[C_Mnd]Spend 2 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 2 Points[C_Off]") action None
                         if perk_cha_soc == 2:
-                            textbutton "[C_Mnd]Spend 3 Points[C_Off]" action None
+                            textbutton renpy.translate_string("[C_Mnd]Spend 3 Points[C_Off]") action None
 
                 if a_menu_2 == "perk_skl_dnc":
                     if 1 > 0:
-                        label "Dance"
-                        textbutton "[C_Mnd]Unavailable[C_Off]" action None
+                        label renpy.translate_string("Dance")
+                        textbutton renpy.translate_string("[C_Mnd]Unavailable[C_Off]") action None
                     elif perk_skl_dnc == 0 and perk >= 1 and stat_cha >= 10:
-                        label "Dance"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_skl_dnc", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Dance")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_skl_dnc", 1), SetVariable("perk", perk-1)]
                     elif perk_skl_dnc >= 1:
-                        label "Dance (LVL 1)"
-                        textbutton "[C_Pos]Skill Learned[C_Off]" action None
+                        label renpy.translate_string("Dance (LVL 1)")
+                        textbutton renpy.translate_string("[C_Pos]Skill Learned[C_Off]") action None
                     else:
-                        label "Dance (LVL [perk_skl_dnc])"
-                        textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                        label renpy.translate_string("Dance (LVL [perk_skl_dnc])")
+                        textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
 
                 if a_menu_2 == "perk_skl_gui":
                     if 1 > 0:
-                        label "Guitar"
-                        textbutton "[C_Mnd]Unavailable[C_Off]" action None
+                        label renpy.translate_string("Guitar")
+                        textbutton renpy.translate_string("[C_Mnd]Unavailable[C_Off]") action None
                     elif perk_skl_gui == 0 and perk >= 1 and stat_int >= 10:
-                        label "Guitar"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_skl_gui", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Guitar")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_skl_gui", 1), SetVariable("perk", perk-1)]
                     elif perk_skl_gui >= 1:
-                        label "Guitar (LVL 1)"
-                        textbutton "[C_Pos]Skill Learned[C_Off]" action None
+                        label renpy.translate_string("Guitar (LVL 1)")
+                        textbutton renpy.translate_string("[C_Pos]Skill Learned[C_Off]") action None
                     else:
-                        label "Guitar (LVL [perk_skl_gui])"
-                        textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                        label renpy.translate_string("Guitar (LVL [perk_skl_gui])")
+                        textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
 
                 if a_menu_2 == "perk_skl_swm":
                     if perk_skl_swm == 0 and perk >= 1 and stat_phy >= 10:
-                        label "Swimming"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_skl_swm", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Swimming")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_skl_swm", 1), SetVariable("perk", perk-1)]
                     elif perk_skl_swm >= 1:
-                        label "Swimming (LVL 1)"
-                        textbutton "[C_Pos]Skill Learned[C_Off]" action None
+                        label renpy.translate_string("Swimming (LVL 1)")
+                        textbutton renpy.translate_string("[C_Pos]Skill Learned[C_Off]") action None
                     else:
-                        label "Swimming (LVL [perk_skl_swm])"
-                        textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                        label renpy.translate_string("Swimming (LVL [perk_skl_swm])")
+                        textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
 
                 if a_menu_2 == "perk_skl_msg":
                     if 1 > 0:
-                        label "Massaging"
-                        textbutton "[C_Mnd]Unavailable[C_Off]" action None
+                        label renpy.translate_string("Massaging")
+                        textbutton renpy.translate_string("[C_Mnd]Unavailable[C_Off]") action None
                     elif perk_skl_msg == 0 and perk >= 1 and stat_cha >= 10:
-                        label "Massaging"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_skl_msg", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Massaging")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_skl_msg", 1), SetVariable("perk", perk-1)]
                     elif perk_skl_msg >= 1:
-                        label "Massaging (LVL 1)"
-                        textbutton "[C_Pos]Skill Learned[C_Off]" action None
+                        label renpy.translate_string("Massaging (LVL 1)")
+                        textbutton renpy.translate_string("[C_Pos]Skill Learned[C_Off]") action None
                     else:
-                        label "Massaging (LVL [perk_skl_msg])"
-                        textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                        label renpy.translate_string("Massaging (LVL [perk_skl_msg])")
+                        textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
 
                 if a_menu_2 == "perk_skl_cok":
                     if 1 < 0:
-                        label "Cooking"
-                        textbutton "[C_Mnd]Unavailable[C_Off]" action None
+                        label renpy.translate_string("Cooking")
+                        textbutton renpy.translate_string("[C_Mnd]Unavailable[C_Off]") action None
                     elif perk_skl_cok == 0 and perk >= 1 and stat_int >= 10:
-                        label "Cooking"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_skl_cok", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Cooking")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_skl_cok", 1), SetVariable("perk", perk-1)]
                     elif perk_skl_cok >= 1:
-                        label "Cooking (LVL 1)"
-                        textbutton "[C_Pos]Skill Learned[C_Off]" action None
+                        label renpy.translate_string("Cooking (LVL 1)")
+                        textbutton renpy.translate_string("[C_Pos]Skill Learned[C_Off]") action None
                     else:
-                        label "Cooking (LVL [perk_skl_cok])"
-                        textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                        label renpy.translate_string("Cooking (LVL [perk_skl_cok])")
+                        textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
 
                 if a_menu_2 == "perk_skl_tut":
                     if perk_skl_tut == 0 and perk >= 1 and stat_cha >= 5 and stat_int >= 5:
-                        label "Tutoring"
-                        textbutton "Spend 1 Point" action [SetVariable("perk_skl_tut", 1), SetVariable("perk", perk-1)]
+                        label renpy.translate_string("Tutoring")
+                        textbutton renpy.translate_string("Spend 1 Point") action [SetVariable("perk_skl_tut", 1), SetVariable("perk", perk-1)]
                     elif perk_skl_tut >= 1:
-                        label "Tutoring (LVL 1)"
-                        textbutton "[C_Pos]Skill Learned[C_Off]" action None
+                        label renpy.translate_string("Tutoring (LVL 1)")
+                        textbutton renpy.translate_string("[C_Pos]Skill Learned[C_Off]") action None
                     else:
-                        label "Tutoring (LVL [perk_skl_tut])"
-                        textbutton "[C_Mnd]Spend 1 Point[C_Off]" action None
+                        label renpy.translate_string("Tutoring (LVL [perk_skl_tut])")
+                        textbutton renpy.translate_string("[C_Mnd]Spend 1 Point[C_Off]") action None
 
                 side ("c l"):
                     area (0, 0, 1100, 680)
@@ -3272,465 +3272,465 @@ screen UI_Menu_Options_Skill():
                         draggable True mousewheel True
                         vbox:
                             if a_menu_2 == "perk_phy_str":
-                                text "Improves your performance when carrying girls and heavier items; increases your damage in fights [C_Mnd](when available)[C_Off]. [C_Dat]You can carry " + str(round((20 + ((3 + (perk_phy_str * 2)) * (3 + (perk_phy_str * 2)))) * (1 + (stat_phy * 0.01)), 2)) + "kg[C_Off]."
+                                text renpy.translate_string("Improves your performance when carrying girls and heavier items; increases your damage in fights [C_Mnd](when available)[C_Off]. [C_Dat]You can carry ") + str(round((20 + ((3 + (perk_phy_str * 2)) * (3 + (perk_phy_str * 2)))) * (1 + (stat_phy * 0.01)), 2)) + "kg[C_Off]."
                                 if perk_phy_str >= 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 STR"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 STR")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_phy_str >= 5:
-                                        text "{p}✅ 5 STR"
+                                        text renpy.translate_string("{p}✅ 5 STR")
                                     else:
-                                        text "{p}❌ 5 STR"
+                                        text renpy.translate_string("{p}❌ 5 STR")
 
                                 if perk_phy_str >= 2:
-                                    text "{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 STR"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 STR")
                                 else:
-                                    text "{p}{b}LVL 2{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}Requires:")
                                     if perk >= 2:
-                                        text "{p}✅ 2 Perk"
+                                        text renpy.translate_string("{p}✅ 2 Perk")
                                     else:
-                                        text "{p}❌ 2 Perk"
+                                        text renpy.translate_string("{p}❌ 2 Perk")
                                     if stat_phy_str >= 20:
-                                        text "{p}✅ 20 STR"
+                                        text renpy.translate_string("{p}✅ 20 STR")
                                     else:
-                                        text "{p}❌ 20 STR"
+                                        text renpy.translate_string("{p}❌ 20 STR")
 
                                 if perk_phy_str == 3:
-                                    text "{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 STR"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 STR")
                                 else:
-                                    text "{p}{b}LVL 3{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}Requires:")
                                     if perk >= 3:
-                                        text "{p}✅ 3 Perk"
+                                        text renpy.translate_string("{p}✅ 3 Perk")
                                     else:
-                                        text "{p}❌ 3 Perk"
+                                        text renpy.translate_string("{p}❌ 3 Perk")
                                     if stat_phy_str >= 80:
-                                        text "{p}✅ 80 STR"
+                                        text renpy.translate_string("{p}✅ 80 STR")
                                     else:
-                                        text "{p}❌ 80 STR"
+                                        text renpy.translate_string("{p}❌ 80 STR")
 
                             if a_menu_2 == "perk_phy_agi":
-                                text "Improves your speed performance. Spend less time when use fast travel. Time passes slower in agility minigames."
+                                text renpy.translate_string("Improves your speed performance. Spend less time when use fast travel. Time passes slower in agility minigames.")
                                 if perk_phy_agi >= 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 AGI"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 AGI")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_phy_agi >= 5:
-                                        text "{p}✅ 5 AGI"
+                                        text renpy.translate_string("{p}✅ 5 AGI")
                                     else:
-                                        text "{p}❌ 5 AGI"
+                                        text renpy.translate_string("{p}❌ 5 AGI")
 
                                 if perk_phy_agi >= 2:
-                                    text "{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 AGI"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 AGI")
                                 else:
-                                    text "{p}{b}LVL 2{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}Requires:")
                                     if perk >= 2:
-                                        text "{p}✅ 2 Perk"
+                                        text renpy.translate_string("{p}✅ 2 Perk")
                                     else:
-                                        text "{p}❌ 2 Perk"
+                                        text renpy.translate_string("{p}❌ 2 Perk")
                                     if stat_phy_agi >= 20:
-                                        text "{p}✅ 20 AGI"
+                                        text renpy.translate_string("{p}✅ 20 AGI")
                                     else:
-                                        text "{p}❌ 20 AGI"
+                                        text renpy.translate_string("{p}❌ 20 AGI")
 
                                 if perk_phy_agi == 3:
-                                    text "{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 AGI"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 AGI")
                                 else:
-                                    text "{p}{b}LVL 3{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}Requires:")
                                     if perk >= 3:
-                                        text "{p}✅ 3 Perk"
+                                        text renpy.translate_string("{p}✅ 3 Perk")
                                     else:
-                                        text "{p}❌ 3 Perk"
+                                        text renpy.translate_string("{p}❌ 3 Perk")
                                     if stat_phy_agi >= 80:
-                                        text "{p}✅ 80 AGI"
+                                        text renpy.translate_string("{p}✅ 80 AGI")
                                     else:
-                                        text "{p}❌ 80 AGI"
+                                        text renpy.translate_string("{p}❌ 80 AGI")
 
                             if a_menu_2 == "perk_phy_res":
-                                text "Increases your stamina and ability to perform physical activities for longer periods, and increase your resistance in fights."
+                                text renpy.translate_string("Increases your stamina and ability to perform physical activities for longer periods, and increase your resistance in fights.")
                                 if perk_phy_res >= 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 RES"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 RES")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_phy_res >= 5:
-                                        text "{p}✅ 5 RES"
+                                        text renpy.translate_string("{p}✅ 5 RES")
                                     else:
-                                        text "{p}❌ 5 RES"
+                                        text renpy.translate_string("{p}❌ 5 RES")
 
                                 if perk_phy_res >= 2:
-                                    text "{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 RES"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 RES")
                                 else:
-                                    text "{p}{b}LVL 2{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}Requires:")
                                     if perk >= 2:
-                                        text "{p}✅ 2 Perk"
+                                        text renpy.translate_string("{p}✅ 2 Perk")
                                     else:
-                                        text "{p}❌ 2 Perk"
+                                        text renpy.translate_string("{p}❌ 2 Perk")
                                     if stat_phy_res >= 20:
-                                        text "{p}✅ 20 RES"
+                                        text renpy.translate_string("{p}✅ 20 RES")
                                     else:
-                                        text "{p}❌ 20 RES"
+                                        text renpy.translate_string("{p}❌ 20 RES")
 
                                 if perk_phy_res == 3:
-                                    text "{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 RES"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 RES")
                                 else:
-                                    text "{p}{b}LVL 3{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}Requires:")
                                     if perk >= 3:
-                                        text "{p}✅ 3 Perk"
+                                        text renpy.translate_string("{p}✅ 3 Perk")
                                     else:
-                                        text "{p}❌ 3 Perk"
+                                        text renpy.translate_string("{p}❌ 3 Perk")
                                     if stat_phy_res >= 80:
-                                        text "{p}✅ 80 RES"
+                                        text renpy.translate_string("{p}✅ 80 RES")
                                     else:
-                                        text "{p}❌ 80 RES"
+                                        text renpy.translate_string("{p}❌ 80 RES")
 
                             if a_menu_2 == "perk_int_per":
-                                text "Enhances your ability to notice hidden scenes and see through characters' words and actions. Reduce chances of you to be caught by surprise in some scenes [C_Mnd](when available)[C_Off]. [C_Dat]You have a " + str(round(((perk_int_per/3)*100), 2)) + "% chance of noticing hidden things[C_Off]."
+                                text renpy.translate_string("Enhances your ability to notice hidden scenes and see through characters' words and actions. Reduce chances of you to be caught by surprise in some scenes [C_Mnd](when available)[C_Off]. [C_Dat]You have a ") + str(round(((perk_int_per/3)*100), 2)) + "% chance of noticing hidden things[C_Off]."
                                 if perk_int_per >= 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 PER"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 PER")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_int_per >= 5:
-                                        text "{p}✅ 5 PER"
+                                        text renpy.translate_string("{p}✅ 5 PER")
                                     else:
-                                        text "{p}❌ 5 PER"
+                                        text renpy.translate_string("{p}❌ 5 PER")
 
                                 if perk_int_per >= 2:
-                                    text "{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 PER"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 PER")
                                 else:
-                                    text "{p}{b}LVL 2{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}Requires:")
                                     if perk >= 2:
-                                        text "{p}✅ 2 Perk"
+                                        text renpy.translate_string("{p}✅ 2 Perk")
                                     else:
-                                        text "{p}❌ 2 Perk"
+                                        text renpy.translate_string("{p}❌ 2 Perk")
                                     if stat_int_per >= 20:
-                                        text "{p}✅ 20 PER"
+                                        text renpy.translate_string("{p}✅ 20 PER")
                                     else:
-                                        text "{p}❌ 20 PER"
+                                        text renpy.translate_string("{p}❌ 20 PER")
 
                                 if perk_int_per == 3:
-                                    text "{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 PER"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 PER")
                                 else:
-                                    text "{p}{b}LVL 3{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}Requires:")
                                     if perk >= 3:
-                                        text "{p}✅ 3 Perk"
+                                        text renpy.translate_string("{p}✅ 3 Perk")
                                     else:
-                                        text "{p}❌ 3 Perk"
+                                        text renpy.translate_string("{p}❌ 3 Perk")
                                     if stat_int_per >= 80:
-                                        text "{p}✅ 80 PER"
+                                        text renpy.translate_string("{p}✅ 80 PER")
                                     else:
-                                        text "{p}❌ 80 PER"
+                                        text renpy.translate_string("{p}❌ 80 PER")
 
                             if a_menu_2 == "perk_int_mem":
-                                text "Allows you to have knowledge of general things around you, enhances your ability to remember information and details, and slightly improves your performance in some skills."
+                                text renpy.translate_string("Allows you to have knowledge of general things around you, enhances your ability to remember information and details, and slightly improves your performance in some skills.")
                                 if perk_int_mem >= 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 MEM"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 MEM")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_int_mem >= 5:
-                                        text "{p}✅ 5 MEM"
+                                        text renpy.translate_string("{p}✅ 5 MEM")
                                     else:
-                                        text "{p}❌ 5 MEM"
+                                        text renpy.translate_string("{p}❌ 5 MEM")
 
                                 if perk_int_mem >= 2:
-                                    text "{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 MEM"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 MEM")
                                 else:
-                                    text "{p}{b}LVL 2{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}Requires:")
                                     if perk >= 2:
-                                        text "{p}✅ 2 Perk"
+                                        text renpy.translate_string("{p}✅ 2 Perk")
                                     else:
-                                        text "{p}❌ 2 Perk"
+                                        text renpy.translate_string("{p}❌ 2 Perk")
                                     if stat_int_mem >= 20:
-                                        text "{p}✅ 20 MEM"
+                                        text renpy.translate_string("{p}✅ 20 MEM")
                                     else:
-                                        text "{p}❌ 20 MEM"
+                                        text renpy.translate_string("{p}❌ 20 MEM")
 
                                 if perk_int_mem == 3:
-                                    text "{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 MEM"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 MEM")
                                 else:
-                                    text "{p}{b}LVL 3{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}Requires:")
                                     if perk >= 3:
-                                        text "{p}✅ 3 Perk"
+                                        text renpy.translate_string("{p}✅ 3 Perk")
                                     else:
-                                        text "{p}❌ 3 Perk"
+                                        text renpy.translate_string("{p}❌ 3 Perk")
                                     if stat_int_mem >= 80:
-                                        text "{p}✅ 80 MEM"
+                                        text renpy.translate_string("{p}✅ 80 MEM")
                                     else:
-                                        text "{p}❌ 80 MEM"
+                                        text renpy.translate_string("{p}❌ 80 MEM")
 
                             if a_menu_2 == "perk_int_log":
-                                text "Improves your logical reasoning skills, making it easier to solve complex problems and puzzles, and make better decisions. Time passes slower in thinking minigames."
+                                text renpy.translate_string("Improves your logical reasoning skills, making it easier to solve complex problems and puzzles, and make better decisions. Time passes slower in thinking minigames.")
                                 if perk_int_log >= 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 LOG"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 LOG")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_int_log >= 5:
-                                        text "{p}✅ 5 LOG"
+                                        text renpy.translate_string("{p}✅ 5 LOG")
                                     else:
-                                        text "{p}❌ 5 LOG"
+                                        text renpy.translate_string("{p}❌ 5 LOG")
 
                                 if perk_int_log >= 2:
-                                    text "{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 LOG"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 LOG")
                                 else:
-                                    text "{p}{b}LVL 2{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}Requires:")
                                     if perk >= 2:
-                                        text "{p}✅ 2 Perk"
+                                        text renpy.translate_string("{p}✅ 2 Perk")
                                     else:
-                                        text "{p}❌ 2 Perk"
+                                        text renpy.translate_string("{p}❌ 2 Perk")
                                     if stat_int_log >= 20:
-                                        text "{p}✅ 20 LOG"
+                                        text renpy.translate_string("{p}✅ 20 LOG")
                                     else:
-                                        text "{p}❌ 20 LOG"
+                                        text renpy.translate_string("{p}❌ 20 LOG")
 
                                 if perk_int_log == 3:
-                                    text "{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 LOG"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 LOG")
                                 else:
-                                    text "{p}{b}LVL 3{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}Requires:")
                                     if perk >= 3:
-                                        text "{p}✅ 3 Perk"
+                                        text renpy.translate_string("{p}✅ 3 Perk")
                                     else:
-                                        text "{p}❌ 3 Perk"
+                                        text renpy.translate_string("{p}❌ 3 Perk")
                                     if stat_int_log >= 80:
-                                        text "{p}✅ 80 LOG"
+                                        text renpy.translate_string("{p}✅ 80 LOG")
                                     else:
-                                        text "{p}❌ 80 LOG"
+                                        text renpy.translate_string("{p}❌ 80 LOG")
 
                             if a_menu_2 == "perk_cha_sex":
-                                text "Increases your attractiveness and the amount of lust generated in the characters. Improve your performance in H scenes. Characters get even hornier by erotic physical contacts with you, and also get horny by common physical contacts with you."
+                                text renpy.translate_string("Increases your attractiveness and the amount of lust generated in the characters. Improve your performance in H scenes. Characters get even hornier by erotic physical contacts with you, and also get horny by common physical contacts with you.")
                                 if perk_cha_sex >= 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 SEX"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 SEX")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_cha_sex >= 5:
-                                        text "{p}✅ 5 SEX"
+                                        text renpy.translate_string("{p}✅ 5 SEX")
                                     else:
-                                        text "{p}❌ 5 SEX"
+                                        text renpy.translate_string("{p}❌ 5 SEX")
 
                                 if perk_cha_sex >= 2:
-                                    text "{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 SEX"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 SEX")
                                 else:
-                                    text "{p}{b}LVL 2{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}Requires:")
                                     if perk >= 2:
-                                        text "{p}✅ 2 Perk"
+                                        text renpy.translate_string("{p}✅ 2 Perk")
                                     else:
-                                        text "{p}❌ 2 Perk"
+                                        text renpy.translate_string("{p}❌ 2 Perk")
                                     if stat_cha_sex >= 20:
-                                        text "{p}✅ 20 SEX"
+                                        text renpy.translate_string("{p}✅ 20 SEX")
                                     else:
-                                        text "{p}❌ 20 SEX"
+                                        text renpy.translate_string("{p}❌ 20 SEX")
 
                                 if perk_cha_sex == 3:
-                                    text "{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 SEX"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 SEX")
                                 else:
-                                    text "{p}{b}LVL 3{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}Requires:")
                                     if perk >= 3:
-                                        text "{p}✅ 3 Perk"
+                                        text renpy.translate_string("{p}✅ 3 Perk")
                                     else:
-                                        text "{p}❌ 3 Perk"
+                                        text renpy.translate_string("{p}❌ 3 Perk")
                                     if stat_cha_sex >= 80:
-                                        text "{p}✅ 80 SEX"
+                                        text renpy.translate_string("{p}✅ 80 SEX")
                                     else:
-                                        text "{p}❌ 80 SEX"
+                                        text renpy.translate_string("{p}❌ 80 SEX")
 
                             if a_menu_2 == "perk_cha_per":
-                                text "Improves your performance in using skills and increases the amount of money received when working."
+                                text renpy.translate_string("Improves your performance in using skills and increases the amount of money received when working.")
                                 if perk_cha_per >= 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 PER"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 PER")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_cha_per >= 5:
-                                        text "{p}✅ 5 PER"
+                                        text renpy.translate_string("{p}✅ 5 PER")
                                     else:
-                                        text "{p}❌ 5 PER"
+                                        text renpy.translate_string("{p}❌ 5 PER")
 
                                 if perk_cha_per >= 2:
-                                    text "{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 PER"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 20 PER")
                                 else:
-                                    text "{p}{b}LVL 2{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}Requires:")
                                     if perk >= 2:
-                                        text "{p}✅ 2 Perk"
+                                        text renpy.translate_string("{p}✅ 2 Perk")
                                     else:
-                                        text "{p}❌ 2 Perk"
+                                        text renpy.translate_string("{p}❌ 2 Perk")
                                     if stat_cha_per >= 20:
-                                        text "{p}✅ 20 PER"
+                                        text renpy.translate_string("{p}✅ 20 PER")
                                     else:
-                                        text "{p}❌ 20 PER"
+                                        text renpy.translate_string("{p}❌ 20 PER")
 
                                 if perk_cha_per == 3:
-                                    text "{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 PER"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 PER")
                                 else:
-                                    text "{p}{b}LVL 3{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}Requires:")
                                     if perk >= 3:
-                                        text "{p}✅ 3 Perk"
+                                        text renpy.translate_string("{p}✅ 3 Perk")
                                     else:
-                                        text "{p}❌ 3 Perk"
+                                        text renpy.translate_string("{p}❌ 3 Perk")
                                     if stat_cha_per >= 80:
-                                        text "{p}✅ 80 PER"
+                                        text renpy.translate_string("{p}✅ 80 PER")
                                     else:
-                                        text "{p}❌ 80 PER"
+                                        text renpy.translate_string("{p}❌ 80 PER")
 
                             if a_menu_2 == "perk_cha_soc":
-                                text "Increases your performance in character interactions."
+                                text renpy.translate_string("Increases your performance in character interactions.")
                                 if perk_cha_soc >= 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 SOC"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 SOC")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_cha_soc >= 5:
-                                        text "{p}✅ 5 SOC"
+                                        text renpy.translate_string("{p}✅ 5 SOC")
                                     else:
-                                        text "{p}❌ 5 SOC"
+                                        text renpy.translate_string("{p}❌ 5 SOC")
 
                                 if perk_cha_soc >= 2:
-                                    text "{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 80 SOC"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 2 Perk{p}✅ 80 SOC")
                                 else:
-                                    text "{p}{b}LVL 2{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 2{/b}{p}Requires:")
                                     if perk >= 2:
-                                        text "{p}✅ 2 Perk"
+                                        text renpy.translate_string("{p}✅ 2 Perk")
                                     else:
-                                        text "{p}❌ 2 Perk"
+                                        text renpy.translate_string("{p}❌ 2 Perk")
                                     if stat_cha_soc >= 20:
-                                        text "{p}✅ 20 SOC"
+                                        text renpy.translate_string("{p}✅ 20 SOC")
                                     else:
-                                        text "{p}❌ 20 SOC"
+                                        text renpy.translate_string("{p}❌ 20 SOC")
 
                                 if perk_cha_soc == 3:
-                                    text "{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 SOC"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 3 Perk{p}✅ 80 SOC")
                                 else:
-                                    text "{p}{b}LVL 3{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 3{/b}{p}Requires:")
                                     if perk >= 3:
-                                        text "{p}✅ 3 Perk"
+                                        text renpy.translate_string("{p}✅ 3 Perk")
                                     else:
-                                        text "{p}❌ 3 Perk"
+                                        text renpy.translate_string("{p}❌ 3 Perk")
                                     if stat_cha_soc >= 80:
-                                        text "{p}✅ 80 SOC"
+                                        text renpy.translate_string("{p}✅ 80 SOC")
                                     else:
-                                        text "{p}❌ 80 SOC"
+                                        text renpy.translate_string("{p}❌ 80 SOC")
 
                             if a_menu_2 == "perk_skl_dnc":
-                                text "Allows you to dance in a rhythm minigame."
+                                text renpy.translate_string("Allows you to dance in a rhythm minigame.")
                                 if perk_skl_dnc == 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 10 CHA"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 10 CHA")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_cha >= 10:
-                                        text "{p}✅ 10 CHA"
+                                        text renpy.translate_string("{p}✅ 10 CHA")
                                     else:
-                                        text "{p}❌ 10 CHA"
+                                        text renpy.translate_string("{p}❌ 10 CHA")
 
                             if a_menu_2 == "perk_skl_gui":
-                                text "Allows you to play guitar in a rhythm minigame."
+                                text renpy.translate_string("Allows you to play guitar in a rhythm minigame.")
                                 if perk_skl_gui == 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 10 INT"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 10 INT")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_int >= 10:
-                                        text "{p}✅ 10 INT"
+                                        text renpy.translate_string("{p}✅ 10 INT")
                                     else:
-                                        text "{p}❌ 10 INT"
+                                        text renpy.translate_string("{p}❌ 10 INT")
 
                             if a_menu_2 == "perk_skl_swm":
-                                text "Allows you to swim in scenes and minigames [C_Mnd](when available)[C_Off]."
+                                text renpy.translate_string("Allows you to swim in scenes and minigames [C_Mnd](when available)[C_Off].")
                                 if perk_skl_swm == 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 10 PHY"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 10 PHY")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_phy >= 10:
-                                        text "{p}✅ 10 PHY"
+                                        text renpy.translate_string("{p}✅ 10 PHY")
                                     else:
-                                        text "{p}❌ 10 PHY"
+                                        text renpy.translate_string("{p}❌ 10 PHY")
 
                             if a_menu_2 == "perk_skl_msg":
-                                text "Allows you to massage characters."
+                                text renpy.translate_string("Allows you to massage characters.")
                                 if perk_skl_msg == 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 10 CHA"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 10 CHA")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_cha >= 10:
-                                        text "{p}✅ 10 CHA"
+                                        text renpy.translate_string("{p}✅ 10 CHA")
                                     else:
-                                        text "{p}❌ 10 CHA"
+                                        text renpy.translate_string("{p}❌ 10 CHA")
 
                             if a_menu_2 == "perk_skl_cok":
-                                text "Increases your performance in cooking, leaving its minigames easier."
+                                text renpy.translate_string("Increases your performance in cooking, leaving its minigames easier.")
                                 if perk_skl_cok == 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 10 INT"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 10 INT")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_int >= 10:
-                                        text "{p}✅ 10 INT"
+                                        text renpy.translate_string("{p}✅ 10 INT")
                                     else:
-                                        text "{p}❌ 10 INT"
+                                        text renpy.translate_string("{p}❌ 10 INT")
 
                             if a_menu_2 == "perk_skl_tut":
-                                text "Allows you to teach a skill you know."
+                                text renpy.translate_string("Allows you to teach a skill you know.")
                                 if perk_skl_tut == 1:
-                                    text "{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 CHA{p}✅ 5 INT"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}[C_Pos]Adquired[C_Off]:{p}✅ 1 Perk{p}✅ 5 CHA{p}✅ 5 INT")
                                 else:
-                                    text "{p}{b}LVL 1{/b}{p}Requires:"
+                                    text renpy.translate_string("{p}{b}LVL 1{/b}{p}Requires:")
                                     if perk >= 1:
-                                        text "{p}✅ 1 Perk"
+                                        text renpy.translate_string("{p}✅ 1 Perk")
                                     else:
-                                        text "{p}❌ 1 Perk"
+                                        text renpy.translate_string("{p}❌ 1 Perk")
                                     if stat_cha >= 5:
-                                        text "{p}✅ 5 CHA"
+                                        text renpy.translate_string("{p}✅ 5 CHA")
                                     else:
-                                        text "{p}❌ 5 CHA"
+                                        text renpy.translate_string("{p}❌ 5 CHA")
                                     if stat_int >= 5:
-                                        text "{p}✅ 5 INT"
+                                        text renpy.translate_string("{p}✅ 5 INT")
                                     else:
-                                        text "{p}❌ 5 INT"
+                                        text renpy.translate_string("{p}❌ 5 INT")
                     vbar value YScrollValue("ScrollDatabase")
