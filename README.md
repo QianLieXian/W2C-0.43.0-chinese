@@ -1,14 +1,13 @@
 # W2C 0.43.0 简体中文补丁
 
-当前版本：r3。剧情、选项、界面与教程采用 GPT 语境翻译，附原版问题修复。
+当前版本：r3。仅提供汉化补丁和工具，不分发完整游戏 APK；请自行准备原版 APK。剧情、选项、界面与教程采用 GPT 语境翻译，附原版问题修复。
 
-[下载最新版 APK / 补丁](https://github.com/QianLieXian/W2C-Chinese-Patch/releases/latest)
+[下载汉化补丁和一键打包工具](https://github.com/QianLieXian/W2C-Chinese-Patch/releases/latest)
 
 ## 安卓
 
-- 直接安装 Releases 中的汉化 APK。安装前备份存档；签名与原版不同，无法覆盖安装时需先卸载原版。
-- 自己打补丁：下载补丁 ZIP 并解压，将原版 `W2C-0.43.0-android.apk` 放入文件夹，Windows 双击 `安卓一键汉化.bat`，完成后安装 `output/W2C-0.43.0-zh-android.apk`。也支持把 APK 拖到 BAT 上。
-- 首次运行 BAT 会下载 Java 和签名工具，原版 APK 保留。
+- 使用方法：下载补丁 ZIP 并解压，将原版 `W2C-0.43.0-android.apk` 放入文件夹，Windows 双击 `安卓一键汉化.bat`，完成后安装 `output/W2C-0.43.0-zh-android.apk`。也支持把 APK 拖到 BAT 上。
+- 首次运行 BAT 会下载 Java 和签名工具，原版 APK 保留。安装前备份存档；本地生成的汉化包签名与原版不同。
 
 ## 电脑
 
