@@ -23,7 +23,7 @@ label wgot_show:
 # Load activity
 # ----------------------------------------------------------------------------------------------------
 label wgot_show_activity:
-    $ msg.msg("[C_Nam][fnamewgot][C_Off] is " + str(Get_ActivityName("wgot")))
+    $ msg.msg(renpy.translate_string("[C_Nam][fnamewgot][C_Off] is ") + renpy.translate_string(str(str(Get_ActivityName("wgot")))))
 
     if Get_ActivityName("wgot") in ["at class"]:
         jump show_ui
@@ -37,7 +37,7 @@ label wgot_show_activity:
 label wgot_interact_end:
     if "interacting_hero" in wgot_know:
         $ wgot_know.remove("interacting_hero")
-        $ msg.msg("Finish talking")
+        $ msg.msg(renpy.translate_string("Finish talking"))
     jump show_ui
 
 # ----------------------------------------------------------------------------------------------------
@@ -919,7 +919,7 @@ label initiative_wgot:
             
             "Deny":
                 $ wgot_know.append("HERO_Dated_N")
-                $ msg.msg("{nm}[fnamewgot]{/nm} knows you a little more")
+                $ msg.msg(renpy.translate_string("{nm}[fnamewgot]{/nm} knows you a little more"))
                 $ add_stat("wgot", "inti", 0.5)
 
                 hero "N{w=[wt1]}-No{w=[wt2]}, I've never dated before."
@@ -935,7 +935,7 @@ label initiative_wgot:
 
             "Confirm":
                 $ wgot_know.append("HERO_Dated_Y")
-                $ msg.msg("{nm}[fnamewgot]{/nm} knows you a little more")
+                $ msg.msg(renpy.translate_string("{nm}[fnamewgot]{/nm} knows you a little more"))
                 $ add_stat("wgot", "inti", 0.5)
 
                 hero "W{w=[wt1]}-well{w=[wt2]}, y{w=[wt1]}-yes{w=[wt2]}, I kinda dated a girl once."
@@ -983,7 +983,7 @@ label initiative_wgot:
                 if _return:
                     $ wgot_know.append("HERO_Y_Girl_" + _return)
 
-                $ msg.msg("{nm}[fnamewgot]{/nm} knows you a little more")
+                $ msg.msg(renpy.translate_string("{nm}[fnamewgot]{/nm} knows you a little more"))
                 $ add_stat("wgot", "inti", 0.5)
 
                 if _return in ["Personality_2", "Personality_6", "HairSize_5", "HairSize_6", "Breast_2", "EyeShape_4", "EyeShape_5"]: # Match - dispirited, shy/timid, long hair, medium breasts, downturned/deep set eyes

@@ -184,7 +184,7 @@ translate zh action_bathe_oops_2_e22fa309:
 translate zh action_bathe_oops_2_d31e45bf:
 
     # wnei "Ohh{w=[wt2]}, {nm}[fnamehero]{/nm}{w=[wt2]}, are ya cummin' to join us?{fast}" nointeract
-    wnei "" nointeract
+    wnei "哎呀{w=[wt2]}，{nm}[fnamehero]{/nm}{w=[wt2]}，你也要进来一起爽吗？{fast}" nointeract
 
 # game/scripts/Mechanics/Action.rpy:3777
 translate zh action_bathe_oops_2_bf92e59b:
@@ -226,7 +226,7 @@ translate zh action_locker_stalls_ae27a1c5:
 translate zh action_locker_stalls_2e5e7de3:
 
     # mind "(There it is!){fast}" nointeract
-    mind "" nointeract
+    mind "（找到了！）{fast}" nointeract
 
 # game/scripts/Mechanics/Action.rpy:3971
 translate zh action_locker_stalls_49ebf70a:

@@ -28,7 +28,7 @@ translate zh wota_quest0_2ac5889c:
 translate zh wota_quest0_086e8d11:
 
     # wota "My eyes cannot be seen by ordinary mortals. This is why we wear glasses with thick lenses, even in swimming glasses. These lenses suppress my powers, what allow you humans to remain alive... M-maybe they also serve for some degree of myopia, but this is irrelevant!{fast}" nointeract
-    wota "" nointeract
+    wota "我的眼睛，凡人不可直视。所以我们就连游泳，也得戴这种厚镜片。这些镜片封印着我的力量，才让你们人类得以存活……也、也许还有一点矫正近视的作用，不过那不重要！{fast}" nointeract
 
 # game/scripts/Scene/Scene - WOTA.rpy:62
 translate zh wota_quest0_1b7ac5a5:

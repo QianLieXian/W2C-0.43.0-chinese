@@ -250,7 +250,7 @@ translate zh initiative_wuza_f10dd53f:
 translate zh initiative_wuza_9ab5cfcf:
 
     # wuza "{bt}Hey buddy...! Hey buddy...!{/bt}{w=[wt2]} I've been wondering!{w=[wt3]} Have you ever have a girlfriend?{w=[wt2]} {bt}Tell me...! Tell me...!{/bt}{fast}" nointeract
-    wuza "" nointeract
+    wuza "{bt}嘿，兄弟……！嘿，兄弟……！{/bt}{w=[wt2]}我一直想问！{w=[wt3]}你交过女朋友吗？{w=[wt2]}{bt}说说嘛……！说说嘛……！{/bt}{fast}" nointeract
 
 # game/scripts/Chat/Chat WUZA.rpy:378
 translate zh initiative_wuza_009a0e08:
@@ -298,7 +298,7 @@ translate zh initiative_wuza_42b00981:
 translate zh initiative_wuza_22f5af2e:
 
     # wuza "Hey! I've been super curious! What kind of girls do you like? You know, like what makes you go {pa}WOW{/pa} when you see a girl?{fast}" nointeract
-    wuza "" nointeract
+    wuza "嘿！我一直超好奇的！你喜欢什么样的女生？就是，什么样的女生会让你眼前一亮，觉得{pa}哇！{/pa}的那种？{fast}" nointeract
 
 # game/scripts/Chat/Chat WUZA.rpy:409
 translate zh initiative_wuza_adc63e23:

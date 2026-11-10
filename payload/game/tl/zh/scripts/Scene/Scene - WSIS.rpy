@@ -40,7 +40,7 @@ translate zh wsis_quest_1_kitchen_cook2shop_17377cc4:
 translate zh wsis_quest_1_kitchen_cook2shop_4debfb1e:
 
     # wsis "Are you idiot or what? We don't have ingredients for that here!{fast}" nointeract
-    wsis "" nointeract
+    wsis "你是白痴吗？家里根本没有那些食材！{fast}" nointeract
 
 # game/scripts/Scene/Scene - WSIS.rpy:227
 translate zh wsis_quest_1_kitchen_cook2shop_3bf5096f:
@@ -982,7 +982,7 @@ translate zh wsis_quest_1_0_b571fc8f:
 translate zh wsis_quest_1_0_7868d382:
 
     # mind "(This situation was not quite what I expected tonight. This scene is so...){fast}" nointeract
-    mind "" nointeract
+    mind "（今晚的状况，跟我想的完全不一样。这画面真是……）{fast}" nointeract
 
 # game/scripts/Scene/Scene - WSIS.rpy:2161
 translate zh wsis_quest_1_0_e693d278:
@@ -1774,7 +1774,7 @@ translate zh wsis_quest_5_527eee76:
 translate zh wsis_quest_5_98e9eae6:
 
     # wsis "{w=[wt1]}.{w=[wt1]}.{w=[wt1]}.{w=[wt3]}[C_Nam][wsis_to_hero][C_Off]{w=[wt1]}.{w=[wt1]}.{w=[wt1]}.{w=[wt3]} {size=-10}I love you{/size}{w=[wt1]}.{w=[wt1]}.{w=[wt1]}.{w=[wt4]}{fast}" nointeract
-    wsis "" nointeract
+    wsis "{w=[wt1]}{w=[wt1]}…{w=[wt1]}{w=[wt3]}{w=[wt1]}…{w=[wt1]}{w=[wt1]}[C_Nam][wsis_to_hero][C_Off]…{w=[wt3]}…{size=-10}我爱你{/size}…{w=[wt1]}{w=[wt1]}…{w=[wt1]}{w=[wt4]}{fast}" nointeract
 
 # game/scripts/Scene/Scene - WSIS.rpy:3075
 translate zh wsis_quest_5_eb6bf065:

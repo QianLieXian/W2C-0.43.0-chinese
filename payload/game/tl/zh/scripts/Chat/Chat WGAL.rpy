@@ -700,7 +700,7 @@ translate zh initiative_wgal_2a119b76:
 translate zh initiative_wgal_55f37a1c:
 
     # wgal "So, have you ever dated? Or, like, at least know what it's like to kiss someone? Like, dating your own hand doesn't count, obviously.{fast}" nointeract
-    wgal "" nointeract
+    wgal "所以，谈过恋爱吗？或者，至少知道亲嘴什么感觉吧？当然，跟自己的手谈恋爱不算！{fast}" nointeract
 
 # game/scripts/Chat/Chat WGAL.rpy:664
 translate zh initiative_wgal_adbc2ce6:
@@ -754,7 +754,7 @@ translate zh initiative_wgal_a79ddd0b:
 translate zh initiative_wgal_6146c223:
 
     # wgal "So, what kind of girl is your type?{fast}" nointeract
-    wgal "" nointeract
+    wgal "所以，喜欢什么类型的女生？{fast}" nointeract
 
 # game/scripts/Chat/Chat WGAL.rpy:696
 translate zh initiative_wgal_adc63e23:

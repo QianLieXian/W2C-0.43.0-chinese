@@ -886,7 +886,7 @@ translate zh initiative_hine_ddc41a84:
 translate zh initiative_hine_01761504:
 
     # hine "You know, I'm curious now. Have you ever dated?{fast}" nointeract
-    hine "" nointeract
+    hine "那个，突然有点好奇。你谈过恋爱吗？{fast}" nointeract
 
 # game/scripts/Chat/Chat HINE.rpy:761
 translate zh initiative_hine_adbc2ce6:
@@ -934,7 +934,7 @@ translate zh initiative_hine_8f812b5b:
 translate zh initiative_hine_9c0e9abc:
 
     # hine "So, what kind of girl catches your attention? I'm curious what your standards are.{fast}" nointeract
-    hine "" nointeract
+    hine "那么，什么样的女生能吸引你？好奇你的标准是什么。{fast}" nointeract
 
 # game/scripts/Chat/Chat HINE.rpy:791
 translate zh initiative_hine_adc63e23:

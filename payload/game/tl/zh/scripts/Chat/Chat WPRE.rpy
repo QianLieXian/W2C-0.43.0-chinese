@@ -766,7 +766,7 @@ translate zh initiative_wpre_dd62e25d:
 translate zh initiative_wpre_85941379:
 
     # wpre "If I may ask, {nm}[fnamehero]{/nm}... Have you ever been in a romantic relationship before? I apologize if this question is too personal.{fast}" nointeract
-    wpre "" nointeract
+    wpre "请问，{nm}[fnamehero]{/nm}……你以前谈过恋爱吗？如果这个问题涉及隐私，请原谅我。{fast}" nointeract
 
 # game/scripts/Chat/Chat WPRE.rpy:700
 translate zh initiative_wpre_adbc2ce6:
@@ -802,7 +802,7 @@ translate zh initiative_wpre_919ef7d9:
 translate zh initiative_wpre_c439d566:
 
     # wpre "Pardon me for asking, but I'm curious... What qualities do you find appealing in a potential romantic partner?{fast}" nointeract
-    wpre "" nointeract
+    wpre "冒昧问一下，我有点好奇……你理想中的恋人，哪些特质最吸引你？{fast}" nointeract
 
 # game/scripts/Chat/Chat WPRE.rpy:723
 translate zh initiative_wpre_adc63e23:

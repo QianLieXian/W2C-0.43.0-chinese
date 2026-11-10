@@ -58,7 +58,7 @@ translate zh wtpe_quest_0_1_0d123897:
 translate zh wtpe_quest_0_1_2a30c5b9:
 
     # wtpe "Hey, look up here. I'll let you decide what we'll be using for class. What do you think? The rope? The agility ladder? Or the resistance bands?{pr}[C_Mnd](Not implemented yet)[C_Off]{fast}" nointeract
-    wtpe "" nointeract
+    wtpe "喂，往上看。今天上课用什么，就让你来选。怎么样？绳子、敏捷梯，还是弹力带？{pr}[C_Mnd]（尚未实装）[C_Off]{fast}" nointeract
 
 # game/scripts/Scene/Scene - WTPE.rpy:196
 translate zh wtpe_quest_0_1_81ea2f6d:
@@ -154,7 +154,7 @@ translate zh wtpe_locker_favor_ff7489c2:
 translate zh wtpe_locker_favor_fdf05505:
 
     # wtpe "Be a dear and grab it for me?{fast}" nointeract
-    wtpe "" nointeract
+    wtpe "帮老师拿一下，好吗？{fast}" nointeract
 
 # game/scripts/Scene/Scene - WTPE.rpy:452
 translate zh wtpe_locker_favor_66681b98:

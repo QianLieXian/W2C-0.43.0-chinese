@@ -1,0 +1,18 @@
+{
+  "version": "r3",
+  "dialogue_pairs": 6944,
+  "string_pairs": 3684,
+  "nonempty_source_empty_translation": 0,
+  "dialogue_suffix_mismatches": 0,
+  "dialogue_variable_mismatches": 0,
+  "dialogue_tag_mismatches": 0,
+  "runtime_all_dialogues": {
+    "verified": 6944,
+    "nonempty_source": 6939,
+    "all_passed": true
+  },
+  "fixed_empty_dialogues": 56,
+  "restored_interaction_flags": 16,
+  "android_device_tested": false,
+  "all_branches_played": false
+}

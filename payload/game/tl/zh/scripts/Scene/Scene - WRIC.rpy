@@ -40,7 +40,7 @@ translate zh wric_quest0_squeak_2_2a2dba57:
 translate zh wric_quest0_squeak_2_1758a86d:
 
     # wric "The one who what!? How utterly presumptuous of you to address me in such a vulgar manner! You better choose your next words carefully, do you hear me!? Know you were the one loitering in the doorway like some sort of... of... D-door-blocking statue! And now look! My milkshake is completely ruined for your fault!!{fast}" nointeract
-    wric "" nointeract
+    wric "我怎么了！？竟敢用这种粗俗的语气跟我说话，真是放肆！你接下来说话最好小心点，听见了吗！？明明是你堵在门口，像个……像个……堵、堵门雕像！现在看看！我的奶昔都被你毁了！！{fast}" nointeract
 
 # game/scripts/Scene/Scene - WRIC.rpy:150
 translate zh wric_quest0_squeak_2_b96d9c1d:
@@ -358,7 +358,7 @@ translate zh wric_quest0_squeak_2_abe3a36d:
 translate zh wric_quest0_squeak_2_76f2aa4f:
 
     # wric "What do you think you're doing!?{w=[wt3]} How dare you turn your back on someone of my standing!{w=[wt2]} Such insolence!"
-    wric "你想干什么！{w=[wt3]}？竟敢背对我！如此{w=[wt2]}放肆！"
+    wric "你想干什么！？{w=[wt3]}竟敢背对本小姐！{w=[wt2]}如此放肆！"
 
 # game/scripts/Scene/Scene - WRIC.rpy:416
 translate zh wric_quest0_squeak_2_c65aaf7c:
@@ -484,7 +484,7 @@ translate zh wric_quest0_squeak_2_3e3caa33:
 translate zh wric_quest0_squeak_2_06bc10d9:
 
     # wric "Hmph!{w=[wt2]} How terribly rude!{w=[wt3]} I{w=[wt1]}.{w=[wt1]}.{w=[wt1]}.{w=[wt2]} I merely wish to compensate you for the jacket.{w=[wt3]} Since my incompetent servant couldn't provide a replacement{w=[wt2]}, here.{w=[wt2]} In this ticket there's $300.{w=[wt3]} With this you can buy a new jacket.{w=[wt3]} You better do remember this generosity and adjust your attitude accordingly.{w=[wt4]} You're in my debt now!{fast}" nointeract
-    wric "" nointeract
+    wric "哼{w=[wt2]}，真没礼貌！{w=[wt3]}{w=[wt1]}我{w=[wt1]}{w=[wt1]}{w=[wt2]}……我只是想赔你那件外套。既{w=[wt3]}然我那无能的仆人没能送来新的，给，{w=[wt2]}这张{w=[wt2]}票据值300美元{w=[wt3]}，够你买件新外套了。{w=[wt3]}记住我这份慷慨，好好改改你的态度。现在，你欠{w=[wt4]}我一个人情！{fast}" nointeract
 
 # game/scripts/Scene/Scene - WRIC.rpy:586
 translate zh wric_quest0_squeak_2_8d694947:

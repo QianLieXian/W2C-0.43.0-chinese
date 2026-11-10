@@ -1,8 +1,15 @@
 {
   "passed": [
+    "All runtime dialogue mappings, bodies, speakers, interaction flags and variables",
     "Chinese default language",
     "Main menu translation",
     "Map translation",
+    "Composite map translation",
+    "Actual composed activity notification",
+    "Internal activity enum preserved",
+    "Formatted gift notification",
+    "Chat exit button",
+    "Atomic tool label",
     "Merged main character database",
     "Runtime dialogue identifier resolves to Chinese",
     "Chinese word puzzle 0",

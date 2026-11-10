@@ -100,7 +100,7 @@ translate zh wdel_quest0_9e38c80f:
 translate zh wdel_quest0_21321149:
 
     # wdel "Huh? Hell no, dumbass! If I hit girls, I would've already decked that nano-robot from the other class! Damn Student Council lapdog! She needs to mind her own business. She's lucky that a dude should never punch a little girl like her!{fast}" nointeract
-    wdel "" nointeract
+    wdel "啥？怎么可能，笨蛋！我要是打女生，早就揍隔壁班那个迷你机器人了！该死的学生会走狗！管好自己的事不行吗？算她走运，男子汉才不会打她那种小丫头！{fast}" nointeract
 
 # game/scripts/Scene/Scene - WDEL.rpy:130
 translate zh wdel_quest0_73eec724:

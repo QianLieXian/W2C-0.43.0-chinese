@@ -922,7 +922,7 @@ translate zh initiative_wnei_e7efbd3c:
 translate zh initiative_wnei_d0b743ec:
 
     # wnei "What's your favorite color?{fast}" nointeract
-    wnei "" nointeract
+    wnei "最喜欢什么颜色？{fast}" nointeract
 
 # game/scripts/Chat/Chat WNEI.rpy:1247
 translate zh initiative_wnei_c99f4a24:
@@ -1324,7 +1324,7 @@ translate zh initiative_wnei_3255138e:
 translate zh initiative_wnei_75ee82b9:
 
     # wnei "What kind of games do you like to play?{fast}" nointeract
-    wnei "" nointeract
+    wnei "你喜欢玩什么游戏？{fast}" nointeract
 
 # game/scripts/Chat/Chat WNEI.rpy:1453
 translate zh initiative_wnei_16c5f31e:
@@ -1444,7 +1444,7 @@ translate zh initiative_wnei_dc59d032:
 translate zh initiative_wnei_HERO_Y_Theme_995d0cfa:
 
     # wnei "What kind of movies do you like to watch?{fast}" nointeract
-    wnei "" nointeract
+    wnei "你喜欢看什么电影？{fast}" nointeract
 
 # game/scripts/Chat/Chat WNEI.rpy:1517
 translate zh initiative_wnei_HERO_Y_Theme_acbd736c:
@@ -1660,7 +1660,7 @@ translate zh initiative_wnei_HERO_Y_Theme_46f67de3:
 translate zh initiative_wnei_HERO_Y_Theme_bf300932:
 
     # wnei "Hey{w=[wt1]}, do you like pop music?{fast}" nointeract
-    wnei "" nointeract
+    wnei "嘿{w=[wt1]}，喜欢流行音乐吗？{fast}" nointeract
 
 # game/scripts/Chat/Chat WNEI.rpy:1656
 translate zh initiative_wnei_HERO_Y_Theme_90a67fed:
@@ -1708,7 +1708,7 @@ translate zh initiative_wnei_HERO_Y_Theme_fc3cd8e0:
 translate zh initiative_wnei_HERO_Y_Theme_09a8dc9e:
 
     # wnei "{pa}What about we dance together!?{/pa}{w=[wt3]} I have some cool pop songs on my phone that I could play here for us!{w=[wt3]} There are music with different speeds!{fast}" nointeract
-    wnei "" nointeract
+    wnei "{pa}一起跳舞怎么样！？{/pa}{w=[wt3]}我手机里有几首好听的流行歌，可以放给我们听！{w=[wt3]}各种节奏快慢的都有！{fast}" nointeract
 
 # game/scripts/Chat/Chat WNEI.rpy:1691
 translate zh initiative_wnei_HERO_Y_Theme_3a7daec8:
@@ -1762,7 +1762,7 @@ translate zh initiative_wnei_HERO_Y_Theme_b8b60eb4:
 translate zh initiative_wnei_HERO_Y_Theme_ba43fa97:
 
     # wnei "Did ya have a girlfriend were you lived? {fast}" nointeract
-    wnei "" nointeract
+    wnei "你以前住的地方，有交女朋友吗？{fast}" nointeract
 
 # game/scripts/Chat/Chat WNEI.rpy:1753
 translate zh initiative_wnei_HERO_Y_Theme_adbc2ce6:
@@ -1822,7 +1822,7 @@ translate zh initiative_wnei_HERO_Y_Theme_9f1f15ff:
 translate zh initiative_wnei_HERO_Y_Theme_d69d2b6a:
 
     # wnei "Hey! Tell me more 'bout what kind of girl do you like! Maybe I can introduce ya to some cool friends!{fast}" nointeract
-    wnei "" nointeract
+    wnei "嘿！再多说点你喜欢什么样的女生嘛！说不定能给你介绍几个有趣的朋友！{fast}" nointeract
 
 # game/scripts/Chat/Chat WNEI.rpy:1791
 translate zh initiative_wnei_HERO_Y_Theme_adc63e23:

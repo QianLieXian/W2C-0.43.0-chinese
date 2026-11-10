@@ -874,7 +874,7 @@ translate zh initiative_hprv_406cc4bc:
 translate zh initiative_hprv_e38e7cb4:
 
     # hprv "You know, I'm curious now. Have you ever dated?{fast}" nointeract
-    hprv "" nointeract
+    hprv "那个，突然有点好奇。你谈过恋爱吗？{fast}" nointeract
 
 # game/scripts/Chat/Chat HPRV.rpy:754
 translate zh initiative_hprv_adbc2ce6:
@@ -922,7 +922,7 @@ translate zh initiative_hprv_1acf1143:
 translate zh initiative_hprv_ba4fee1a:
 
     # hprv "So bro, boobs or butts? Or maybe other parts...? {gg}He... He...{/gg}{fast}" nointeract
-    hprv "" nointeract
+    hprv "所以，兄弟，胸还是屁股？或者别的部位……？{gg}嘿……嘿……{/gg}{fast}" nointeract
 
 # game/scripts/Chat/Chat HPRV.rpy:784
 translate zh initiative_hprv_adc63e23:

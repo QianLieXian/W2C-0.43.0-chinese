@@ -1,0 +1,388 @@
+{
+  "old_r2_real_empty_dialogues": 56,
+  "old_r2_suffix_mismatches": 16,
+  "changed_dialogues": 73,
+  "current_real_empty_dialogues": 0,
+  "current_suffix_mismatches": 0,
+  "original_intentionally_empty_dialogues": 5,
+  "details_empty": [
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat HINE.rpy",
+      "source": "You know, I'm curious now. Have you ever dated?{fast}",
+      "new": "那个，突然有点好奇。你谈过恋爱吗？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat HINE.rpy",
+      "source": "So, what kind of girl catches your attention? I'm curious what your standards are.{fast}",
+      "new": "那么，什么样的女生能吸引你？好奇你的标准是什么。{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat HPRV.rpy",
+      "source": "You know, I'm curious now. Have you ever dated?{fast}",
+      "new": "那个，突然有点好奇。你谈过恋爱吗？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat HPRV.rpy",
+      "source": "So bro, boobs or butts? Or maybe other parts...? {gg}He... He...{/gg}{fast}",
+      "new": "所以，兄弟，胸还是屁股？或者别的部位……？{gg}嘿……嘿……{/gg}{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WCOU.rpy",
+      "source": "(Good and bad news?{w=[wt2]} This is making me apprehensive.){fast}",
+      "new": "（好消息和坏消息？{w=[wt2]}听得我有点慌。）{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WDEL.rpy",
+      "source": "Hey{w=[wt2]}, bro.{w=[wt3]} Have you ever hooked up with a chick?{fast}",
+      "new": "嘿{w=[wt2]}，兄弟。{w=[wt3]}有没有跟妞好过？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WDEL.rpy",
+      "source": "Hey, straight up, what kinda chick gets your engine runnin'?{fast}",
+      "new": "嘿，直说吧，什么样的妞能让你引擎轰鸣？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WGAL.rpy",
+      "source": "So, have you ever dated? Or, like, at least know what it's like to kiss someone? Like, dating your own hand doesn't count, obviously.{fast}",
+      "new": "所以，谈过恋爱吗？或者，至少知道亲嘴什么感觉吧？当然，跟自己的手谈恋爱不算！{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WGAL.rpy",
+      "source": "So, what kind of girl is your type?{fast}",
+      "new": "所以，喜欢什么类型的女生？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WGOT.rpy",
+      "source": "I've been... wondering about something. It's perhaps too personal, but... Have you ever dated someone?{fast}",
+      "new": "有件事……一直有些好奇。也许太私密，不过……你曾与谁交往过吗？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WGOT.rpy",
+      "source": "There's something I've been curious about. Though perhaps it's too mundane a question. What type of person you might find... Attractive?{fast}",
+      "new": "有件事，一直想知道。虽然问题也许过于平凡。什么样的人，会让你觉得……有魅力？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WLAZ.rpy",
+      "source": "Random question. Ever dated anyone? Just curious.{fast}",
+      "new": "随便问问。谈过恋爱吗？纯好奇。{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WLAZ.rpy",
+      "source": "So... What's your type? Girl-wise, I mean. Just idle curiosity.{fast}",
+      "new": "所以……你喜欢什么类型？女生，我是说。闲着没事问问。{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WMOM.rpy",
+      "source": "What a surprise, {nm}[wmom_to_hero]{/nm}! Wanna join me to my yoga workout?{fast}",
+      "new": "真惊喜呀，{nm}[wmom_to_hero]{/nm}！要跟妈妈一起练瑜伽吗？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WMOM.rpy",
+      "source": "So, {nm}[wmom_to_hero]{/nm}, what about your life in the countryside? Did my big boy met any nice girl? Hmmm? Mama wanna know everything! ~❤{fast}",
+      "new": "那么，{nm}[wmom_to_hero]{/nm}，在乡下过得怎么样？我的大宝贝有没有遇见好姑娘？嗯？妈妈什么都想知道！～❤{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WMOM.rpy",
+      "source": "So. {nm}[wmom_to_hero]{/nm}, mama wanna know more about you. Do any kind of girl catches your eye?{fast}",
+      "new": "那么，{nm}[wmom_to_hero]{/nm}，妈妈还想多了解你一点。什么样的女生能吸引你呢？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WNEI.rpy",
+      "source": "What's your favorite color?{fast}",
+      "new": "最喜欢什么颜色？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WNEI.rpy",
+      "source": "What kind of games do you like to play?{fast}",
+      "new": "你喜欢玩什么游戏？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WNEI.rpy",
+      "source": "What kind of movies do you like to watch?{fast}",
+      "new": "你喜欢看什么电影？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WNEI.rpy",
+      "source": "Hey{w=[wt1]}, do you like pop music?{fast}",
+      "new": "嘿{w=[wt1]}，喜欢流行音乐吗？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WNEI.rpy",
+      "source": "{pa}What about we dance together!?{/pa}{w=[wt3]} I have some cool pop songs on my phone that I could play here for us!{w=[wt3]} There are music with different speeds!{fast}",
+      "new": "{pa}一起跳舞怎么样！？{/pa}{w=[wt3]}我手机里有几首好听的流行歌，可以放给我们听！{w=[wt3]}各种节奏快慢的都有！{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WNEI.rpy",
+      "source": "Did ya have a girlfriend were you lived? {fast}",
+      "new": "你以前住的地方，有交女朋友吗？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WNEI.rpy",
+      "source": "Hey! Tell me more 'bout what kind of girl do you like! Maybe I can introduce ya to some cool friends!{fast}",
+      "new": "嘿！再多说点你喜欢什么样的女生嘛！说不定能给你介绍几个有趣的朋友！{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WOTA.rpy",
+      "source": "The cosmic energies compel me to ask, have you ever, uhh, engaged in the ancient ritual known as d-dating? Of course I'm asking j-just for the mission!{fast}",
+      "new": "宇宙的能量迫使我发问，你有没有，呃，进行过被称为恋、恋爱的古老仪式？当然，只、只是任务需要！{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WOTA.rpy",
+      "source": "So, In a hypothetical situation, where you, let's say, might have to choose a partner to, uhh, have a r-romantic relationship with, well, w-what kind of person would you hope her to be?{fast}",
+      "new": "那么，假设有一种情况，你，比如说，必须挑选一个伴侣来，嗯，开始一段浪、浪漫的关系，那个，你、你希望她是什么样的人？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WPRE.rpy",
+      "source": "If I may ask, {nm}[fnamehero]{/nm}... Have you ever been in a romantic relationship before? I apologize if this question is too personal.{fast}",
+      "new": "请问，{nm}[fnamehero]{/nm}……你以前谈过恋爱吗？如果这个问题涉及隐私，请原谅我。{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WPRE.rpy",
+      "source": "Pardon me for asking, but I'm curious... What qualities do you find appealing in a potential romantic partner?{fast}",
+      "new": "冒昧问一下，我有点好奇……你理想中的恋人，哪些特质最吸引你？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WRIC.rpy",
+      "source": "Though I suppose you wouldn't know anything about proper courtship, would you? I doubt you've ever even been in the presence of anyone worth dating.{fast}",
+      "new": "不过，正经追求这种事，你大概一点也不懂，是吧？怀疑你连一个值得交往的人，都没见过。{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WRIC.rpy",
+      "source": "Hmph! So, what would your so refined standards be?{fast}",
+      "new": "哼！那么，你那高雅的标准，到底是什么？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WSIS.rpy",
+      "source": "What do you want? I'm about to go home.{fast}",
+      "new": "干吗？我正准备回家。{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WSIS.rpy",
+      "source": "[wsis_to_hero]... Did you... ever date anyone in the countryside?{fast}",
+      "new": "[wsis_to_hero]……你在乡下……有没有跟人交往过？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WSIS.rpy",
+      "source": "S-so... W-what kind of girls do you like?{fast}",
+      "new": "那、那么……你、你喜欢什么样的女生？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WSIS.rpy",
+      "source": "Hey... What's your favorite color?{fast}",
+      "new": "嘿……最喜欢什么颜色？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WSIS.rpy",
+      "source": "So... what kind of games do you like?{fast}",
+      "new": "那么……喜欢玩什么游戏？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WSIS.rpy",
+      "source": "What kind of movies do you watch?{fast}",
+      "new": "平时看什么电影？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WSIS.rpy",
+      "source": "Y-yeah... What's your favorite memory from back then?{fast}",
+      "new": "嗯、嗯……最喜欢那时候的哪段回忆？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WUZA.rpy",
+      "source": "{bt}Hey buddy...! Hey buddy...!{/bt}{w=[wt2]} I've been wondering!{w=[wt3]} Have you ever have a girlfriend?{w=[wt2]} {bt}Tell me...! Tell me...!{/bt}{fast}",
+      "new": "{bt}嘿，兄弟……！嘿，兄弟……！{/bt}{w=[wt2]}我一直想问！{w=[wt3]}你交过女朋友吗？{w=[wt2]}{bt}说说嘛……！说说嘛……！{/bt}{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Chat/Chat WUZA.rpy",
+      "source": "Hey! I've been super curious! What kind of girls do you like? You know, like what makes you go {pa}WOW{/pa} when you see a girl?{fast}",
+      "new": "嘿！我一直超好奇的！你喜欢什么样的女生？就是，什么样的女生会让你眼前一亮，觉得{pa}哇！{/pa}的那种？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Mechanics/Action.rpy",
+      "source": "Ohh{w=[wt2]}, {nm}[fnamehero]{/nm}{w=[wt2]}, are ya cummin' to join us?{fast}",
+      "new": "哎呀{w=[wt2]}，{nm}[fnamehero]{/nm}{w=[wt2]}，你也要进来一起爽吗？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Mechanics/Action.rpy",
+      "source": "(There it is!){fast}",
+      "new": "（找到了！）{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Mechanics/Club - StudentCouncil.rpy",
+      "source": "[C_Pos]Bonus:[C_Off] your academic choices carry more weight, and you earn more money by doing Student Council activities.{pr}[C_Neg]Onus:[C_Off] reduces the gain of intimacy, love, and lust of students outside the Student Council.{fast}",
+      "new": "[C_Pos]优势：[C_Off]你的学业相关选择更有影响力，完成学生会活动也能赚到更多钱。{pr}[C_Neg]代价：[C_Off]与学生会以外的学生相处时，亲密度、好感度和欲望增长减少。{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Mechanics/Club - StudentCouncil.rpy",
+      "source": "Actually{w=[wt1]}, yes.{w=[wt2]} One of the showers in the [C_Dat]girls' locker room[C_Off] gave out{w=[wt1]}, water's leaking all over the floor.{w=[wt3]} Maintenance won't send anyone until next week{w=[wt1]}, and we can't leave it flooding.{w=[wt2]} You're handy with that sort of thing{w=[wt1]}, aren't you?{fast}",
+      "new": "还真有{w=[wt1]}。{w=[wt2]}[C_Dat]女生更衣室[C_Off]有个花洒坏了{w=[wt1]}，水漏得满地都是。{w=[wt3]}维修人员下周才肯来{w=[wt1]}，总不能一直让它淹着。{w=[wt2]}这种活儿你应该挺拿手的吧{w=[wt1]}？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WDEL.rpy",
+      "source": "Huh? Hell no, dumbass! If I hit girls, I would've already decked that nano-robot from the other class! Damn Student Council lapdog! She needs to mind her own business. She's lucky that a dude should never punch a little girl like her!{fast}",
+      "new": "啥？怎么可能，笨蛋！我要是打女生，早就揍隔壁班那个迷你机器人了！该死的学生会走狗！管好自己的事不行吗？算她走运，男子汉才不会打她那种小丫头！{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WDIS.rpy",
+      "source": ". . . Y-you'll find it stupid. But... I-I think I like {nm}[fnamehriv]{/nm}. And I j-just worry about him. {gg}He-he...{/gg} I know he would never have eyes for a girl like me, right? He is kind, intelligent, handsome, and perfect! And I'm... A stupid cow!{fast}",
+      "new": "……你、你会觉得很傻吧。不过……我、我好像喜欢{nm}[fnamehriv]{/nm}。所、所以有点担心他。{gg}嘿嘿……{/gg}我知道，他肯定看不上我这种女生，对吧？他温柔、聪明、帅气，简直完美！可我……就是头笨奶牛！{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WDIS.rpy",
+      "source": "S-sorry! I...{fast}",
+      "new": "对、对不起！我……{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WGAL.rpy",
+      "source": "I{w=[wt2]}, like{w=[wt2]}, know I'm pretty hot and{w=[wt2]}, like{w=[wt2]}, it's{w=[wt1]} {bt}OOOBVIOUS{/bt} that every man would die to fuck me!{w=[wt2]} That's all they think, isn't it?{w=[wt4]} What's your answer?{fast}",
+      "new": "{w=[wt2]}我呢{w=[wt2]}，知道自己身材很辣{w=[wt2]}，所{w=[wt2]}有男{w=[wt1]}人都恨不得上我，这不是{bt}明——摆着{w=[wt2]}{/bt}的吗！你们不就只想这个{w=[wt4]}？你怎么回答？{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WGOT.rpy",
+      "source": "Ohh, well, t-that was...{fast}",
+      "new": "哦，那个，刚、刚才……{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WOTA.rpy",
+      "source": "My eyes cannot be seen by ordinary mortals. This is why we wear glasses with thick lenses, even in swimming glasses. These lenses suppress my powers, what allow you humans to remain alive... M-maybe they also serve for some degree of myopia, but this is irrelevant!{fast}",
+      "new": "我的眼睛，凡人不可直视。所以我们就连游泳，也得戴这种厚镜片。这些镜片封印着我的力量，才让你们人类得以存活……也、也许还有一点矫正近视的作用，不过那不重要！{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WPRE.rpy",
+      "source": "I'm glad to hear that! But is this really everything? I don't want to be so intrusive if you don't want to go into details, I just want you to know that you don't have to keep all the problems for you. You can count on me.{fast}",
+      "new": "那就好！不过，真的只有这些吗？你要是不想细说，我不会追问。只是想让你知道，你不必把所有烦恼都自己扛着。你可以依靠我。{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WRIC.rpy",
+      "source": "The one who what!? How utterly presumptuous of you to address me in such a vulgar manner! You better choose your next words carefully, do you hear me!? Know you were the one loitering in the doorway like some sort of... of... D-door-blocking statue! And now look! My milkshake is completely ruined for your fault!!{fast}",
+      "new": "我怎么了！？竟敢用这种粗俗的语气跟我说话，真是放肆！你接下来说话最好小心点，听见了吗！？明明是你堵在门口，像个……像个……堵、堵门雕像！现在看看！我的奶昔都被你毁了！！{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WRIC.rpy",
+      "source": "Hmph!{w=[wt2]} How terribly rude!{w=[wt3]} I{w=[wt1]}.{w=[wt1]}.{w=[wt1]}.{w=[wt2]} I merely wish to compensate you for the jacket.{w=[wt3]} Since my incompetent servant couldn't provide a replacement{w=[wt2]}, here.{w=[wt2]} In this ticket there's $300.{w=[wt3]} With this you can buy a new jacket.{w=[wt3]} You better do remember this generosity and adjust your attitude accordingly.{w=[wt4]} You're in my debt now!{fast}",
+      "new": "哼{w=[wt2]}，真没礼貌！{w=[wt3]}{w=[wt1]}我{w=[wt1]}{w=[wt1]}{w=[wt2]}……我只是想赔你那件外套。既{w=[wt3]}然我那无能的仆人没能送来新的，给，{w=[wt2]}这张{w=[wt2]}票据值300美元{w=[wt3]}，够你买件新外套了。{w=[wt3]}记住我这份慷慨，好好改改你的态度。现在，你欠{w=[wt4]}我一个人情！{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WSIS.rpy",
+      "source": "Are you idiot or what? We don't have ingredients for that here!{fast}",
+      "new": "你是白痴吗？家里根本没有那些食材！{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WSIS.rpy",
+      "source": "(This situation was not quite what I expected tonight. This scene is so...){fast}",
+      "new": "（今晚的状况，跟我想的完全不一样。这画面真是……）{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WSIS.rpy",
+      "source": "{w=[wt1]}.{w=[wt1]}.{w=[wt1]}.{w=[wt3]}[C_Nam][wsis_to_hero][C_Off]{w=[wt1]}.{w=[wt1]}.{w=[wt1]}.{w=[wt3]} {size=-10}I love you{/size}{w=[wt1]}.{w=[wt1]}.{w=[wt1]}.{w=[wt4]}{fast}",
+      "new": "{w=[wt1]}{w=[wt1]}…{w=[wt1]}{w=[wt3]}{w=[wt1]}…{w=[wt1]}{w=[wt1]}[C_Nam][wsis_to_hero][C_Off]…{w=[wt3]}…{size=-10}我爱你{/size}…{w=[wt1]}{w=[wt1]}…{w=[wt1]}{w=[wt4]}{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WTPE.rpy",
+      "source": "Hey, look up here. I'll let you decide what we'll be using for class. What do you think? The rope? The agility ladder? Or the resistance bands?{pr}[C_Mnd](Not implemented yet)[C_Off]{fast}",
+      "new": "喂，往上看。今天上课用什么，就让你来选。怎么样？绳子、敏捷梯，还是弹力带？{pr}[C_Mnd]（尚未实装）[C_Off]{fast}"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WTPE.rpy",
+      "source": "Be a dear and grab it for me?{fast}",
+      "new": "帮老师拿一下，好吗？{fast}"
+    }
+  ],
+  "details_suffix": [
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - Day 1.rpy",
+      "source": "(Just within the hour that I arrived, my return was already worth it... There's so many things on my mind right now... but mainly, I can't forget...){fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - Day 1.rpy",
+      "source": "{aw}T-t-that's...{/aw}{fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - Day 2.rpy",
+      "source": "Oh, this courtyard is absolutely lovely, isn't it? The ambiance here feels so peaceful and relaxed, the wide open area with benches, kiosks, and that charming fountain seems designed for students to find comfort during breaks or leisure moments. What do you think? Isn't it a very welcoming place?{fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - Day 2.rpy",
+      "source": "By the way{w=[wt2]}, Would you be interested in the opening of some kind of club?{fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - Day 2.rpy",
+      "source": "Sorry!{w=[wt2]} I just found your change of posture funny.{fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - Day 2.rpy",
+      "source": "By the way, did something here caught your attention?{fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - HINE.rpy",
+      "source": "[a_event_2]{fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WCOU.rpy",
+      "source": "So, any more questions?{fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WCOU.rpy",
+      "source": "('Obey your doctor', right? [C_Nam][hero_about_wcou][C_Off] looks like a middle ground between naughty and controlling... No! More than that! She's like 100%% of each! If I do not obey, she must be super disappointed, but on the other hand, I feel that if I get carried away at the moment, I won't be able to impress her.){fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WCOU.rpy",
+      "source": "(Anything... Else...?) {fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WCOU.rpy",
+      "source": "I don't know how far you went with auntie and cousing, but... Maybe I could use some of that vigor of yours. You know, someone to help relieve a little stress whenever I want... Being my little dog! Would you make that deal? ~❤{fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WCOU.rpy",
+      "source": "{aw}O{w=[wt1]}-oh{w=[wt2]}, I{w=[wt1]}-I...{/aw}{fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WNEI.rpy",
+      "source": "Oh my{w=[wt2]}, glad see you back here, dear!{w=[wt2]} Why don't ya cum to have a breakfast with us, hm?{w=[wt3]} I'm gonna make a special lunch for you!{fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WNEI.rpy",
+      "source": "Adults always want to control everything and decide what is better for children, but never take into account what children think. They just think of work and monotonous things! I was always afraid of becoming that way, So I decided I wouldn't change, and that I'd become a super duper cool adult!{fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WNEI.rpy",
+      "source": "({aw}Ehhh...!?{/aw}){fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    },
+    {
+      "file": "game/tl/zh/scripts/Scene/Scene - WNEI.rpy",
+      "source": "(...Wait!{w=[wt3]} I'm in trouble!!!{w=[wt4]} The handshake moment is when the father examines another man's hand{w=[wt1]}, where a firm handshake means the man is hardworking{w=[wt1]}, then worthy of his daughter.{w=[wt3]} Else{w=[wt2]}, the suitor is seen as a bum!{w=[wt3]} Am I strong enough for that?{w=[wt3]} I still can play it safe and just do a gentleman handshake.{w=[wt4]} What do I do now!?){fast}",
+      "old_suffix": "",
+      "restored_suffix": "nointeract"
+    }
+  ]
+}

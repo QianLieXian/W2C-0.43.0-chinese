@@ -268,32 +268,32 @@ screen minigame_logic(var_the="math", var_num=4, var_tio=0, var_tim=None, var_tx
                 xalign 0.5
                 yalign 0.5
                 spacing 50
-                label "{size=+80}{b}Logic{/b}{/size}" xalign 0.5
+                label renpy.translate_string("{size=+80}{b}Logic{/b}{/size}") xalign 0.5
                 vbox:
                     xalign 0.5
                     xysize (960, 400)
                     if var_txt == None:
                         if isinstance(var_the, list) or var_the == "any":
-                            text "{size=+10}Connect each question to its match — the puzzle type changes every round!{/size}" xalign 0.5
+                            text renpy.translate_string("{size=+10}Connect each question to its match — the puzzle type changes every round!{/size}") xalign 0.5
                         elif var_the == "math":
-                            text "{size=+10}Connect each sum to its result.{/size}" xalign 0.5
+                            text renpy.translate_string("{size=+10}Connect each sum to its result.{/size}") xalign 0.5
                         elif var_the == "color":
-                            text "{size=+10}Connect each colour to its name — don't let the text colour fool you!{/size}" xalign 0.5
+                            text renpy.translate_string("{size=+10}Connect each colour to its name — don't let the text colour fool you!{/size}") xalign 0.5
                         elif var_the == "spell":
-                            text "{size=+10}Unscramble each word and connect it to its match.{/size}" xalign 0.5
+                            text renpy.translate_string("{size=+10}Unscramble each word and connect it to its match.{/size}") xalign 0.5
                         elif var_the == "shape":
-                            text "{size=+10}Connect each shape to its name.{/size}" xalign 0.5
+                            text renpy.translate_string("{size=+10}Connect each shape to its name.{/size}") xalign 0.5
                         elif var_the == "emoji":
-                            text "{size=+10}Connect each emoji to its name.{/size}" xalign 0.5
+                            text renpy.translate_string("{size=+10}Connect each emoji to its name.{/size}") xalign 0.5
                         elif var_the == "opposite":
-                            text "{size=+10}Connect each word to its opposite.{/size}" xalign 0.5
+                            text renpy.translate_string("{size=+10}Connect each word to its opposite.{/size}") xalign 0.5
                         else:
-                            text "{size=+10}Connect each question to its matching answer.{/size}" xalign 0.5
+                            text renpy.translate_string("{size=+10}Connect each question to its matching answer.{/size}") xalign 0.5
                         if var_mod == "continuous":
-                            text "{size=+5}Solve as many rounds as you can before time runs out — each round adds more pairs.{/size}" xalign 0.5
+                            text renpy.translate_string("{size=+5}Solve as many rounds as you can before time runs out — each round adds more pairs.{/size}") xalign 0.5
                     else:
-                        text "{size=+10}[var_txt]{/size}" xalign 0.5
-                text "[C_Dat]{size=+40}{b}Click to start!{/b}[C_Off]" xalign 0.5
+                        text renpy.translate_string("{size=+10}[var_txt]{/size}") xalign 0.5
+                text renpy.translate_string("[C_Dat]{size=+40}{b}Click to start!{/b}[C_Off]") xalign 0.5
 
         key "mousedown_1" action SetScreenVariable("game_started", True)
 
@@ -317,12 +317,12 @@ screen minigame_logic(var_the="math", var_num=4, var_tio=0, var_tim=None, var_tx
             yalign 0.0
             yoffset 20
             spacing 10
-            text "{size=+30}{b}Logic{/b}{/size}" xalign 0.5
+            text renpy.translate_string("{size=+30}{b}Logic{/b}{/size}") xalign 0.5
             if effective_tim != None:
                 bar value timer_current range effective_tim xmaximum 800 xalign 0.5
-            text "{size=+5}Connected: [connection_count] / [effective_num]{/size}" xalign 0.5
+            text renpy.translate_string("{size=+5}Connected: [connection_count] / [effective_num]{/size}") xalign 0.5
             if var_mod == "continuous":
-                text "{size=+15}{b}Score: [score]{/b}{/size}" xalign 0.5
+                text renpy.translate_string("{size=+15}{b}Score: [score]{/b}{/size}") xalign 0.5
 
         # Centre: question + answer columns
         hbox:
@@ -368,7 +368,7 @@ screen minigame_logic(var_the="math", var_num=4, var_tio=0, var_tim=None, var_tx
                             # "color": frame background carries the question; no text needed.
                             if is_connected_q:
                                 $ q_badge = _logic_badge(connections[q_i])
-                                text "[q_badge]" size 40 xalign 0.95 yalign 0.05 color "#FFFF64" outlines [(2, "#000", 0, 0)]
+                                text renpy.translate_string("[q_badge]") size 40 xalign 0.95 yalign 0.05 color "#FFFF64" outlines [(2, "#000", 0, 0)]
 
             # Answer column (shuffled order)
             vbox:
@@ -397,7 +397,7 @@ screen minigame_logic(var_the="math", var_num=4, var_tio=0, var_tim=None, var_tx
                             text a_data["display"] size 50 xalign 0.5 yalign 0.5
                             if is_connected_slot:
                                 $ a_badge = _logic_badge(slot_owner)
-                                text "[a_badge]" size 40 xalign 0.05 yalign 0.05 color "#FFFF64" outlines [(2, "#000", 0, 0)]
+                                text renpy.translate_string("[a_badge]") size 40 xalign 0.05 yalign 0.05 color "#FFFF64" outlines [(2, "#000", 0, 0)]
 
         # Pre-compute the next round's scale/frame count and theme for continuous mode.
         $ next_scale_acc = scale_acc + var_sca
@@ -406,7 +406,7 @@ screen minigame_logic(var_the="math", var_num=4, var_tio=0, var_tim=None, var_tx
 
         # Bottom: Check button (enabled only when every question has a connection)
         if var_mod == "continuous":
-            textbutton "{size=+10}{b}Check{/b}{/size}":
+            textbutton renpy.translate_string("{size=+10}{b}Check{/b}{/size}"):
                 xalign 0.5
                 yalign 1.0
                 yoffset -30
@@ -432,7 +432,7 @@ screen minigame_logic(var_the="math", var_num=4, var_tio=0, var_tim=None, var_tx
                     SetScreenVariable("selected_q", None),
                 ]
         else:
-            textbutton "{size=+10}{b}Check{/b}{/size}":
+            textbutton renpy.translate_string("{size=+10}{b}Check{/b}{/size}"):
                 xalign 0.5
                 yalign 1.0
                 yoffset -30

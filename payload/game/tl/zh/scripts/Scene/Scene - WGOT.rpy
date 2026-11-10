@@ -40,7 +40,7 @@ translate zh wgot_quest0_58409596:
 translate zh wgot_quest0_086518b3:
 
     # hero "Ohh, well, t-that was...{fast}" nointeract
-    hero "" nointeract
+    hero "哦，那个，刚、刚才……{fast}" nointeract
 
 # game/scripts/Scene/Scene - WGOT.rpy:116
 translate zh wgot_quest0_f4eb299a:

@@ -166,7 +166,7 @@ translate zh initiative_wlaz_976d4bcb:
 translate zh initiative_wlaz_54eeb346:
 
     # wlaz "Random question. Ever dated anyone? Just curious.{fast}" nointeract
-    wlaz "" nointeract
+    wlaz "随便问问。谈过恋爱吗？纯好奇。{fast}" nointeract
 
 # game/scripts/Chat/Chat WLAZ.rpy:336
 translate zh initiative_wlaz_acdc3c35:
@@ -202,7 +202,7 @@ translate zh initiative_wlaz_78daa3e9:
 translate zh initiative_wlaz_06946899:
 
     # wlaz "So... What's your type? Girl-wise, I mean. Just idle curiosity.{fast}" nointeract
-    wlaz "" nointeract
+    wlaz "所以……你喜欢什么类型？女生，我是说。闲着没事问问。{fast}" nointeract
 
 # game/scripts/Chat/Chat WLAZ.rpy:369
 translate zh initiative_wlaz_adc63e23:

@@ -64,7 +64,7 @@ translate zh wcou_interact_check_fe503724:
 translate zh wcou_interact_check_5b49d39c:
 
     # mind "(Good and bad news?{w=[wt2]} This is making me apprehensive.){fast}" nointeract
-    mind "" nointeract
+    mind "（好消息和坏消息？{w=[wt2]}听得我有点慌。）{fast}" nointeract
 
 # game/scripts/Chat/Chat WCOU.rpy:117
 translate zh wcou_interact_check_1584e51a:

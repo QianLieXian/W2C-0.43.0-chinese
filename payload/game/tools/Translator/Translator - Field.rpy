@@ -750,4 +750,4 @@ init -5 python in tltool:
         return bool(renpy.game.persistent.tl_atomic)
 
     def atomic_label():
-        return ("[X]" if atomic_on() else "[  ]").replace("[", "[[") + " Whole tags"
+        return ("[X]" if atomic_on() else "[  ]").replace("[", "[[") + renpy.translate_string(" Whole tags")

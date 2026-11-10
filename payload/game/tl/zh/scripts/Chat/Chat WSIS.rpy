@@ -400,7 +400,7 @@ translate zh wsis_interact_check_930eb718:
 translate zh wsis_interact_check_556c24f3:
 
     # wsis "What do you want? I'm about to go home.{fast}" nointeract
-    wsis "" nointeract
+    wsis "干吗？我正准备回家。{fast}" nointeract
 
 # game/scripts/Chat/Chat WSIS.rpy:662
 translate zh wsis_interact_check_c6925920:
@@ -3880,7 +3880,7 @@ translate zh initiative_wsis_5f5a0e84:
 translate zh initiative_wsis_09e78582:
 
     # wsis "[wsis_to_hero]... Did you... ever date anyone in the countryside?{fast}" nointeract
-    wsis "" nointeract
+    wsis "[wsis_to_hero]……你在乡下……有没有跟人交往过？{fast}" nointeract
 
 # game/scripts/Chat/Chat WSIS.rpy:2910
 translate zh initiative_wsis_36e5b279:
@@ -3940,7 +3940,7 @@ translate zh initiative_wsis_2a5c1652:
 translate zh initiative_wsis_d1f48e0d:
 
     # wsis "S-so... W-what kind of girls do you like?{fast}" nointeract
-    wsis "" nointeract
+    wsis "那、那么……你、你喜欢什么样的女生？{fast}" nointeract
 
 # game/scripts/Chat/Chat WSIS.rpy:2957
 translate zh initiative_wsis_3ce2a4fd:
@@ -3988,7 +3988,7 @@ translate zh initiative_wsis_ceb22ec6:
 translate zh initiative_wsis_b7e37ea4:
 
     # wsis "Hey... What's your favorite color?{fast}" nointeract
-    wsis "" nointeract
+    wsis "嘿……最喜欢什么颜色？{fast}" nointeract
 
 # game/scripts/Chat/Chat WSIS.rpy:3013
 translate zh initiative_wsis_df632b1c:
@@ -4060,7 +4060,7 @@ translate zh initiative_wsis_c1a42f53:
 translate zh initiative_wsis_0c1c8a6c:
 
     # wsis "So... what kind of games do you like?{fast}" nointeract
-    wsis "" nointeract
+    wsis "那么……喜欢玩什么游戏？{fast}" nointeract
 
 # game/scripts/Chat/Chat WSIS.rpy:3084
 translate zh initiative_wsis_b26ff155:
@@ -4144,7 +4144,7 @@ translate zh initiative_wsis_adca1097:
 translate zh initiative_wsis_HERO_Y_Theme_16dce08a:
 
     # wsis "What kind of movies do you watch?{fast}" nointeract
-    wsis "" nointeract
+    wsis "平时看什么电影？{fast}" nointeract
 
 # game/scripts/Chat/Chat WSIS.rpy:3156
 translate zh initiative_wsis_HERO_Y_Theme_aeb9c1fc:
@@ -4264,7 +4264,7 @@ translate zh initiative_wsis_HERO_Y_Theme_aaf53ed0:
 translate zh initiative_wsis_HERO_Y_Theme_310f6635:
 
     # wsis "Y-yeah... What's your favorite memory from back then?{fast}" nointeract
-    wsis "" nointeract
+    wsis "嗯、嗯……最喜欢那时候的哪段回忆？{fast}" nointeract
 
 # game/scripts/Chat/Chat WSIS.rpy:3251
 translate zh initiative_wsis_HERO_Y_Theme_ea2d6b26:

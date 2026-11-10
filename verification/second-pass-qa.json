@@ -1,0 +1,12 @@
+{
+  "version": "r2",
+  "dialogue_blocks": 6944,
+  "string_entries": 3684,
+  "additional_entries_since_r1": 327,
+  "engine_missing_dialogue": 0,
+  "engine_missing_standard_strings": 0,
+  "additional_unmapped_explicit_display_fragments": 0,
+  "all_branches_played": false,
+  "all_image_text_reviewed": false,
+  "android_device_tested": false
+}

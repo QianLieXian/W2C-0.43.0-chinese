@@ -17,7 +17,7 @@ screen wsis_bath_control():
     $ _f = MOCHA_FORTH.peek()
     $ _d = MOCHA_DOWN.peek()
 
-    textbutton "Done" align (0.5, 1.0) action [
+    textbutton renpy.translate_string("Done") align (0.5, 1.0) action [
         SetVariable("ch_move_forth", MOCHA_FORTH.peek()),
         SetVariable("ch_move_down", MOCHA_DOWN.peek()),
         Hide("wsis_bath_control"), Return()]
@@ -322,9 +322,9 @@ label wsis_bath_1: # Bathroom Scene
         pause(3)
 
         $ wsis_lust = 0
-        $ msg.msg("{nm}[fnamewsis]{/nm} came, and her lust reset.")
+        $ msg.msg(renpy.translate_string("{nm}[fnamewsis]{/nm} came, and her lust reset."))
         $ xp_now += 25
-        $ msg.msg("XP [C_Pos]+ 25[C_Off].")
+        $ msg.msg(renpy.translate_string("XP [C_Pos]+ 25[C_Off]."))
         $ wsis_quest_10 = 1
 
         pause(2)

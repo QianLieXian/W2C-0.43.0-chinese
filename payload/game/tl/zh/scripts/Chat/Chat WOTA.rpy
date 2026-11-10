@@ -610,7 +610,7 @@ translate zh initiative_wota_250766d6:
 translate zh initiative_wota_3060fd64:
 
     # wota "The cosmic energies compel me to ask, have you ever, uhh, engaged in the ancient ritual known as d-dating? Of course I'm asking j-just for the mission!{fast}" nointeract
-    wota "" nointeract
+    wota "宇宙的能量迫使我发问，你有没有，呃，进行过被称为恋、恋爱的古老仪式？当然，只、只是任务需要！{fast}" nointeract
 
 # game/scripts/Chat/Chat WOTA.rpy:606
 translate zh initiative_wota_adbc2ce6:
@@ -670,7 +670,7 @@ translate zh initiative_wota_36514550:
 translate zh initiative_wota_516ecba4:
 
     # wota "So, In a hypothetical situation, where you, let's say, might have to choose a partner to, uhh, have a r-romantic relationship with, well, w-what kind of person would you hope her to be?{fast}" nointeract
-    wota "" nointeract
+    wota "那么，假设有一种情况，你，比如说，必须挑选一个伴侣来，嗯，开始一段浪、浪漫的关系，那个，你、你希望她是什么样的人？{fast}" nointeract
 
 # game/scripts/Chat/Chat WOTA.rpy:648
 translate zh initiative_wota_adc63e23:

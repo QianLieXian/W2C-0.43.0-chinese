@@ -898,7 +898,7 @@ translate zh schoolday_1_1_courtyard_5b8be767:
 translate zh schoolday_1_1_courtyard_7d90e3b5:
 
     # wpre "Oh, this courtyard is absolutely lovely, isn't it? The ambiance here feels so peaceful and relaxed, the wide open area with benches, kiosks, and that charming fountain seems designed for students to find comfort during breaks or leisure moments. What do you think? Isn't it a very welcoming place?{fast}" nointeract
-    wpre "哦，这个庭院真漂亮，对不对？这里的气氛好安宁、好放松，宽阔的场地，长椅、凉亭，还有漂亮的喷泉，好像都是为了让学生在课间和闲暇时舒服地休息。您觉得呢？是不是很让人放松？{fast}"
+    wpre "哦，这个庭院真漂亮，对不对？这里的气氛好安宁、好放松，宽阔的场地，长椅、凉亭，还有漂亮的喷泉，好像都是为了让学生在课间和闲暇时舒服地休息。您觉得呢？是不是很让人放松？{fast}" nointeract
 
 # game/scripts/Scene/Scene - Day 2.rpy:793
 translate zh schoolday_1_1_courtyard_9d4e59e9:
@@ -1018,7 +1018,7 @@ translate zh schoolday_1_1_courtyard_74cc794e:
 translate zh schoolday_1_1_courtyard_d2eecb2c:
 
     # wpre "By the way{w=[wt2]}, Would you be interested in the opening of some kind of club?{fast}" nointeract
-    wpre "对了{w=[wt2]}，您有没有特别希望成立的社团？{fast}"
+    wpre "对了{w=[wt2]}，您有没有特别希望成立的社团？{fast}" nointeract
 
 # game/scripts/Scene/Scene - Day 2.rpy:846
 translate zh schoolday_1_1_courtyard_dd81a1e6:
@@ -1114,7 +1114,7 @@ translate zh schoolday_1_1_library_4454e944:
 translate zh schoolday_1_1_library_55b4a7d3:
 
     # hero "Sorry!{w=[wt2]} I just found your change of posture funny.{fast}" nointeract
-    hero "抱歉！{w=[wt2]}只是觉得你突然变了个样子，挺有趣的。{fast}"
+    hero "抱歉！{w=[wt2]}只是觉得你突然变了个样子，挺有趣的。{fast}" nointeract
 
 # game/scripts/Scene/Scene - Day 2.rpy:917
 translate zh schoolday_1_1_library_eb0555b5:
@@ -1150,7 +1150,7 @@ translate zh schoolday_1_1_library_5c202ae7:
 translate zh schoolday_1_1_library_7561de7b:
 
     # wpre "By the way, did something here caught your attention?{fast}" nointeract
-    wpre "对了，这里有没有什么让您感兴趣的？{fast}"
+    wpre "对了，这里有没有什么让您感兴趣的？{fast}" nointeract
 
 # game/scripts/Scene/Scene - Day 2.rpy:942
 translate zh schoolday_1_1_library_7d4cf130:

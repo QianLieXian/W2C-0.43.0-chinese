@@ -34,7 +34,7 @@ translate zh wmom_show_activity_9106588f:
 translate zh wmom_show_activity_52357f61:
 
     # wmom "What a surprise, {nm}[wmom_to_hero]{/nm}! Wanna join me to my yoga workout?{fast}" nointeract
-    wmom "" nointeract
+    wmom "真惊喜呀，{nm}[wmom_to_hero]{/nm}！要跟妈妈一起练瑜伽吗？{fast}" nointeract
 
 # game/scripts/Chat/Chat WMOM.rpy:136
 translate zh wmom_show_activity_9ac71ef8:
@@ -832,7 +832,7 @@ translate zh initiative_wmom_fe6d9bd6:
 translate zh initiative_wmom_37adc9ae:
 
     # wmom "So, {nm}[wmom_to_hero]{/nm}, what about your life in the countryside? Did my big boy met any nice girl? Hmmm? Mama wanna know everything! ~❤{fast}" nointeract
-    wmom "" nointeract
+    wmom "那么，{nm}[wmom_to_hero]{/nm}，在乡下过得怎么样？我的大宝贝有没有遇见好姑娘？嗯？妈妈什么都想知道！～❤{fast}" nointeract
 
 # game/scripts/Chat/Chat WMOM.rpy:906
 translate zh initiative_wmom_adbc2ce6:
@@ -874,7 +874,7 @@ translate zh initiative_wmom_8545af92:
 translate zh initiative_wmom_404c06c6:
 
     # wmom "So. {nm}[wmom_to_hero]{/nm}, mama wanna know more about you. Do any kind of girl catches your eye?{fast}" nointeract
-    wmom "" nointeract
+    wmom "那么，{nm}[wmom_to_hero]{/nm}，妈妈还想多了解你一点。什么样的女生能吸引你呢？{fast}" nointeract
 
 # game/scripts/Chat/Chat WMOM.rpy:931
 translate zh initiative_wmom_adc63e23:

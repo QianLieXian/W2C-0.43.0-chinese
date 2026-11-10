@@ -1276,7 +1276,7 @@ translate zh initiative_wgot_623aaafd:
 translate zh initiative_wgot_455ce7af:
 
     # wgot "I've been... wondering about something. It's perhaps too personal, but... Have you ever dated someone?{fast}" nointeract
-    wgot "" nointeract
+    wgot "有件事……一直有些好奇。也许太私密，不过……你曾与谁交往过吗？{fast}" nointeract
 
 # game/scripts/Chat/Chat WGOT.rpy:925
 translate zh initiative_wgot_adbc2ce6:
@@ -1348,7 +1348,7 @@ translate zh initiative_wgot_10e9f8e2:
 translate zh initiative_wgot_c2164c85:
 
     # wgot "There's something I've been curious about. Though perhaps it's too mundane a question. What type of person you might find... Attractive?{fast}" nointeract
-    wgot "" nointeract
+    wgot "有件事，一直想知道。虽然问题也许过于平凡。什么样的人，会让你觉得……有魅力？{fast}" nointeract
 
 # game/scripts/Chat/Chat WGOT.rpy:969
 translate zh initiative_wgot_adc63e23:

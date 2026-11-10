@@ -715,7 +715,7 @@ screen main_menu():
                     yalign 0.5
                     xsize 600
                     if preferences.gametimeevent == None:
-                        text "{color=#000}👇Drag here👇 or scroll to zoom{/color}" size 40 xalign 0.5
+                        text renpy.translate_string("{color=#000}👇Drag here👇 or scroll to zoom{/color}") size 40 xalign 0.5
                         bar value VariableValue("a_ani_9", 100) xmaximum 600 ymaximum 50 xalign 0.5
                 imagebutton:
                     idle At("images/UI/SM_Carrd.webp", ButtonIdle)
@@ -941,7 +941,7 @@ screen about():
                     spacing 25
                     xsize 1350
                     xalign 0.5
-                    label "Devlog:"
+                    label renpy.translate_string("Devlog:")
 
                     viewport id "devlog_bar":
                         xsize 1150
@@ -955,13 +955,13 @@ screen about():
                             spacing 25
                             xalign 0.5
                             for logii, logvr in enumerate(log_id):
-                                textbutton "[logvr]":
+                                textbutton renpy.translate_string("[logvr]"):
                                     action SetScreenVariable("logvv", logii)
                                     selected (logvv == logii)
 
-                text "Check {a=https://quiquersson.itch.io/w2c/devlog}itch.io{/a} for more detailed devlog info."
+                text renpy.translate_string("Check {a=https://quiquersson.itch.io/w2c/devlog}itch.io{/a} for more detailed devlog info.")
                 text log_txt[logvv] justify True xsize 1350
-                text "[gui.about!t]\n" justify True xsize 1350
+                text renpy.translate_string("[gui.about!t]\n") justify True xsize 1350
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
@@ -1068,7 +1068,7 @@ screen file_slots(title):
 
                 # range(1, 10) gives the numbers from 1 to 9.
                 for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
+                    textbutton renpy.translate_string("[page]") action FilePage(page)
 
                 textbutton _(">") action FilePageNext()
 
@@ -1215,7 +1215,7 @@ screen preferences():
                 # Additional vboxes of type "radio_pref" or "check_pref" can be
                 # added here, to add additional creator-defined preferences.
 
-            label "{pr}{pr}Audio Volume"
+            label renpy.translate_string("{pr}{pr}Audio Volume")
             hbox:
                 vbox:
                     style_prefix "slider"
@@ -1381,8 +1381,8 @@ screen language():
 
                 vbox:
                     xsize 1200
-                    label "{pr}Translator" xalign 0.5
-                    text "{color=#FFFF00}⚠{/color} Rewrite any line of the game in your own language, with the scene it belongs to on screen. Your work is written straight into the translation files. Also opens with {b}SHIFT+T{/b} anywhere in the game."
+                    label renpy.translate_string("{pr}Translator") xalign 0.5
+                    text renpy.translate_string("{color=#FFFF00}⚠{/color} Rewrite any line of the game in your own language, with the scene it belongs to on screen. Your work is written straight into the translation files. Also opens with {b}SHIFT+T{/b} anywhere in the game.")
 
                 vbox:
                     textbutton _("{image=starchan} Open Translator") action TranslatorTool()
@@ -1392,13 +1392,13 @@ screen language():
                 
                 vbox:
                     xsize 1200
-                    label "Default" xalign 0.5
-                    text "{color=#FFFF00}⚠{/color} If you want to help with any translation or proofreading, just contact me on Discord, Twitter, or email."
+                    label renpy.translate_string("Default") xalign 0.5
+                    text renpy.translate_string("{color=#FFFF00}⚠{/color} If you want to help with any translation or proofreading, just contact me on Discord, Twitter, or email.")
 
                 vbox:
                     textbutton _("{image=starchan} English") action [SetVariable("persistent.lang", None), Language(None)]
-                    text "* Writting: {b}quiquersson{/b}"
-                    text "* Proofreading: {b}BlurCat{/b}; {b}Granite{/b}; {b}Oxymoron{/b}"
+                    text renpy.translate_string("* Writting: {b}quiquersson{/b}")
+                    text renpy.translate_string("* Proofreading: {b}BlurCat{/b}; {b}Granite{/b}; {b}Oxymoron{/b}")
                     text tl_done_line(None)
 
             vbox:
@@ -1406,50 +1406,50 @@ screen language():
                 
                 vbox:
                     xsize 1200
-                    label "{pr}Translation" xalign 0.5
-                    text "{color=#FFFF00}⚠{/color} Consider go back to the ''English'' language if you witness an error. Remember that you can always change the language to fit your needs."
+                    label renpy.translate_string("{pr}Translation") xalign 0.5
+                    text renpy.translate_string("{color=#FFFF00}⚠{/color} Consider go back to the ''English'' language if you witness an error. Remember that you can always change the language to fit your needs.")
 
                 vbox:
                     textbutton _("{image=starchan} Português (Brasil)") action [SetVariable("persistent.lang", "pt"), Language("pt")]
-                    text "* Translator: {b}quiquersson{/b}, {b}Kola{/b}, {b}Edditor{/b}"
+                    text renpy.translate_string("* Translator: {b}quiquersson{/b}, {b}Kola{/b}, {b}Edditor{/b}")
                     text tl_done_line("pt")
 
                 vbox:
                     textbutton _("{image=starchan} Español") action [SetVariable("persistent.lang", "es"), Language("es")]
-                    text "* Translator: {b}fenixrage{/b}, {b}Puniasterus{/b}, {b}Viskaax{/b}"
+                    text renpy.translate_string("* Translator: {b}fenixrage{/b}, {b}Puniasterus{/b}, {b}Viskaax{/b}")
                     text tl_done_line("es")
 
                 vbox:
                     textbutton _("{image=starchan} Italiano") action [SetVariable("persistent.lang", "it"), Language("it")]
-                    text "* Translator: {b}mensch{/b}, {b}CristianBuzz{/b}"
+                    text renpy.translate_string("* Translator: {b}mensch{/b}, {b}CristianBuzz{/b}")
                     text tl_done_line("it")
 
                 vbox:
                     textbutton _("{image=starchan} Русский") action [SetVariable("persistent.lang", "ru"), Language("ru")]
-                    text "* Translator: {b}BigFloppa{/b}"
+                    text renpy.translate_string("* Translator: {b}BigFloppa{/b}")
                     text tl_done_line("ru")
 
                 vbox:
                     textbutton _("{image=starchan} 中文") action [SetVariable("persistent.lang", "zh"), Language("zh")]
                     if persistent.lang == "zh":
-                        text "* Translator: {b}小白{/b} & {b}太上月华静夜天尊{/b} (考虑检查他的 {a=https://space.bilibili.com/38852434}Bilibili 频道{/a})"
+                        text renpy.translate_string("* Translator: {b}小白{/b} & {b}太上月华静夜天尊{/b} (考虑检查他的 {a=https://space.bilibili.com/38852434}Bilibili 频道{/a})")
                     else:
-                        text "* Translator: {b}小白{/b} & {b}太上月华静夜天尊{/b} (Consider checking his {a=https://space.bilibili.com/38852434}Bilibili channel{/a})"
+                        text renpy.translate_string("* Translator: {b}小白{/b} & {b}太上月华静夜天尊{/b} (Consider checking his {a=https://space.bilibili.com/38852434}Bilibili channel{/a})")
                     text tl_done_line("zh")
 
                 vbox:
                     textbutton _("{image=starchan} Türkçe") action [SetVariable("persistent.lang", "tr"), Language("tr")]
-                    text "* Translator: {b}zlpfilee{/b}"
+                    text renpy.translate_string("* Translator: {b}zlpfilee{/b}")
                     text tl_done_line("tr")
 
                 vbox:
                     textbutton _("{image=starchan} Française") action [SetVariable("persistent.lang", "fr"), Language("fr")]
-                    text '* Translator: {b}Jin{/b}, {b}Christophe "KurryTofu" Dehay{/b}'
+                    text renpy.translate_string('* Translator: {b}Jin{/b}, {b}Christophe "KurryTofu" Dehay{/b}')
                     text tl_done_line("fr")
 
                 vbox:
                     textbutton _("{image=starchan} 한국어") action [SetVariable("persistent.lang", "ko"), Language("ko")]
-                    text "* Translator: {b}kimbaechoo{/b}"
+                    text renpy.translate_string("* Translator: {b}kimbaechoo{/b}")
                     text tl_done_line("ko")
 
 
@@ -1616,19 +1616,19 @@ screen keyboard_help():
         text _("Rolls forward to later dialogue.")
 
     hbox:
-        label "H"
+        label renpy.translate_string("H")
         text _("Hides the user interface.")
 
     hbox:
-        label "S"
+        label renpy.translate_string("S")
         text _("Takes a screenshot.")
 
     hbox:
-        label "V"
+        label renpy.translate_string("V")
         text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
 
     hbox:
-        label "Shift+A"
+        label renpy.translate_string("Shift+A")
         text _("Opens the accessibility menu.")
 
 

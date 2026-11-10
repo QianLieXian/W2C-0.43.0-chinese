@@ -850,7 +850,7 @@ translate zh initiative_wric_c1060b42:
 translate zh initiative_wric_5ae8e737:
 
     # wric "Though I suppose you wouldn't know anything about proper courtship, would you? I doubt you've ever even been in the presence of anyone worth dating.{fast}" nointeract
-    wric "" nointeract
+    wric "不过，正经追求这种事，你大概一点也不懂，是吧？怀疑你连一个值得交往的人，都没见过。{fast}" nointeract
 
 # game/scripts/Chat/Chat WRIC.rpy:730
 translate zh initiative_wric_6825cdad:
@@ -958,7 +958,7 @@ translate zh initiative_wric_9bb161c5:
 translate zh initiative_wric_482665d8:
 
     # wric "Hmph! So, what would your so refined standards be?{fast}" nointeract
-    wric "" nointeract
+    wric "哼！那么，你那高雅的标准，到底是什么？{fast}" nointeract
 
 # game/scripts/Chat/Chat WRIC.rpy:791
 translate zh initiative_wric_adc63e23:

@@ -436,7 +436,7 @@ translate zh wgal_quest0_cfd9f7b5:
 translate zh wgal_quest0_2f639917:
 
     # wgal "I{w=[wt2]}, like{w=[wt2]}, know I'm pretty hot and{w=[wt2]}, like{w=[wt2]}, it's{w=[wt1]} {bt}OOOBVIOUS{/bt} that every man would die to fuck me!{w=[wt2]} That's all they think, isn't it?{w=[wt4]} What's your answer?{fast}" nointeract
-    wgal "" nointeract
+    wgal "{w=[wt2]}我呢{w=[wt2]}，知道自己身材很辣{w=[wt2]}，所{w=[wt2]}有男{w=[wt1]}人都恨不得上我，这不是{bt}明——摆着{w=[wt2]}{/bt}的吗！你们不就只想这个{w=[wt4]}？你怎么回答？{fast}" nointeract
 
 # game/scripts/Scene/Scene - WGAL.rpy:540
 translate zh wgal_quest0_b4b6bcbb_1:

@@ -883,10 +883,10 @@ label action_change_oops: # Walking in on the changing crowd — called from got
 
             # Barred for the rest of the day: the nav button disappears until `passday` clears it.
             store.hero_locker_f_ban = True
-            msg.msg("You are not welcome in the female locker room for the rest of the day.")
+            msg.msg(renpy.translate_string("You are not welcome in the female locker room for the rest of the day."))
 
         else:
-            msg.msg("They agreed to let it go.")
+            msg.msg(renpy.translate_string("They agreed to let it go."))
 
         Change_RestorePanel(_oops_saved)
 
@@ -897,7 +897,7 @@ label change_oops_leave:
     # Thrown out on a bad verdict. This is not just flavour: `check_playermap` re-calls `goto_school_locker_f` on EVERY gamecheck while HERO stands in the room, so staying put keeps re-arming the scene for any girl who starts changing next. Moving him out is what actually stops it — `show_ui` -> `gamecheck` -> `check_playermap` then scenes whatever room `hero_map` now points at.
     if hero_locker_f_ban:
         $ hero_map = hero_map_prev or (MAP_DATA["school"]["name"] + " - " + MAP_DATA["school"]["map"]["courtyard"]["name"])
-        $ msg.msg("You were shoved out of the female locker room.")
+        $ msg.msg(renpy.translate_string("You were shoved out of the female locker room."))
 
         scene bg_0
 

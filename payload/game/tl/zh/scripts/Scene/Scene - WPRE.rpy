@@ -154,7 +154,7 @@ translate zh wpre_quest0_9299c19e:
 translate zh wpre_quest0_280d210c:
 
     # wpre "I'm glad to hear that! But is this really everything? I don't want to be so intrusive if you don't want to go into details, I just want you to know that you don't have to keep all the problems for you. You can count on me.{fast}" nointeract
-    wpre "" nointeract
+    wpre "那就好！不过，真的只有这些吗？你要是不想细说，我不会追问。只是想让你知道，你不必把所有烦恼都自己扛着。你可以依靠我。{fast}" nointeract
 
 # game/scripts/Scene/Scene - WPRE.rpy:793
 translate zh wpre_quest0_4967dd4a:

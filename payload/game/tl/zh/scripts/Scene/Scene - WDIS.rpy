@@ -136,7 +136,7 @@ translate zh wdis_quest0_2f75d03e:
 translate zh wdis_quest0_c6925608:
 
     # wdis ". . . Y-you'll find it stupid. But... I-I think I like {nm}[fnamehriv]{/nm}. And I j-just worry about him. {gg}He-he...{/gg} I know he would never have eyes for a girl like me, right? He is kind, intelligent, handsome, and perfect! And I'm... A stupid cow!{fast}" nointeract
-    wdis "" nointeract
+    wdis "……你、你会觉得很傻吧。不过……我、我好像喜欢{nm}[fnamehriv]{/nm}。所、所以有点担心他。{gg}嘿嘿……{/gg}我知道，他肯定看不上我这种女生，对吧？他温柔、聪明、帅气，简直完美！可我……就是头笨奶牛！{fast}" nointeract
 
 # game/scripts/Scene/Scene - WDIS.rpy:168
 translate zh wdis_quest0_35d22b35:
@@ -298,7 +298,7 @@ translate zh wdis_quest0_fe6b3303:
 translate zh wdis_quest0_bb234b6d:
 
     # hero "S-sorry! I...{fast}" nointeract
-    hero "" nointeract
+    hero "对、对不起！我……{fast}" nointeract
 
 # game/scripts/Scene/Scene - WDIS.rpy:383
 translate zh wdis_quest0_de87d21b:

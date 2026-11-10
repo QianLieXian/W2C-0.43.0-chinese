@@ -916,7 +916,7 @@ translate zh initiative_wdel_dd1c743e:
 translate zh initiative_wdel_23232521:
 
     # wdel "Hey{w=[wt2]}, bro.{w=[wt3]} Have you ever hooked up with a chick?{fast}" nointeract
-    wdel "" nointeract
+    wdel "嘿{w=[wt2]}，兄弟。{w=[wt3]}有没有跟妞好过？{fast}" nointeract
 
 # game/scripts/Chat/Chat WDEL.rpy:858
 translate zh initiative_wdel_463f322b:
@@ -976,7 +976,7 @@ translate zh initiative_wdel_4261da6d:
 translate zh initiative_wdel_218ed303:
 
     # wdel "Hey, straight up, what kinda chick gets your engine runnin'?{fast}" nointeract
-    wdel "" nointeract
+    wdel "嘿，直说吧，什么样的妞能让你引擎轰鸣？{fast}" nointeract
 
 # game/scripts/Chat/Chat WDEL.rpy:900
 translate zh initiative_wdel_adc63e23:

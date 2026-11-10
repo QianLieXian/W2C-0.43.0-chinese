@@ -112,7 +112,7 @@ translate zh wcou_office1a_59b7e9db:
 translate zh wcou_office1a_40b46de3:
 
     # wcou "So, any more questions?{fast}" nointeract
-    wcou "那，还有什么问题吗？{fast}"
+    wcou "那，还有什么问题吗？{fast}" nointeract
 
 # game/scripts/Scene/Scene - WCOU.rpy:518
 translate zh wcou_office1a_3eb7f5c9:
@@ -184,7 +184,7 @@ translate zh wcou_office1a_e89bd7f1:
 translate zh wcou_office1a_86ac8c6d:
 
     # mind "('Obey your doctor', right? [C_Nam][hero_about_wcou][C_Off] looks like a middle ground between naughty and controlling... No! More than that! She's like 100%% of each! If I do not obey, she must be super disappointed, but on the other hand, I feel that if I get carried away at the moment, I won't be able to impress her.){fast}" nointeract
-    mind "（“要听医生的话”，对吧？[C_Nam][hero_about_wcou][C_Off]好像既爱撩人，又爱控制别人……不！不止这样！这两样她都是百分之百！要是不听话，她肯定很失望；可另一方面，要是我就这么被气氛牵着走，好像又没法让她刮目相看。）{fast}"
+    mind "（“要听医生的话”，对吧？[C_Nam][hero_about_wcou][C_Off]好像既爱撩人，又爱控制别人……不！不止这样！这两样她都是百分之百！要是不听话，她肯定很失望；可另一方面，要是我就这么被气氛牵着走，好像又没法让她刮目相看。）{fast}" nointeract
 
 # game/scripts/Scene/Scene - WCOU.rpy:570
 translate zh wcou_office1a_267d565d:
@@ -448,7 +448,7 @@ translate zh wcou_checkup1_end_316b73cb:
 translate zh wcou_checkup1_end_ba070f71:
 
     # mind "(Anything... Else...?) {fast}" nointeract
-    mind "（别的……东西……？）{fast}"
+    mind "（别的……东西……？）{fast}" nointeract
 
 # game/scripts/Scene/Scene - WCOU.rpy:1052
 translate zh wcou_checkup1_end_e56e8718:
@@ -958,7 +958,7 @@ translate zh wcou_quest_1_0560aba8:
 translate zh wcou_quest_1_1_e9d1d6d0:
 
     # wcou "I don't know how far you went with auntie and cousing, but... Maybe I could use some of that vigor of yours. You know, someone to help relieve a little stress whenever I want... Being my little dog! Would you make that deal? ~❤{fast}" nointeract
-    wcou "不知道你和姨妈、表妹进展到哪儿了，不过……也许我也能用上你这股精力。你知道，找个人，随时随地帮我缓解压力……当我的小狗狗！这笔交易，做不做？～❤{fast}"
+    wcou "不知道你和姨妈、表妹进展到哪儿了，不过……也许我也能用上你这股精力。你知道，找个人，随时随地帮我缓解压力……当我的小狗狗！这笔交易，做不做？～❤{fast}" nointeract
 
 # game/scripts/Scene/Scene - WCOU.rpy:1804
 translate zh wcou_quest_1_1_dcd65289:
@@ -1150,7 +1150,7 @@ translate zh wcou_quest_1_1_c9590593:
 translate zh wcou_quest_1_1_890c2937:
 
     # hero "{aw}O{w=[wt1]}-oh{w=[wt2]}, I{w=[wt1]}-I...{/aw}{fast}" nointeract
-    hero "{aw}哦{w=[wt1]}、哦{w=[wt2]}，我{w=[wt1]}、我……{/aw}{fast}"
+    hero "{aw}哦{w=[wt1]}、哦{w=[wt2]}，我{w=[wt1]}、我……{/aw}{fast}" nointeract
 
 # game/scripts/Scene/Scene - WCOU.rpy:2034
 translate zh wcou_quest_1_1_11b823ab:

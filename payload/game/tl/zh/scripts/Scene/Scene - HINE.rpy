@@ -202,7 +202,7 @@ translate zh hine_club_choice_7355235c:
 translate zh hine_club_choice_9bfb3fa5:
 
     # hine "[a_event_2]{fast}" nointeract
-    hine "[a_event_2]{fast}"
+    hine "[a_event_2]{fast}" nointeract
 
 # game/scripts/Scene/Scene - HINE.rpy:243
 translate zh hine_music_club_73df66ad:

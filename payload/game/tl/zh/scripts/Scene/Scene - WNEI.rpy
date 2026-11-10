@@ -262,7 +262,7 @@ translate zh wnei_quest_2_2_877f0972:
 translate zh wnei_quest_2_2_ad7a83d3:
 
     # wmam "Oh my{w=[wt2]}, glad see you back here, dear!{w=[wt2]} Why don't ya cum to have a breakfast with us, hm?{w=[wt3]} I'm gonna make a special lunch for you!{fast}" nointeract
-    wmam "哎呀{w=[wt2]}，又在这里见到你，真高兴，亲爱的！{w=[wt2]}来我们家吃早饭吧，嗯？{w=[wt3]}我给你做顿特别的午餐！{fast}"
+    wmam "哎呀{w=[wt2]}，又在这里见到你，真高兴，亲爱的！{w=[wt2]}来我们家吃早饭吧，嗯？{w=[wt3]}我给你做顿特别的午餐！{fast}" nointeract
 
 # game/scripts/Scene/Scene - WNEI.rpy:395
 translate zh wnei_quest_2_2_7a155527:
@@ -1138,7 +1138,7 @@ translate zh wnei_quest_2a_e836b295:
 translate zh wnei_quest_2a_d6ff81e3:
 
     # wnei "Adults always want to control everything and decide what is better for children, but never take into account what children think. They just think of work and monotonous things! I was always afraid of becoming that way, So I decided I wouldn't change, and that I'd become a super duper cool adult!{fast}" nointeract
-    wnei "大人总想控制一切，决定什么才对孩子好，却从不考虑孩子怎么想。满脑子都是工作，还有无聊的事！我一直很怕自己也变成那样，所以我决定，不要改变，要成为一个超级超级酷的大人！{fast}"
+    wnei "大人总想控制一切，决定什么才对孩子好，却从不考虑孩子怎么想。满脑子都是工作，还有无聊的事！我一直很怕自己也变成那样，所以我决定，不要改变，要成为一个超级超级酷的大人！{fast}" nointeract
 
 # game/scripts/Scene/Scene - WNEI.rpy:1581
 translate zh wnei_quest_2a_c98aa246:
@@ -1180,7 +1180,7 @@ translate zh wnei_quest_2a_581888cc:
 translate zh wnei_quest_2a_3de3ff0e:
 
     # mind "({aw}Ehhh...!?{/aw}){fast}" nointeract
-    mind "（{aw}欸……！？{/aw}）{fast}"
+    mind "（{aw}欸……！？{/aw}）{fast}" nointeract
 
 # game/scripts/Scene/Scene - WNEI.rpy:1648
 translate zh wnei_quest_2a_bb446073:
@@ -1366,7 +1366,7 @@ translate zh wnei_quest_2a_2617d32b:
 translate zh wnei_quest_2a_b842119d:
 
     # mind "(...Wait!{w=[wt3]} I'm in trouble!!!{w=[wt4]} The handshake moment is when the father examines another man's hand{w=[wt1]}, where a firm handshake means the man is hardworking{w=[wt1]}, then worthy of his daughter.{w=[wt3]} Else{w=[wt2]}, the suitor is seen as a bum!{w=[wt3]} Am I strong enough for that?{w=[wt3]} I still can play it safe and just do a gentleman handshake.{w=[wt4]} What do I do now!?){fast}" nointeract
-    mind "（……等等！{w=[wt3]}麻烦大了！！！{w=[wt4]}握手时，父亲会考察对方的手{w=[wt1]}，握得有力，就代表踏实肯干{w=[wt1]}，才配得上自己的女儿。{w=[wt3]}不然{w=[wt2]}，求婚者就会被当成游手好闲的家伙！{w=[wt3]}我够有力气吗？{w=[wt3]}也可以求稳，只礼貌地握一下。{w=[wt4]}现在怎么办！？）{fast}"
+    mind "（……等等！{w=[wt3]}麻烦大了！！！{w=[wt4]}握手时，父亲会考察对方的手{w=[wt1]}，握得有力，就代表踏实肯干{w=[wt1]}，才配得上自己的女儿。{w=[wt3]}不然{w=[wt2]}，求婚者就会被当成游手好闲的家伙！{w=[wt3]}我够有力气吗？{w=[wt3]}也可以求稳，只礼貌地握一下。{w=[wt4]}现在怎么办！？）{fast}" nointeract
 
 # game/scripts/Scene/Scene - WNEI.rpy:1849
 translate zh wnei_quest_2a_c80acc9f:

@@ -23,7 +23,7 @@ label wric_show:
 # Load activity
 # ----------------------------------------------------------------------------------------------------
 label wric_show_activity:
-    $ msg.msg("[C_Nam][fnamewric][C_Off] is " + str(Get_ActivityName("wric")))
+    $ msg.msg(renpy.translate_string("[C_Nam][fnamewric][C_Off] is ") + renpy.translate_string(str(str(Get_ActivityName("wric")))))
 
     if Get_ActivityName("wric") in ["at class"]:
         jump show_ui
@@ -37,7 +37,7 @@ label wric_show_activity:
 label wric_interact_end:
     if "interacting_hero" in wric_know:
         $ wric_know.remove("interacting_hero")
-        $ msg.msg("Finish talking")
+        $ msg.msg(renpy.translate_string("Finish talking"))
     jump show_ui
 
 # ----------------------------------------------------------------------------------------------------
@@ -524,7 +524,7 @@ label wric_interact_chat:
             $ wric_know.append("Talk_School")
 
             if perk_int_per >= 1 and not "WRIC_BG_PRESIDENT_GGGDAUGHTER" in hero_know:
-                $ msg.msg("[C_Pos]Success check for [C_Dat]Perception[C_Off] skill[C_Off]")
+                $ msg.msg(renpy.translate_string("[C_Pos]Success check for [C_Dat]Perception[C_Off] skill[C_Off]"))
                 play SE1 "JingleRight.mp3"
                 hero "You know{w=[wt2]}, there's something I noticed a while ago.{w=[wt3]} You have the same last name as the president honored on the monument in the school front yard.{w=[wt3]} Is there some degree of kinship between you?"
 
@@ -535,7 +535,7 @@ label wric_interact_chat:
                 wric "{bt}Well... Well...{/bt}{w=[wt3]} You really do surprise me sometimes, you know?{w=[wt2]} I have to say I admire how observant you are.{w=[wt4]} Exactly.{w=[wt2]} That man was my great-great-grandfather{w=[wt2]}, the greatest president this country has ever had! He was honored for his education bills!"
 
                 $ hero_know.append("WRIC_BG_PRESIDENT_GGGDAUGHTER")
-                $ msg.msg("You know {nm}[fnamewric]{/nm} a little more")
+                $ msg.msg(renpy.translate_string("You know {nm}[fnamewric]{/nm} a little more"))
                 $ add_stat("wric", "inti", perk_int_per)
 
                 if not "WRIC_BG_SCHOOL_1" in hero_know:
@@ -552,7 +552,7 @@ label wric_interact_chat:
                 label wric_interact_chat_WRIC_BG_SCHOOL_1:
                     if not "WRIC_BG_SCHOOL_1" in hero_know:
                         $ hero_know.append("WRIC_BG_SCHOOL_1")
-                        $ msg.msg("You know {nm}[fnamewric]{/nm} a little more")
+                        $ msg.msg(renpy.translate_string("You know {nm}[fnamewric]{/nm} a little more"))
                         $ add_stat("wric", "inti", 1)
 
                         $ wric_mood = "A1"
@@ -625,7 +625,7 @@ label wric_interact_chat:
 
                     if not "WRIC_BG_WSIS_1" in hero_know:
                         $ hero_know.append("WRIC_BG_WSIS_1")
-                        $ msg.msg("You know {nm}[fnamewric]{/nm} a little more")
+                        $ msg.msg(renpy.translate_string("You know {nm}[fnamewric]{/nm} a little more"))
                         $ add_stat("wric", "inti", 1)
 
                         $ hero_mood = "A2"
@@ -649,7 +649,7 @@ label wric_interact_chat:
 
                         else:
                             $ hero_know.append("WRIC_BG_WSIS_2")
-                            $ msg.msg("You know {nm}[fnamewric]{/nm} a little more")
+                            $ msg.msg(renpy.translate_string("You know {nm}[fnamewric]{/nm} a little more"))
                             $ add_stat("wric", "inti", 1)
 
                             $ hero_mood = "O1"
@@ -668,7 +668,7 @@ label wric_interact_chat:
 
                     elif not "WRIC_BG_WSIS_3" in hero_know:
                         $ hero_know.append("WRIC_BG_WSIS_3")
-                        $ msg.msg("You know {nm}[fnamewric]{/nm} a little more")
+                        $ msg.msg(renpy.translate_string("You know {nm}[fnamewric]{/nm} a little more"))
                         $ add_stat("wric", "inti", 1)
 
                         $ wric_mood = "O1"
@@ -725,7 +725,7 @@ label initiative_wric:
 
             "Deny":
                 $ wric_know.append("HERO_Dated_N")
-                $ msg.msg("{nm}[fnamewric]{/nm} knows you a little more")
+                $ msg.msg(renpy.translate_string("{nm}[fnamewric]{/nm} knows you a little more"))
                 $ add_stat("wric", "inti", 0.5)
                 hero "N{w=[wt1]}-no{w=[wt2]}, I've never dated anyone."
 
@@ -734,7 +734,7 @@ label initiative_wric:
 
             "Confirm":
                 $ wric_know.append("HERO_Dated_Y")
-                $ msg.msg("{nm}[fnamewric]{/nm} knows you a little more")
+                $ msg.msg(renpy.translate_string("{nm}[fnamewric]{/nm} knows you a little more"))
                 $ add_stat("wric", "inti", 0.5)
                 hero "W{w=[wt1]}-well{w=[wt2]}, I have dated someone before..."
 
@@ -805,7 +805,7 @@ label initiative_wric:
                 if _return:
                     $ wric_know.append("HERO_Y_Girl_" + _return)
 
-                $ msg.msg("{nm}[fnamewric]{/nm} knows you a little more")
+                $ msg.msg(renpy.translate_string("{nm}[fnamewric]{/nm} knows you a little more"))
                 $ add_stat("wric", "inti", 0.5)
 
                 if _return in ["Personality_9", "Personality_11", "Breast_2", "Breast_3", "HairSize_5", "HairSize_6"]: # Match - intelligent, visually diligent, medium/big breasts, long hair (elegant)

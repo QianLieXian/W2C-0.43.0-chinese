@@ -82,7 +82,7 @@ translate zh club_studentcouncil_start_4a48b5f5:
 translate zh club_studentcouncil_start_1f91b346:
 
     # wrin "[C_Pos]Bonus:[C_Off] your academic choices carry more weight, and you earn more money by doing Student Council activities.{pr}[C_Neg]Onus:[C_Off] reduces the gain of intimacy, love, and lust of students outside the Student Council.{fast}" nointeract
-    wrin "" nointeract
+    wrin "[C_Pos]优势：[C_Off]你的学业相关选择更有影响力，完成学生会活动也能赚到更多钱。{pr}[C_Neg]代价：[C_Off]与学生会以外的学生相处时，亲密度、好感度和欲望增长减少。{fast}" nointeract
 
 # game/scripts/Mechanics/Club - StudentCouncil.rpy:82
 translate zh club_studentcouncil_start_473c3c27:
@@ -196,7 +196,7 @@ translate zh club_studentcouncil_quest_79ece6de:
 translate zh club_studentcouncil_quest_59bb5439:
 
     # wrin "Actually{w=[wt1]}, yes.{w=[wt2]} One of the showers in the [C_Dat]girls' locker room[C_Off] gave out{w=[wt1]}, water's leaking all over the floor.{w=[wt3]} Maintenance won't send anyone until next week{w=[wt1]}, and we can't leave it flooding.{w=[wt2]} You're handy with that sort of thing{w=[wt1]}, aren't you?{fast}" nointeract
-    wrin "" nointeract
+    wrin "还真有{w=[wt1]}。{w=[wt2]}[C_Dat]女生更衣室[C_Off]有个花洒坏了{w=[wt1]}，水漏得满地都是。{w=[wt3]}维修人员下周才肯来{w=[wt1]}，总不能一直让它淹着。{w=[wt2]}这种活儿你应该挺拿手的吧{w=[wt1]}？{fast}" nointeract
 
 # game/scripts/Mechanics/Club - StudentCouncil.rpy:356
 translate zh club_studentcouncil_quest_bd7f789b:

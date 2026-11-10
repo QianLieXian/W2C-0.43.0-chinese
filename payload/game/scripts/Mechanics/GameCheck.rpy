@@ -186,13 +186,13 @@ screen LoadingCheckpoint():
             vbox:
                 spacing 50 xalign 0.5 yalign 0.5 xsize 600
 
-                label "{size=60}Attention, hero!{/size}" xalign 0.5
+                label renpy.translate_string("{size=60}Attention, hero!{/size}") xalign 0.5
 
-                text "This place is no longer safe! In the moment, the multiverses are corrupted, causing various conflicts and incompatibilities between saves, therefore you must get isekaied through [C_Dat]New Game[C_Off]. But don't worry, you now have the option to choose your progress through [C_Dat]Custom[C_Off] option!" justify True size 45 xalign 0.5
+                text renpy.translate_string("This place is no longer safe! In the moment, the multiverses are corrupted, causing various conflicts and incompatibilities between saves, therefore you must get isekaied through [C_Dat]New Game[C_Off]. But don't worry, you now have the option to choose your progress through [C_Dat]Custom[C_Off] option!") justify True size 45 xalign 0.5
 
                 #text "It seems that this save is from a older version of the game, that may contain incompatibilities. It's suggested to continue playing from a safer checkpoint on [C_Dat]New Game[C_Off]." justify True
 
-                textbutton "Return" action MainMenu(confirm=False) xalign 0.5
+                textbutton renpy.translate_string("Return") action MainMenu(confirm=False) xalign 0.5
 
                 #textbutton "Just Load" action Return() xalign 0.5
 
@@ -282,7 +282,7 @@ label after_load:
     # Fix Missing Gallery Image
     # --------------------------------------------------
     if "SHOT_WatchingTV" in cellbg and "SHOT_WatchingTV_HERO" not in cellbg:
-        $ msg.msg("[C_Pos]Updated data for phone gallery image[C_Off]")
+        $ msg.msg(renpy.translate_string("[C_Pos]Updated data for phone gallery image[C_Off]"))
         $ cellbg.remove("SHOT_WatchingTV")
         $ cellbg.insert(1, "SHOT_WatchingTV_HERO")
         $ cellbg.insert(1, "SHOT_WatchingTV_WSIS")
@@ -298,13 +298,13 @@ label after_load:
             
             # Add new item using proper function
             AddItem_Inventory("Coll_Plushy_BunnyPink", 1, None, wsis_item)
-            msg.msg("[C_Pos]Updated data for [C_Off][C_Nam][fnamewsis][C_Off][C_Pos]'s inventory[C_Off]")
+            msg.msg(renpy.translate_string("[C_Pos]Updated data for [C_Off][C_Nam][fnamewsis][C_Off][C_Pos]'s inventory[C_Off]"))
 
     # --------------------------------------------------
     # Student Council database fixed
     # --------------------------------------------------
     if hasattr(store, 'council_blacklist'):
-        $ msg.msg("[C_Pos]Updated data for Student Council database[C_Off]")
+        $ msg.msg(renpy.translate_string("[C_Pos]Updated data for Student Council database[C_Off]"))
         $ club_stco_blacklist = [council_blacklist]
         if "hriv" in club_stco_blacklist:
             $ add_stat("hero", "club_stco", 5)
@@ -321,14 +321,14 @@ label after_load:
     # --------------------------------------------------
     if hasattr(store, 'hriv_prey'):
         if hriv_prey[3] != 40:
-            $ msg.msg("[C_Pos]Updated data for affection between characters[C_Off]")
+            $ msg.msg(renpy.translate_string("[C_Pos]Updated data for affection between characters[C_Off]"))
             $ wdis_hriv = hriv_prey[3]
             $ hriv_prey[3] = 0
     # --------------------------------------------------
     if perk_skl_dnc == 1:
         $ perk_skl_dnc = 0
         $ perk += 1
-        $ msg.msg("[C_Dat]Dance skill[C_Off] was removed and 1 perk was added back")
+        $ msg.msg(renpy.translate_string("[C_Dat]Dance skill[C_Off] was removed and 1 perk was added back"))
 
     # --------------------------------------------------
     # Convert old string-based items to new Item objects
@@ -362,7 +362,7 @@ label after_load:
     # --------------------------------------------------
     # Short notification timer
     # --------------------------------------------------
-    $ msg.msg("[C_Pos]Game loaded successfully[C_Off]")
+    $ msg.msg(renpy.translate_string("[C_Pos]Game loaded successfully[C_Off]"))
     pause
     $ msg.clear()
     # --------------------------------------------------
@@ -473,11 +473,11 @@ label check_playermap:
         scene bg_0
         with dissolve
         if hero_wear != None and Wear_Available("hero", "home") == "home":
-            $ msg.msg("You dressed your home outfit.")
+            $ msg.msg(renpy.translate_string("You dressed your home outfit."))
         elif hero_wear != None and task_loc_hero_home != "wardrobe":
-            $ msg.msg("Your home clothes are in the wash, so you make do with what is left.")
+            $ msg.msg(renpy.translate_string("Your home clothes are in the wash, so you make do with what is left."))
         elif hero_wear != None:
-            $ msg.msg("Your home clothes are too filthy to wear, so you make do with what is left.")
+            $ msg.msg(renpy.translate_string("Your home clothes are too filthy to wear, so you make do with what is left."))
         $ hero_wear = Wear_Available("hero", "home")
 
     # Once a day each housemate who shares the room reacts to HERO in his underwear or a towel: someone close enjoys the view (intimacy, a little lust), anyone else glares (WSIS rage, WMOM love).
@@ -489,14 +489,14 @@ label check_playermap:
                     _res_name = C_Nam + getattr(store, "fname" + _res) + C_Off
                     _res_look = "in your underwear" if hero_wear == "under" else "in nothing but a towel"
                     if intimacy_tier(_res) >= 2:
-                        msg.msg(_res_name + " eyes you up " + _res_look + " and doesn't look away")
+                        msg.msg(_res_name + renpy.translate_string(" eyes you up ") + _res_look + renpy.translate_string(" and doesn't look away"))
                         add_stat(_res, "inti", 2)
                         add_stat(_res, "lust", 2)
                     elif _res == "wsis":
-                        msg.msg(_res_name + " glares at you wandering around " + _res_look)
+                        msg.msg(_res_name + renpy.translate_string(" glares at you wandering around ") + _res_look)
                         add_stat(_res, "rage", 3)
                     else:
-                        msg.msg(_res_name + " scolds you for wandering around " + _res_look)
+                        msg.msg(_res_name + renpy.translate_string(" scolds you for wandering around ") + _res_look)
                         add_stat(_res, "love", -1)
 
     if hero_map == MAP_DATA["home"]["name"] + " - " + MAP_DATA["home"]["map"]["facade"]["name"]:
@@ -556,7 +556,7 @@ label check_playermap:
             scene bg_0
             with dissolve
             $ hero_wear = "school"
-            $ msg.msg("You dressed your school uniform.")
+            $ msg.msg(renpy.translate_string("You dressed your school uniform."))
             #$ msg.msg("You're at" + str(Get_MapName("hero")))
             pause(1)
         scene bg_school courtyard
@@ -613,7 +613,7 @@ label check_playermap:
             scene bg_0
             with dissolve
             $ hero_wear = "school_swim"
-            $ msg.msg("You dressed your swimsuit uniform.")
+            $ msg.msg(renpy.translate_string("You dressed your swimsuit uniform."))
             pause(1)
         scene bg_school pool
         show screen nav_school_pool
@@ -624,7 +624,7 @@ label check_playermap:
             scene bg_0
             with dissolve
             $ hero_wear = "school_sport"
-            $ msg.msg("You dressed your gym uniform.")
+            $ msg.msg(renpy.translate_string("You dressed your gym uniform."))
             pause(1)
         scene bg_school sportcourt
         show screen nav_school_sportcourt
@@ -784,9 +784,9 @@ init python:
                 bonus_name = date_score_ui[DATE_AXIS_BONUS[stat_id][5:]][0].lower()
                 bonus_char = getattr(store, f"fname{char_id}", None) or char_id
                 if bonus_moved > 0:
-                    msg.msg("[C_Nam]" + bonus_char + "[C_Off] [C_Per]" + bonus_name + " bonus[C_Off]: [C_Pos]+" + str(round(bonus_moved, 2)) + "%[C_Off]")
+                    msg.msg(renpy.translate_string("[C_Nam]") + bonus_char + renpy.translate_string("[C_Off] [C_Per]") + bonus_name + renpy.translate_string(" bonus[C_Off]: [C_Pos]+") + renpy.translate_string(str(str(round(bonus_moved, 2)))) + renpy.translate_string("%[C_Off]"))
                 else:
-                    msg.msg("[C_Nam]" + bonus_char + "[C_Off] [C_Per]" + bonus_name + " bonus[C_Off]: [C_Neg]" + str(round(bonus_moved, 2)) + "%[C_Off]")
+                    msg.msg(renpy.translate_string("[C_Nam]") + bonus_char + renpy.translate_string("[C_Off] [C_Per]") + bonus_name + renpy.translate_string(" bonus[C_Off]: [C_Neg]") + renpy.translate_string(str(str(round(bonus_moved, 2)))) + renpy.translate_string("%[C_Off]"))
             return
 
         # Date axes earn on the date's OWN scale: a flat base per raw point, multiplied by how far that
@@ -826,9 +826,9 @@ init python:
                     axis_name = date_score_ui[stat_id[5:]][0].lower()
                     axis_char = getattr(store, f"fname{char_id}", None) or char_id
                     if axis_moved > 0:
-                        msg.msg("[C_Nam]" + axis_char + "[C_Off] [C_Per]" + axis_name + "[C_Off]: [C_Pos]+" + str(round(axis_moved, 2)) + "%[C_Off]")
+                        msg.msg(renpy.translate_string("[C_Nam]") + axis_char + renpy.translate_string("[C_Off] [C_Per]") + axis_name + renpy.translate_string("[C_Off]: [C_Pos]+") + renpy.translate_string(str(str(round(axis_moved, 2)))) + renpy.translate_string("%[C_Off]"))
                     else:
-                        msg.msg("[C_Nam]" + axis_char + "[C_Off] [C_Per]" + axis_name + "[C_Off]: [C_Neg]" + str(round(axis_moved, 2)) + "%[C_Off]")
+                        msg.msg(renpy.translate_string("[C_Nam]") + axis_char + renpy.translate_string("[C_Off] [C_Per]") + axis_name + renpy.translate_string("[C_Off]: [C_Neg]") + renpy.translate_string(str(str(round(axis_moved, 2)))) + renpy.translate_string("%[C_Off]"))
                 return
 
         # No date running (or not with her): an axis call simply pays the affinity it is made of.
@@ -876,9 +876,9 @@ init python:
                 stat_display = f"[C_Per]reputation[C_Off] with [C_Dat]{club_name}[C_Off]"
 
                 if final_value > 0:
-                    msg.msg("[C_Nam]" + char_name + "[C_Off] " + stat_display + ": [C_Pos]+" + str(final_value) + "[C_Off]")
+                    msg.msg(renpy.translate_string("[C_Nam]") + char_name + renpy.translate_string("[C_Off] ") + stat_display + renpy.translate_string(": [C_Pos]+") + renpy.translate_string(str(str(final_value))) + renpy.translate_string("[C_Off]"))
                 else:
-                    msg.msg("[C_Nam]" + char_name + "[C_Off] " + stat_display + ": [C_Neg]" + str(final_value) + "[C_Off]")
+                    msg.msg(renpy.translate_string("[C_Nam]") + char_name + renpy.translate_string("[C_Off] ") + stat_display + renpy.translate_string(": [C_Neg]") + renpy.translate_string(str(str(final_value))) + renpy.translate_string("[C_Off]"))
 
             return
 
@@ -984,14 +984,14 @@ init python:
                 else:
                     stat_display = "bonus[C_Off][C_Whi] for next interactions"
                 if final_value > 0:
-                    msg.msg("[C_Nam]" + char_name + "[C_Off] [C_Per]" + stat_display + "[C_Off]: [C_Pos]+" + str(final_value) + "%[C_Off]")
+                    msg.msg(renpy.translate_string("[C_Nam]") + char_name + renpy.translate_string("[C_Off] [C_Per]") + stat_display + renpy.translate_string("[C_Off]: [C_Pos]+") + renpy.translate_string(str(str(final_value))) + renpy.translate_string("%[C_Off]"))
                 else:
-                    msg.msg("[C_Nam]" + char_name + "[C_Off] [C_Per]" + stat_display + "[C_Off]: [C_Neg]" + str(final_value) + "%[C_Off]")
+                    msg.msg(renpy.translate_string("[C_Nam]") + char_name + renpy.translate_string("[C_Off] [C_Per]") + stat_display + renpy.translate_string("[C_Off]: [C_Neg]") + renpy.translate_string(str(str(final_value))) + renpy.translate_string("%[C_Off]"))
             else:
                 if final_value > 0:
-                    msg.msg("[C_Nam]" + char_name + "[C_Off] [C_Per]" + stat_display + "[C_Off]: [C_Pos]+" + str(final_value) + "[C_Off]")
+                    msg.msg(renpy.translate_string("[C_Nam]") + char_name + renpy.translate_string("[C_Off] [C_Per]") + stat_display + renpy.translate_string("[C_Off]: [C_Pos]+") + renpy.translate_string(str(str(final_value))) + renpy.translate_string("[C_Off]"))
                 else:
-                    msg.msg("[C_Nam]" + char_name + "[C_Off] [C_Per]" + stat_display + "[C_Off]: [C_Neg]" + str(final_value) + "[C_Off]")
+                    msg.msg(renpy.translate_string("[C_Nam]") + char_name + renpy.translate_string("[C_Off] [C_Per]") + stat_display + renpy.translate_string("[C_Off]: [C_Neg]") + renpy.translate_string(str(str(final_value))) + renpy.translate_string("[C_Off]"))
         
         return
 
@@ -1599,24 +1599,24 @@ label room_entry_exposure(char_id, activity):
     if activity == "bathing":
         if _tier >= 2:
             call hide_ui from _call_hide_ui_122
-            $ msg.msg("You accidentally walk in on [C_Nam]" + _char_name + "[C_Off] taking a bath!")
-            $ msg.msg("[C_Nam]" + _char_name + "[C_Off] is startled but quickly covers herself.")
+            $ msg.msg(renpy.translate_string("You accidentally walk in on [C_Nam]") + _char_name + renpy.translate_string("[C_Off] taking a bath!"))
+            $ msg.msg(renpy.translate_string("[C_Nam]") + _char_name + renpy.translate_string("[C_Off] is startled but quickly covers herself."))
             $ add_stat(char_id, "inti", 1)
             $ hero_lust = min(100, hero_lust + 3)
             jump show_ui
         elif _tier >= 1:
-            $ msg.msg("You hear water running inside. [C_Nam]" + _char_name + "[C_Off] is taking a bath.")
+            $ msg.msg(renpy.translate_string("You hear water running inside. [C_Nam]") + _char_name + renpy.translate_string("[C_Off] is taking a bath."))
 
     elif activity == "changing":
         if _tier >= 2:
             call hide_ui from _call_hide_ui_123
-            $ msg.msg("You walk in on [C_Nam]" + _char_name + "[C_Off] changing clothes!")
-            $ msg.msg("[C_Nam]" + _char_name + "[C_Off] freezes for a moment before shooing you out.")
+            $ msg.msg(renpy.translate_string("You walk in on [C_Nam]") + _char_name + renpy.translate_string("[C_Off] changing clothes!"))
+            $ msg.msg(renpy.translate_string("[C_Nam]") + _char_name + renpy.translate_string("[C_Off] freezes for a moment before shooing you out."))
             $ add_stat(char_id, "inti", 1)
             $ hero_lust = min(100, hero_lust + 3)
             jump show_ui
         elif _tier >= 1:
-            $ msg.msg("You hear rustling inside. [C_Nam]" + _char_name + "[C_Off] is getting changed.")
+            $ msg.msg(renpy.translate_string("You hear rustling inside. [C_Nam]") + _char_name + renpy.translate_string("[C_Off] is getting changed."))
 
     return
 
@@ -1659,7 +1659,7 @@ label goto_home_bedroom_wsis:
         jump wsis_sleepover
 
     elif map_lock_bedroom_wsis == True:
-        $ msg.msg("It's locked")
+        $ msg.msg(renpy.translate_string("It's locked"))
         return
 
     $ hero_map = MAP_DATA["home"]["name"] + " - " + MAP_DATA["home"]["map"]["bedroom_wsis"]["name"]
@@ -1760,7 +1760,7 @@ label goto_school_locker_f:
     # Idea 4 v1: the only reason HERO can reach this room is WTPE's "grab my item" errand — complete it on entry (BEFORE the exposure's possible jump). Future access hooks would branch on their own flag.
     if hero_locker_f_access and club_stco_quest_1 == 0:
         $ hero_locker_f_access = False
-        $ msg.msg("You quickly grab the equipment bag the teacher left on the bench.")
+        $ msg.msg(renpy.translate_string("You quickly grab the equipment bag the teacher left on the bench."))
 
     # Group confrontation takes priority: if anyone is mid-CHANGE the crowd scene runs instead of the single-girl toast (it carries its own replay guard for the whole cast). Scene + interaction live in `action_change_oops` (System - Changing.rpy); a lone bather still falls through to the old path.
     # `hero_locker_oops_visit` caps it at ONE group scene per visit. Without it this label re-runs on every gamecheck while HERO stands here, so each girl who starts changing next would chain another scene.
@@ -2056,14 +2056,14 @@ label npc_lust:
             $ wmom_know.remove("WMOM_is_horny_1")
         if not "WMOM_is_horny_2" in wmom_know:
             $ wmom_know.append("WMOM_is_horny_2")
-            $ msg.msg("{nm}[fnamewmom]{/nm} is very horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewmom]{/nm} is very horny."))
     elif wmom_lust >= min(75,(char_inti_cap*2)+20):
         $ wmom_fx = 1
         if "WMOM_is_horny_2" in wmom_know:
             $ wmom_know.remove("WMOM_is_horny_2")
         if not "WMOM_is_horny_1" in wmom_know:
             $ wmom_know.append("WMOM_is_horny_1")
-            $ msg.msg("{nm}[fnamewmom]{/nm} is getting horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewmom]{/nm} is getting horny."))
     else:
         $ wmom_fx = 0
         if "WMOM_is_horny_1" in wmom_know:
@@ -2078,14 +2078,14 @@ label npc_lust:
             $ wsis_know.remove("WSIS_is_horny_1")
         if not "WSIS_is_horny_2" in wsis_know:
             $ wsis_know.append("WSIS_is_horny_2")
-            $ msg.msg("{nm}[fnamewsis]{/nm} is very horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewsis]{/nm} is very horny."))
     elif wsis_lust >= min(75,(char_inti_cap*2)+20):
         $ wsis_fx = 1
         if "WSIS_is_horny_2" in wsis_know:
             $ wsis_know.remove("WSIS_is_horny_2")
         if not "WSIS_is_horny_1" in wsis_know:
             $ wsis_know.append("WSIS_is_horny_1")
-            $ msg.msg("{nm}[fnamewsis]{/nm} is getting horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewsis]{/nm} is getting horny."))
     else:
         $ wsis_fx = 0
         if "WSIS_is_horny_1" in wsis_know:
@@ -2100,14 +2100,14 @@ label npc_lust:
             $ wnei_know.remove("WNEI_is_horny_1")
         if not "WNEI_is_horny_2" in wnei_know:
             $ wnei_know.append("WNEI_is_horny_2")
-            $ msg.msg("{nm}[fnamewnei]{/nm} is very horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewnei]{/nm} is very horny."))
     elif wnei_lust >= min(75,(char_inti_cap*2)+20):
         $ wnei_fx = 1
         if "WNEI_is_horny_2" in wnei_know:
             $ wnei_know.remove("WNEI_is_horny_2")
         if not "WNEI_is_horny_1" in wnei_know:
             $ wnei_know.append("WNEI_is_horny_1")
-            $ msg.msg("{nm}[fnamewnei]{/nm} is getting horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewnei]{/nm} is getting horny."))
     else:
         $ wnei_fx = 0
         if "WNEI_is_horny_1" in wnei_know:
@@ -2122,14 +2122,14 @@ label npc_lust:
             $ wpre_know.remove("WPRE_is_horny_1")
         if not "WPRE_is_horny_2" in wpre_know:
             $ wpre_know.append("WPRE_is_horny_2")
-            $ msg.msg("{nm}[fnamewpre]{/nm} is very horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewpre]{/nm} is very horny."))
     elif wpre_lust >= min(75,(char_inti_cap*2)+20):
         $ wpre_fx = 1
         if "WPRE_is_horny_2" in wpre_know:
             $ wpre_know.remove("WPRE_is_horny_2")
         if not "WPRE_is_horny_1" in wpre_know:
             $ wpre_know.append("WPRE_is_horny_1")
-            $ msg.msg("{nm}[fnamewpre]{/nm} is getting horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewpre]{/nm} is getting horny."))
     else:
         $ wpre_fx = 0
         if "WPRE_is_horny_1" in wpre_know:
@@ -2144,14 +2144,14 @@ label npc_lust:
             $ wota_know.remove("WOTA_is_horny_1")
         if not "WOTA_is_horny_2" in wota_know:
             $ wota_know.append("WOTA_is_horny_2")
-            $ msg.msg("{nm}[fnamewota]{/nm} is very horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewota]{/nm} is very horny."))
     elif wota_lust >= min(75,(char_inti_cap*2)+20):
         $ wota_fx = 1
         if "WOTA_is_horny_2" in wota_know:
             $ wota_know.remove("WOTA_is_horny_2")
         if not "WOTA_is_horny_1" in wota_know:
             $ wota_know.append("WOTA_is_horny_1")
-            $ msg.msg("{nm}[fnamewota]{/nm} is getting horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewota]{/nm} is getting horny."))
     else:
         $ wota_fx = 0
         if "WOTA_is_horny_1" in wota_know:
@@ -2166,14 +2166,14 @@ label npc_lust:
             $ wdis_know.remove("WDIS_is_horny_1")
         if not "WDIS_is_horny_2" in wdis_know:
             $ wdis_know.append("WDIS_is_horny_2")
-            $ msg.msg("{nm}[fnamewdis]{/nm} is very horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewdis]{/nm} is very horny."))
     elif wdis_lust >= min(75,(char_inti_cap*2)+20):
         $ wdis_fx = 1
         if "WDIS_is_horny_2" in wdis_know:
             $ wdis_know.remove("WDIS_is_horny_2")
         if not "WDIS_is_horny_1" in wdis_know:
             $ wdis_know.append("WDIS_is_horny_1")
-            $ msg.msg("{nm}[fnamewdis]{/nm} is getting horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewdis]{/nm} is getting horny."))
     else:
         $ wdis_fx = 0
         if "WDIS_is_horny_1" in wdis_know:
@@ -2188,14 +2188,14 @@ label npc_lust:
             $ wgal_know.remove("WGAL_is_horny_1")
         if not "WGAL_is_horny_2" in wgal_know:
             $ wgal_know.append("WGAL_is_horny_2")
-            $ msg.msg("{nm}[fnamewgal]{/nm} is very horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewgal]{/nm} is very horny."))
     elif wgal_lust >= min(75,(char_inti_cap*2)+20):
         $ wgal_fx = 1
         if "WGAL_is_horny_2" in wgal_know:
             $ wgal_know.remove("WGAL_is_horny_2")
         if not "WGAL_is_horny_1" in wgal_know:
             $ wgal_know.append("WGAL_is_horny_1")
-            $ msg.msg("{nm}[fnamewgal]{/nm} is getting horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamewgal]{/nm} is getting horny."))
     else:
         $ wgal_fx = 0
         if "WGAL_is_horny_1" in wgal_know:
@@ -2210,14 +2210,14 @@ label npc_lust:
             $ hprv_know.remove("HPRV_is_horny_1")
         if not "HPRV_is_horny_2" in hprv_know:
             $ hprv_know.append("HPRV_is_horny_2")
-            $ msg.msg("{nm}[fnamehprv]{/nm} is very horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamehprv]{/nm} is very horny."))
     elif hprv_lust >= min(75,(char_inti_cap*2)+20):
         $ hprv_fx = 1
         if "HPRV_is_horny_2" in hprv_know:
             $ hprv_know.remove("HPRV_is_horny_2")
         if not "HPRV_is_horny_1" in hprv_know:
             $ hprv_know.append("HPRV_is_horny_1")
-            $ msg.msg("{nm}[fnamehprv]{/nm} is getting horny.")
+            $ msg.msg(renpy.translate_string("{nm}[fnamehprv]{/nm} is getting horny."))
     else:
         $ hprv_fx = 0
         if "HPRV_is_horny_1" in hprv_know:

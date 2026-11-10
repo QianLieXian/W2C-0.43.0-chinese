@@ -23,6 +23,10 @@ try {
     }
     if (!$ApkPath -or !(Test-Path -LiteralPath $ApkPath -PathType Leaf)) { throw '请将原版 W2C-0.43.0-android.apk 放在补丁文件夹里，或拖到 BAT 上。' }
     $ApkPath = (Resolve-Path -LiteralPath $ApkPath).Path
+    $unsigned = Join-Path $output 'W2C-0.43.0-zh-unsigned.apk'
+    $final = Join-Path $output 'W2C-0.43.0-zh-android.apk'
+    if ($ApkPath -eq [IO.Path]::GetFullPath($unsigned) -or $ApkPath -eq [IO.Path]::GetFullPath($final)) { throw '输入文件不能位于补丁的输出包路径，请将原版 APK 放到补丁文件夹或其他位置。' }
+
     Write-Host '正在校验原版 APK……'
     if ((Get-FileHash -LiteralPath $ApkPath -Algorithm SHA256).Hash -ne $manifest.input_sha256) { throw '原版 APK 不匹配。本补丁仅适用于指定的 W2C 0.43.0 安卓原包。' }
     foreach ($file in $manifest.files) {
@@ -47,8 +51,6 @@ try {
         if (!$entry) { throw '签名工具中没有预置测试证书。' }
         [IO.Compression.ZipFileExtensions]::ExtractToFile($entry, (Join-Path $tools 'patch.keystore'), $true)
     } finally { $jar.Dispose() }
-    $unsigned = Join-Path $output 'W2C-0.43.0-zh-unsigned.apk'
-    if ($ApkPath -eq $unsigned) { throw '输入文件不能是输出临时包。' }
     Write-Host '正在合并汉化补丁……'
     Copy-Item -LiteralPath $ApkPath -Destination $unsigned -Force
     $zip = [IO.Compression.ZipFile]::Open($unsigned, [IO.Compression.ZipArchiveMode]::Update, [Text.Encoding]::UTF8)
@@ -69,11 +71,9 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'APK 签名失败，请查看上方错误。' }
     $signed = Get-ChildItem -LiteralPath $signDir -Filter '*-aligned-debugSigned.apk' -File | Select-Object -First 1
     if (!$signed) { throw '未找到签名后的 APK。' }
-    $final = Join-Path $output 'W2C-0.43.0-zh-android.apk'
-    Move-Item -LiteralPath $signed.FullName -Destination $final -Force
-    & $java.FullName '-Dfile.encoding=UTF-8' '-Dsun.stdout.encoding=UTF-8' '-Dsun.stderr.encoding=UTF-8' '-jar' $signer '-a' $final '-y'
+    & $java.FullName '-Dfile.encoding=UTF-8' '-Dsun.stdout.encoding=UTF-8' '-Dsun.stderr.encoding=UTF-8' '-jar' $signer '-a' $signed.FullName '-y'
     if ($LASTEXITCODE -ne 0) { throw '最终 APK 签名或对齐校验未通过。' }
-    $check = [IO.Compression.ZipFile]::OpenRead($final)
+    $check = [IO.Compression.ZipFile]::OpenRead($signed.FullName)
     try {
         foreach ($file in $manifest.files) {
             if (!$file.apk_entry) { continue }
@@ -86,6 +86,10 @@ try {
             if ($hash -ne $file.sha256) { throw ('APK 内文件校验失败：' + $file.apk_entry) }
         }
     } finally { $check.Dispose() }
+    # Publish only after all checks pass. Preserve a previous valid output on failure.
+    if (Test-Path -LiteralPath $final) { [IO.File]::Replace($signed.FullName, $final, ($final + '.previous-' + [Guid]::NewGuid().ToString('N'))) }
+    else { Move-Item -LiteralPath $signed.FullName -Destination $final }
+
     (Get-FileHash -LiteralPath $final -Algorithm SHA256).Hash + '  ' + [IO.Path]::GetFileName($final) | Set-Content -LiteralPath (Join-Path $output 'SHA256.txt') -Encoding ASCII
     Write-Host ('完成：' + $final) -ForegroundColor Green
     Write-Host '原版 APK 已保留。安装前先备份存档；汉化版签名与原版不同。'

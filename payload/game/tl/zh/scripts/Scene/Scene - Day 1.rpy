@@ -358,7 +358,7 @@ translate zh start_mid_1_2ac1451f:
 translate zh start_mid_1_38072abe:
 
     # mind "(Just within the hour that I arrived, my return was already worth it... There's so many things on my mind right now... but mainly, I can't forget...){fast}" nointeract
-    mind "（才回来不到一个小时，就已经值回票价了……脑子里塞满了各种念头……可最忘不掉的，还是……）{fast}"
+    mind "（才回来不到一个小时，就已经值回票价了……脑子里塞满了各种念头……可最忘不掉的，还是……）{fast}" nointeract
 
 # game/scripts/Scene/Scene - Day 1.rpy:1208
 translate zh start_mid_1_9bc217a4:
@@ -2116,7 +2116,7 @@ translate zh scenestep_0_4_call_4af72c35:
 translate zh scenestep_0_4_call_042f6197:
 
     # hero "{aw}T-t-that's...{/aw}{fast}" nointeract
-    hero "{aw}那、那、那个……{/aw}{fast}"
+    hero "{aw}那、那、那个……{/aw}{fast}" nointeract
 
 # game/scripts/Scene/Scene - Day 1.rpy:3055
 translate zh scenestep_0_4_call_46dc6ccb:
