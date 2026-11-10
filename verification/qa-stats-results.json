@@ -1,0 +1,104 @@
+[
+  {
+    "inputs": {},
+    "original": {
+      "ok": true
+    },
+    "patched": {
+      "ok": true
+    }
+  },
+  {
+    "inputs": {
+      "wmom_love": 20
+    },
+    "original": {
+      "ok": true
+    },
+    "patched": {
+      "ok": true
+    }
+  },
+  {
+    "inputs": {
+      "wmom_love": 80
+    },
+    "original": {
+      "ok": true
+    },
+    "patched": {
+      "ok": true
+    }
+  },
+  {
+    "inputs": {
+      "wmom_love": -80
+    },
+    "original": {
+      "ok": false,
+      "error": "ZeroDivisionError: float division by zero"
+    },
+    "patched": {
+      "ok": true
+    }
+  },
+  {
+    "inputs": {
+      "wnei_love": -80
+    },
+    "original": {
+      "ok": false,
+      "error": "ZeroDivisionError: float division by zero"
+    },
+    "patched": {
+      "ok": true
+    }
+  },
+  {
+    "inputs": {
+      "wpre_love": -80
+    },
+    "original": {
+      "ok": false,
+      "error": "ZeroDivisionError: float division by zero"
+    },
+    "patched": {
+      "ok": true
+    }
+  },
+  {
+    "inputs": {
+      "wgal_love": -80
+    },
+    "original": {
+      "ok": false,
+      "error": "ZeroDivisionError: float division by zero"
+    },
+    "patched": {
+      "ok": true
+    }
+  },
+  {
+    "inputs": {
+      "wsis_bonus": -100
+    },
+    "original": {
+      "ok": false,
+      "error": "ZeroDivisionError: float division by zero"
+    },
+    "patched": {
+      "ok": true
+    }
+  },
+  {
+    "inputs": {
+      "wnei_bonus": -200
+    },
+    "original": {
+      "ok": true
+    },
+    "patched": {
+      "ok": true
+    }
+  }
+]
